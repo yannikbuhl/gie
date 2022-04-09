@@ -2,7 +2,21 @@
 # Helper functions for {giedata}
 ################################################################################
 
-# Function to execute GET request
+#' Function to execute GET request
+#'
+#' @param country
+#' @param from
+#' @param to
+#' @param page
+#' @param date
+#' @param size
+#' @param type
+#' @param apikey
+#'
+#' @return
+#' @import httr
+#'
+#' @examples
 giedata_getrequest <- function(country,
                                from,
                                to,
@@ -32,7 +46,7 @@ giedata_getrequest <- function(country,
   url$query <- query
 
   # Execute GET request
-  raw_request <- httr::GET(url, add_headers(`x-key` = apikey))
+  raw_request <- httr::GET(url, httr::add_headers(`x-key` = apikey))
 
   status <- httr::status_code(raw_request)
 
@@ -46,16 +60,23 @@ giedata_getrequest <- function(country,
 
 ## ---------------------------------------------------------------------------##
 
-# Process results from GET request
-
+#' Process results from GET request
+#'
+#' @param raw_results
+#' @param country
+#'
+#' @return
+#' @import dplyr purrr lubridate magrittr
+#'
+#' @examples
 giedata_parseresult <- function(raw_results, country) {
 
   results <- raw_results %>%
     magrittr::extract2("data") %>%
     purrr::map(., ~ giedata_setnull(.x, "info")) %>%
     purrr::map_dfr(.f = bind_rows) %>%
-    arrange(gasDayStart) %>%
-    mutate(gasDayStart = lubridate::as_date(gasDayStart),
+    dplyr::arrange(gasDayStart) %>%
+    dplyr::mutate(gasDayStart = lubridate::as_date(gasDayStart),
            across(!c(status, gasDayStart, name, code, url), as.numeric)) %>%
     suppressWarnings()
 
@@ -65,7 +86,14 @@ giedata_parseresult <- function(raw_results, country) {
 
 ## ---------------------------------------------------------------------------##
 
-# Delete elements from list
+#' Delete elements from list
+#'
+#' @param data
+#' @param x
+#'
+#' @return
+#'
+#' @examples
 giedata_setnull <- function(data, x) {
   data[x] <- NULL
   return(data)

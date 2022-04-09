@@ -11,10 +11,11 @@
 #' @param apikey
 #'
 #' @return A data frame.
+#' @import magrittr httr
 #' @export
 #'
 #' @examples
-giedata_gastanks <- function(country,
+giedata_getgasdata <- function(country,
                              from = Sys.Date() - 5,
                              to = Sys.Date() - 1,
                              page = 1,
@@ -64,7 +65,7 @@ giedata_gastanks <- function(country,
 
     results <- raw_results %>% purrr::map_dfr(., .f = ~ giedata_parseresult(.x))
 
-    return(raw_results)
+    return(results)
 
   }
 
