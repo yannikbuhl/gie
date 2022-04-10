@@ -17,19 +17,33 @@
 #' @import httr
 #'
 #' @examples
-giedata_getrequest <- function(country,
-                               from,
-                               to,
-                               page,
-                               date,
-                               size,
-                               type,
-                               apikey) {
+getrequest <- function(country,
+                       from,
+                       to,
+                       page,
+                       date,
+                       size,
+                       type,
+                       pages = NULL,
+                       verbose,
+                       apikey) {
 
   # Construct base URL
   endpoint <- paste0("https://", type, ".gie.eu/api")
 
-  message("~~~ Processing page number ", page)
+  if (isTRUE(verbose)) {
+
+    if (is.null(pages)) {
+
+      message("~~~ Processing page number ", page, ".")
+
+    } else if (!is.null(pages) & is.integer(pages)) {
+
+      message("~~~ Processing page number ", page, " of ", pages, ".")
+
+    }
+
+  }
 
   # Parse URL
   url <- httr::parse_url(endpoint)
@@ -50,7 +64,7 @@ giedata_getrequest <- function(country,
 
   status <- httr::status_code(raw_request)
 
-  if (status != 200) stop("HTTP error with code: ", status, ".")
+  if (status != 200) stop("HTTP error with code: ", status, ".", call. = FALSE)
 
   raw_results <- raw_request %>% httr::content(as = "parsed")
 
@@ -69,11 +83,11 @@ giedata_getrequest <- function(country,
 #' @import dplyr purrr lubridate magrittr
 #'
 #' @examples
-giedata_parseresult <- function(raw_results, country) {
+parseresult <- function(raw_results, country) {
 
   results <- raw_results %>%
     magrittr::extract2("data") %>%
-    purrr::map(., ~ giedata_setnull(.x, "info")) %>%
+    purrr::map(., ~ setnull(.x, "info")) %>%
     purrr::map_dfr(.f = bind_rows) %>%
     dplyr::arrange(gasDayStart) %>%
     dplyr::mutate(gasDayStart = lubridate::as_date(gasDayStart),
@@ -94,7 +108,7 @@ giedata_parseresult <- function(raw_results, country) {
 #' @return
 #'
 #' @examples
-giedata_setnull <- function(data, x) {
+setnull <- function(data, x) {
   data[x] <- NULL
   return(data)
 }
