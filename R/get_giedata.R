@@ -16,8 +16,8 @@
 #'
 #' @examples
 get_giedata <- function(country,
-                        from = Sys.Date() - 5,
-                        to = Sys.Date() - 1,
+                        from = NULL,
+                        to = NULL,
                         page = 1,
                         date = NULL,
                         size = 20,
@@ -25,7 +25,7 @@ get_giedata <- function(country,
                         verbose = FALSE,
                         apikey) {
 
-  # Execute first GET request
+  # Execute first GET request --------------------------------------------------
   raw_results <- getrequest(country = country,
                             from = from,
                             to = to,
@@ -39,7 +39,20 @@ get_giedata <- function(country,
   # Get number of pages to the request
   pages <- raw_results[["last_page"]]
 
-  # If there is only one page, proceed
+  # Check if there was an empty response with 0 pages --------------------------
+  if (pages == 0) {
+
+    warning("No results found for your query. Invisibly returning raw results.",
+            call. = FALSE)
+
+    invisible(return(raw_results))
+
+    stop(call. = FALSE)
+
+  }
+
+
+  # If there is only one page, proceed -----------------------------------------
   if (pages == 1L) {
 
     if (isTRUE(verbose)) {
@@ -48,10 +61,31 @@ get_giedata <- function(country,
 
     }
 
-    # Parse results from GET request
-    results <- parseresult(raw_results)
+    # tryCatch if parsing goes wrong -------------------------------------------
 
-    return(results)
+    tryCatch(
+
+      error = function(cnd) {
+
+        # In case of error, warn and return raw results
+        warning("!~~~ Parsing failed. Returning raw response.", call. = FALSE)
+
+        return(raw_results)
+
+      },
+      {
+
+        # Parse results from GET request
+        results <- parseresult(raw_results)
+
+        # Return parsed results
+        return(results)
+
+      }
+
+    )
+
+    # End of tryCatch ----------------------------------------------------------
 
   } else if (pages > 1L) {
 
@@ -81,11 +115,29 @@ get_giedata <- function(country,
 
     }
 
-    results <- raw_results %>% purrr::map_dfr(., .f = ~ parseresult(.x))
+    # tryCatch if parsing goes wrong -------------------------------------------
 
-    results <- dplyr::bind_rows(first_page, results)
+    tryCatch(
 
-    return(results)
+      error = function(cnd) {
+
+        warning("!~~~ Parsing failed. Returning raw response.", call. = FALSE)
+
+        return(raw_results)
+
+      },{
+
+        results <- raw_results %>% purrr::map_dfr(., .f = ~ parseresult(.x))
+
+        results <- dplyr::bind_rows(first_page, results)
+
+        return(results)
+
+      }
+
+    )
+
+    # End of tryCatch ----------------------------------------------------------
 
   }
 

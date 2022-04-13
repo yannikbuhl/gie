@@ -63,6 +63,9 @@ getrequest <- function(country,
   raw_request <- httr::GET(url, httr::add_headers(`x-key` = apikey))
 
   status <- httr::status_code(raw_request)
+  error_message <- httr::http_status(raw_request)
+
+  if (isTRUE(verbose) & status != 200) print(error_message)
 
   if (status != 200) stop("HTTP error with code: ", status, ".", call. = FALSE)
 
@@ -83,7 +86,7 @@ getrequest <- function(country,
 #' @import dplyr purrr lubridate magrittr
 #'
 #' @examples
-parseresult <- function(raw_results, country) {
+parseresult <- function(raw_results) {
 
   results <- raw_results %>%
     magrittr::extract2("data") %>%
