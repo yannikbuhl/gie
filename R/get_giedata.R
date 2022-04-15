@@ -1,6 +1,8 @@
 #' Function to download data from GIE's AGSI+ API
 #'
 #' @param country Character string. Specify the country of interest.
+#' @param company Character string. EIC code for the requested company.
+#' @param facility Character string. EIC code for the requested facility.
 #' @param from Character string. Specify the start of the time span you are \cr
 #' interested in downloading (format: YYYY-MM-DD).
 #' @param to
@@ -15,7 +17,9 @@
 #' @export
 #'
 #' @examples
-get_giedata <- function(country,
+get_giedata <- function(country = NULL,
+                        company = NULL,
+                        facility = NULL,
                         from = NULL,
                         to = NULL,
                         page = 1,
@@ -25,8 +29,26 @@ get_giedata <- function(country,
                         verbose = FALSE,
                         apikey) {
 
+  if (missing(apikey)) stop("You need to specify an 'apikey' parameter.")
+
+  # First step of error handling -----------------------------------------------
+  check_giedatainput(country = country,
+                     company = company,
+                     facility = facility,
+                     from = from,
+                     to = to,
+                     page = page,
+                     date = date,
+                     size = size,
+                     type = type,
+                     verbose = verbose,
+                     apikey = apikey)
+
+
   # Execute first GET request --------------------------------------------------
   raw_results <- getrequest(country = country,
+                            company = company,
+                            facility = facility,
                             from = from,
                             to = to,
                             page = page,
@@ -99,6 +121,8 @@ get_giedata <- function(country,
 
     raw_results <- purrr::map(c(2:pages),
                               .f = ~ getrequest(country = country,
+                                                company = company,
+                                                facility = facility,
                                                 from = from,
                                                 to = to,
                                                 page = .x,

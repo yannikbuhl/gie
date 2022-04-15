@@ -18,6 +18,8 @@
 #'
 #' @examples
 getrequest <- function(country,
+                       company,
+                       facility,
                        from,
                        to,
                        page,
@@ -50,6 +52,8 @@ getrequest <- function(country,
 
   # Create list with HTTP parameters
   query <- list(country = country,
+                company = company,
+                facility = facility,
                 from = from,
                 to = to,
                 page = page,
@@ -114,4 +118,32 @@ parseresult <- function(raw_results) {
 setnull <- function(data, x) {
   data[x] <- NULL
   return(data)
+}
+
+## ---------------------------------------------------------------------------##
+
+check_giedatainput <- function(country,
+                               company,
+                               facility,
+                               from,
+                               to,
+                               page,
+                               date,
+                               size,
+                               type,
+                               verbose,
+                               apikey) {
+
+  if (!is.null(company) & is.null(country)) stop()
+
+  if (!is.null(facility & is.null(country)) | is.null(company)) stop()
+
+  if (!is.logical(verbose)) stop()
+
+  if (!is.numeric(page)) stop()
+
+  if (!is.numeric(size)) stop()
+
+  if (!is.character(type)) stop()
+
 }
