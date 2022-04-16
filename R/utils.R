@@ -47,9 +47,6 @@ getrequest <- function(country,
 
   }
 
-  # Parse URL
-  url <- httr::parse_url(endpoint)
-
   # Create list with HTTP parameters
   query <- list(country = country,
                 company = company,
@@ -60,10 +57,22 @@ getrequest <- function(country,
                 date = date,
                 size = size)
 
-  # Update URL
-  url$query <- query
+  # Parse URL
+  url <- construct_url(url = endpoint, query = query)
 
   # Execute GET request
+  raw_request <- send_getrequest(url = url, apikey = apikey)
+
+  raw_results <- raw_request %>% httr::content(as = "parsed")
+
+  return(raw_results)
+
+}
+
+## ---------------------------------------------------------------------------##
+
+send_getrequest <- function(url, apikey) {
+
   raw_request <- httr::GET(url, httr::add_headers(`x-key` = apikey))
 
   status <- httr::status_code(raw_request)
@@ -73,9 +82,19 @@ getrequest <- function(country,
 
   if (status != 200) stop("HTTP error with code: ", status, ".", call. = FALSE)
 
-  raw_results <- raw_request %>% httr::content(as = "parsed")
+  return(raw_request)
 
-  return(raw_results)
+}
+
+## ---------------------------------------------------------------------------##
+
+construct_url <- function(url, query) {
+
+  url <- httr::parse_url(url)
+
+  url$query <- query
+
+  return(url)
 
 }
 
@@ -134,16 +153,27 @@ check_giedatainput <- function(country,
                                verbose,
                                apikey) {
 
-  if (!is.null(company) & is.null(country)) stop()
+  if (!is.null(company) & is.null(country)) {
+    stop("If 'company' is specified, 'country' must be specified, too.")
+  }
 
-  if (!is.null(facility & is.null(country)) | is.null(company)) stop()
+  if (!is.null(facility) & is.null(country) & is.null(company)) {
+    stop("If 'facility' is specified, 'country' and 'company' must be specified, too.")
+  }
 
-  if (!is.logical(verbose)) stop()
+  if (!is.logical(verbose) | length(verbose) != 1) {
+    stop("Parameter 'verbose' needs to be type logical and length 1.")
+  }
 
-  if (!is.numeric(page)) stop()
+  if (!is.numeric(page) | length(page) != 1) {
+    stop("Parameter 'page' needs to be type numeric and length 1..")
+  }
 
-  if (!is.numeric(size)) stop()
+  if (!is.numeric(size) | length(size) != 1) {
+    stop("Parameter 'size' needs to be type numeric and length 1..")
+  }
 
-  if (!is.character(type)) stop()
-
+  if (!is.character(type) | length(type) != 1) {
+    stop("Parameter 'type' needs to be type character and length 1..")
+  }
 }
