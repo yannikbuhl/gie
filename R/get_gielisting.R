@@ -17,7 +17,7 @@ get_gielisting <- function(show = "listing",
                            country = NULL,
                            company = NULL,
                            type = "agsi",
-                           raw = FALSE,
+                           # raw = FALSE,
                            apikey) {
 
   endpoint <- paste0("https://", type, ".gie.eu/api/about")
@@ -30,10 +30,19 @@ get_gielisting <- function(show = "listing",
 
   raw_results <- raw_request %>% httr::content(as = "parsed")
 
-  # Parse results according to region, country, company parameters
+  if (is.null(region) & is.null(country) & is.null(company)) {
 
-  return(raw_results)
+    return(raw_results)
 
+  } else {
+
+    # Parse results according to region, country, company parameters
+    results <- get_listinghierarchy(raw_results = raw_results,
+                                    region = region,
+                                    country = country,
+                                    company = company)
+
+    return(results)
+
+  }
 }
-
-
