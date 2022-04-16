@@ -19,3 +19,5 @@ gasdata <- giedata::get_giedata(country = "de",
                                 verbose = TRUE)
 
 ```
+
+Also, the function `get_gielisting()` already works and returns a nested list with all gas facilities available, including the EIC codes for companies and facilities. Getting parsed results will be available soon.
