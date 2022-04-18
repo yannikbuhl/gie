@@ -4,7 +4,7 @@
 \alias{parseresult}
 \title{Process results from GET request}
 \usage{
-parseresult(raw_results, country)
+parseresult(raw_results)
 }
 \arguments{
 \item{country}{}

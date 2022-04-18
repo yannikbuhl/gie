@@ -1,11 +1,17 @@
+
 #' get_gielisting
 #'
-#' @description Get data on all available gas facilities from GIE
+#' @description Function to download raw or parsed results for the countries, \cr
+#' companies and facilities available from the AGSI+ API of GIE. The EIC codes \cr
+#' of the results can be used to in turn download the actual data \cr
+#' using \code{get_giedata()}.
 #'
 #' @param show
-#' @param apikey
+#' @param region
+#' @param country
+#' @param facilities
 #' @param type
-#' @param raw Set to TRUE if no parsed but raw results desired. Default: FALSE.
+#' @param apikey
 #'
 #' @return
 #' @export
@@ -15,9 +21,8 @@
 get_gielisting <- function(show = "listing",
                            region = NULL,
                            country = NULL,
-                           company = NULL,
+                           facilities = FALSE,
                            type = "agsi",
-                           # raw = FALSE,
                            apikey) {
 
   endpoint <- paste0("https://", type, ".gie.eu/api/about")
@@ -30,7 +35,7 @@ get_gielisting <- function(show = "listing",
 
   raw_results <- raw_request %>% httr::content(as = "parsed")
 
-  if (is.null(region) & is.null(country) & is.null(company)) {
+  if (is.null(region) & is.null(country) & isFALSE(facilities)) {
 
     return(raw_results)
 
@@ -40,7 +45,7 @@ get_gielisting <- function(show = "listing",
     results <- get_listinghierarchy(raw_results = raw_results,
                                     region = region,
                                     country = country,
-                                    company = company)
+                                    facilities = facilities)
 
     return(results)
 

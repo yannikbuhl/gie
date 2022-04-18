@@ -16,7 +16,6 @@
 #' @return
 #' @import httr
 #'
-#' @examples
 getrequest <- function(country,
                        company,
                        facility,
@@ -71,6 +70,13 @@ getrequest <- function(country,
 
 ## ---------------------------------------------------------------------------##
 
+#' send_getrequest
+#'
+#' @param url
+#' @param apikey
+#'
+#' @return
+#'
 send_getrequest <- function(url, apikey) {
 
   raw_request <- httr::GET(url, httr::add_headers(`x-key` = apikey))
@@ -88,6 +94,13 @@ send_getrequest <- function(url, apikey) {
 
 ## ---------------------------------------------------------------------------##
 
+#' construct_url
+#'
+#' @param url
+#' @param query
+#'
+#' @return
+#'
 construct_url <- function(url, query) {
 
   url <- httr::parse_url(url)
@@ -108,7 +121,6 @@ construct_url <- function(url, query) {
 #' @return
 #' @import dplyr purrr lubridate magrittr
 #'
-#' @examples
 parseresult <- function(raw_results) {
 
   results <- raw_results %>%
@@ -133,7 +145,6 @@ parseresult <- function(raw_results) {
 #'
 #' @return
 #'
-#' @examples
 setnull <- function(data, x) {
   data[x] <- NULL
   return(data)
@@ -141,6 +152,22 @@ setnull <- function(data, x) {
 
 ## ---------------------------------------------------------------------------##
 
+#' Title
+#'
+#' @param country
+#' @param company
+#' @param facility
+#' @param from
+#' @param to
+#' @param page
+#' @param date
+#' @param size
+#' @param type
+#' @param verbose
+#' @param apikey
+#'
+#' @return
+#'
 check_giedatainput <- function(country,
                                company,
                                facility,
@@ -180,12 +207,22 @@ check_giedatainput <- function(country,
 
 #------------------------------------------------------------------------------#
 
+#' get_listinghierarchy
+#'
+#' @param raw_results
+#' @param region
+#' @param country
+#' @param facilities
+#'
+#' @return
+#'
 get_listinghierarchy <- function(raw_results,
-                                 region = NULL,
-                                 country = NULL,
-                                 company = NULL) {
+                                 region,
+                                 country,
+                                 facilities) {
 
-  if (!is.null(region) & is.null(country) & is.null(company)) {
+  # Get all data from a region
+  if (!is.null(region) & is.null(country) & isFALSE(facilities)) {
 
     results <- raw_results %>%
       pluck("SSO") %>%
@@ -197,9 +234,9 @@ get_listinghierarchy <- function(raw_results,
 
     return(results)
 
-  }
+  } else if (!is.null(region) & !is.null(country) & isFALSE(facilities)) {
 
-  if (!is.null(region) & !is.null(country) & is.null(company)) {
+  # Get all data for a given country in a given region
 
     results <- raw_results %>%
       pluck("SSO") %>%
@@ -212,6 +249,54 @@ get_listinghierarchy <- function(raw_results,
 
     return(results)
 
+  } else if (!is.null(region) & !is.null(country) & isTRUE(facilities)) {
+
+    results <- raw_results %>%
+      pluck("SSO") %>%
+      pluck(region) %>%
+      pluck(country) %>%
+      map_dfr(.x, .f = ~ extract_listelements(.))
+
+    return(results)
+
+  } else {
+
+    stop("Misspecified parameters. Please check parameter combination.",
+         call. = FALSE)
+
   }
+
+}
+
+#------------------------------------------------------------------------------#
+
+#' extract_listelements
+#'
+#' @param listelement
+#'
+#' @return
+#'
+extract_listelements <- function(listelement) {
+
+  company <- tibble(country = listelement$data$country$name,
+                    country_code = listelement$data$country$code,
+                    company_shortname = listelement$short_name,
+                    company_name = listelement$name,
+                    company_url = listelement$url,
+                    company_eic = listelement$eic)
+
+  facilities <- listelement %>%
+    setnull(., "data") %>%
+    pluck(., "facilities") %>%
+    map(.x, .f = ~ setnull(., "country")) %>%
+    map_dfr(bind_rows) %>%
+    mutate(company_eic = listelement$eic) %>%
+    rename(facility_name = name,
+           facility_eic = eic,
+           facility_type = type)
+
+  data <- facilities %>% left_join(., company, by = "company_eic")
+
+  return(data)
 
 }
