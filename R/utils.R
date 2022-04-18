@@ -230,10 +230,10 @@ get_listinghierarchy <- function(raw_results,
     results <- raw_results %>%
       pluck("SSO") %>%
       pluck(region) %>%
-      # map(.f = ~ map(.x, .f = ~ setnull(., "facilities"))) %>%
-      # map(.f = ~ map(.x, .f = ~ setnull(., "data"))) %>%
-      # map(.f = ~ map(.x, .f = ~ setnull(., "image"))) %>%
-      map(.f = ~ map(.x, .f = ~ setnull(., c("facilities", "data", "image")))) %>%
+      map(.f = ~ map(.x, .f = ~ setnull(., "facilities"))) %>%
+      map(.f = ~ map(.x, .f = ~ setnull(., "data"))) %>%
+      map(.f = ~ map(.x, .f = ~ setnull(., "image"))) %>%
+      # map(.f = ~ map(.x, .f = ~ setnull(., c("facilities", "data", "image")))) %>%
       map_dfr(.f = bind_rows, .id = "country")
 
     return(results)
