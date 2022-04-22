@@ -1,18 +1,21 @@
 #' Function to download data from GIE's AGSI+ API
 #'
-#' @param country Character string. Specify the country of interest.
-#' @param company Character string. EIC code for the requested company.
-#' @param facility Character string. EIC code for the requested facility.
-#' @param from Character string. Specify the start of the time span you are \cr
+#' @param country Character. Specify the country of interest.
+#' @param company Character. EIC code for the requested company.
+#' @param facility Character. EIC code for the requested facility.
+#' @param from Character. Specify the start of the time span you are \cr
 #' interested in downloading (format: YYYY-MM-DD).
-#' @param to
-#' @param page
-#' @param date
-#' @param size
-#' @param type
-#' @param apikey
+#' @param to Character. Specify the end of the time span you are \cr
+#' interested in downloading (format: YYYY-MM-DD).
+#' @param page Integer. The page of a multi-page query you want to get.
+#' @param date Character. If you want to have data only for one date. \cr
+#' If you set 'date', you cannot set the 'from' and/or 'to' parameters \cr
+#' (format: YYYY-MM-DD).
+#' @param size Integer. The number of results per page.
+#' @param database Character. The type of API you want to address ('agsi' or 'alsi').
+#' @param apikey Character. Your personal API key.
 #'
-#' @return A data frame.
+#' @return A data.frame or list with the results.
 #' @import magrittr httr
 #' @export
 #'
@@ -24,8 +27,9 @@ get_giedata <- function(country = NULL,
                         to = NULL,
                         page = 1,
                         date = NULL,
-                        size = 20,
-                        type = "agsi",
+                        size = 30,
+                        type = NULL,
+                        database = "agsi",
                         verbose = FALSE,
                         apikey) {
 
@@ -41,9 +45,9 @@ get_giedata <- function(country = NULL,
                      date = date,
                      size = size,
                      type = type,
+                     database = database,
                      verbose = verbose,
                      apikey = apikey)
-
 
   # Execute first GET request --------------------------------------------------
   raw_results <- getrequest(country = country,
@@ -55,6 +59,7 @@ get_giedata <- function(country = NULL,
                             date = date,
                             size = size,
                             type = type,
+                            database = database,
                             verbose = verbose,
                             apikey = apikey)
 
@@ -72,7 +77,6 @@ get_giedata <- function(country = NULL,
     stop(call. = FALSE)
 
   }
-
 
   # If there is only one page, proceed -----------------------------------------
   if (pages == 1L) {
@@ -129,6 +133,7 @@ get_giedata <- function(country = NULL,
                                                 date = date,
                                                 size = size,
                                                 type = type,
+                                                database = database,
                                                 pages = pages,
                                                 verbose = verbose,
                                                 apikey = apikey))

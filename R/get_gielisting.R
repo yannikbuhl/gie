@@ -1,4 +1,3 @@
-
 #' get_gielisting
 #'
 #' @description Function to download raw or parsed results for the countries, \cr
@@ -6,28 +5,30 @@
 #' of the results can be used to in turn download the actual data \cr
 #' using \code{get_giedata()}.
 #'
-#' @param show
-#' @param region
-#' @param country
-#' @param facilities
-#' @param type
-#' @param apikey
+#' @param region Character. The broader region you want results for (can be 'Europe' or 'Non-EU').
+#' @param country Character. The country you want the results for (two-digit country code). \cr
+#'  If you use this parameter, you have to specify the 'region' parameter accordingly.
+#' @param facilities Logical. If TRUE, facility data will be added to the country results. \cr
+#' If you use this parameter, 'region' and 'country' have to be set. Defaults to FALSE.
+#' @param database Character. The type of API you want to address ('agsi' or 'alsi').
+#' @param apikey Character. Your personal API key.
 #'
 #' @return
 #' @export
 #'
 #' @examples
 #'
-get_gielisting <- function(show = "listing",
-                           region = NULL,
+get_gielisting <- function(region = NULL,
                            country = NULL,
                            facilities = FALSE,
-                           type = "agsi",
+                           database = "agsi",
                            apikey) {
 
-  endpoint <- paste0("https://", type, ".gie.eu/api/about")
+  # Implement parameter checking
 
-  query <- list(show = show)
+  endpoint <- paste0("https://", database, ".gie.eu/api/about")
+
+  query <- list()
 
   url <- construct_url(url = endpoint, query = query)
 

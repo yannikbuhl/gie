@@ -10,7 +10,7 @@
 #' @param page
 #' @param date
 #' @param size
-#' @param type
+#' @param database
 #' @param apikey
 #'
 #' @return
@@ -25,12 +25,13 @@ getrequest <- function(country,
                        date,
                        size,
                        type,
+                       database,
                        pages = NULL,
                        verbose,
                        apikey) {
 
   # Construct base URL
-  endpoint <- paste0("https://", type, ".gie.eu/api")
+  endpoint <- paste0("https://", database, ".gie.eu/api")
 
   if (isTRUE(verbose)) {
 
@@ -54,7 +55,8 @@ getrequest <- function(country,
                 to = to,
                 page = page,
                 date = date,
-                size = size)
+                size = size,
+                type = type)
 
   # Parse URL
   url <- construct_url(url = endpoint, query = query)
@@ -164,7 +166,7 @@ setnull <- function(data, x) {
 #' @param page
 #' @param date
 #' @param size
-#' @param type
+#' @param database
 #' @param verbose
 #' @param apikey
 #'
@@ -179,6 +181,7 @@ check_giedatainput <- function(country,
                                date,
                                size,
                                type,
+                               database,
                                verbose,
                                apikey) {
 
@@ -195,15 +198,15 @@ check_giedatainput <- function(country,
   }
 
   if (!is.numeric(page) | length(page) != 1) {
-    stop("Parameter 'page' needs to be type numeric and length 1..")
+    stop("Parameter 'page' needs to be type numeric and length 1.")
   }
 
-  if (!is.numeric(size) | length(size) != 1) {
-    stop("Parameter 'size' needs to be type numeric and length 1..")
+  if (!is.numeric(size) | length(size) != 1 | size > 300) {
+    stop("Parameter 'size' needs to be type numeric and length 1 and max. 300.")
   }
 
-  if (!is.character(type) | length(type) != 1) {
-    stop("Parameter 'type' needs to be type character and length 1..")
+  if (!is.character(database) | length(database) != 1) {
+    stop("Parameter 'type' needs to be type character and length 1.")
   }
 }
 
