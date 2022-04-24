@@ -15,3 +15,5 @@ Imports:
   lubridate,
   magrittr,
   purrr
+Suggests: 
+    vcr (>= 0.6.0)
