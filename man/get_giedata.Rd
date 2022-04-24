@@ -12,26 +12,40 @@ get_giedata(
   to = NULL,
   page = 1,
   date = NULL,
-  size = 20,
-  type = "agsi",
+  size = 30,
+  type = NULL,
+  database = "agsi",
   verbose = FALSE,
   apikey
 )
 }
 \arguments{
-\item{country}{Character string. Specify the country of interest.}
+\item{country}{Character. Specify the country of interest.}
 
-\item{company}{Character string. EIC code for the requested company.}
+\item{company}{Character. EIC code for the requested company.}
 
-\item{facility}{Character string. EIC code for the requested facility.}
+\item{facility}{Character. EIC code for the requested facility.}
 
-\item{from}{Character string. Specify the start of the time span you are \cr
+\item{from}{Character. Specify the start of the time span you are \cr
 interested in downloading (format: YYYY-MM-DD).}
 
-\item{apikey}{}
+\item{to}{Character. Specify the end of the time span you are \cr
+interested in downloading (format: YYYY-MM-DD).}
+
+\item{page}{Integer. The page of a multi-page query you want to get.}
+
+\item{date}{Character. If you want to have data only for one date. \cr
+If you set 'date', you cannot set the 'from' and/or 'to' parameters \cr
+(format: YYYY-MM-DD).}
+
+\item{size}{Integer. The number of results per page.}
+
+\item{database}{Character. The type of API you want to address ('agsi' or 'alsi').}
+
+\item{apikey}{Character. Your personal API key.}
 }
 \value{
-A data frame.
+A data.frame or list with the results.
 }
 \description{
 Function to download data from GIE's AGSI+ API

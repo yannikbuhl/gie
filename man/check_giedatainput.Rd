@@ -14,6 +14,7 @@ check_giedatainput(
   date,
   size,
   type,
+  database,
   verbose,
   apikey
 )

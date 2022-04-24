@@ -14,6 +14,7 @@ getrequest(
   date,
   size,
   type,
+  database,
   pages = NULL,
   verbose,
   apikey

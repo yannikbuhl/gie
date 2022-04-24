@@ -5,16 +5,25 @@
 \title{get_gielisting}
 \usage{
 get_gielisting(
-  show = "listing",
   region = NULL,
   country = NULL,
   facilities = FALSE,
-  type = "agsi",
+  database = "agsi",
   apikey
 )
 }
 \arguments{
-\item{apikey}{}
+\item{region}{Character. The broader region you want results for (can be 'Europe' or 'Non-EU').}
+
+\item{country}{Character. The country you want the results for (two-digit country code). \cr
+If you use this parameter, you have to specify the 'region' parameter accordingly.}
+
+\item{facilities}{Logical. If TRUE, facility data will be added to the country results. \cr
+If you use this parameter, 'region' and 'country' have to be set. Defaults to FALSE.}
+
+\item{database}{Character. The type of API you want to address ('agsi' or 'alsi').}
+
+\item{apikey}{Character. Your personal API key.}
 }
 \value{
 
