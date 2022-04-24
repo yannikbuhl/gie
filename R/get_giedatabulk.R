@@ -14,6 +14,7 @@ get_giedatabulk <- function(countries = NULL,
   # Download bulk data only for countries
   if (!is.null(countries) & is.null(companies) & is.null(facilities)) {
 
+  # Loop over the countries vector
   results <- purrr:map_dfr(.x = countries,
                            .f = ~ get_giedata(country = .,
                                               from = from,
