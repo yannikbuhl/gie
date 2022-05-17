@@ -12,7 +12,9 @@
 #' If you set 'date', you cannot set the 'from' and/or 'to' parameters \cr
 #' (format: YYYY-MM-DD).
 #' @param size Integer. The number of results per page.
+#' @param type
 #' @param database Character. The type of API you want to address ('agsi' or 'alsi').
+#' @param verbose Prints information on function progress to the console (default: FALSE).
 #' @param apikey Character. Your personal API key.
 #'
 #' @return A data.frame or list with the results.
