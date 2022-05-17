@@ -34,6 +34,11 @@ german_facilities <- giedata::get_gielisting(region = "Europe",
 
 ```
 
+Now, also a basic function is available that lets you download data for multiple countries, companies or facilities at once. Note, however, that as of yet, it is only possible to download a set of various companies for within one country; also, you can only download multiple facilities if the country and the company are fixed (this is mainly due to the way the API is built).
 
+```r 
 
+companydata <- giedata::get_giedatabulk()
+
+```
 
