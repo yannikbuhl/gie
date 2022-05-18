@@ -13,6 +13,9 @@
 #' (format: YYYY-MM-DD).
 #' @param size Integer. The number of results per page.
 #' @param type
+#' @param timeout Numeric. If the amount of pages of your request exceeds 60, a timeout \cr
+#' will be enforced to prevent the API from timing out. Defaults to 3 seconds, any \cr
+#' values must be set in seconds, too.
 #' @param database Character. The type of API you want to address ('agsi' or 'alsi').
 #' @param verbose Prints information on function progress to the console (default: FALSE).
 #' @param apikey Character. Your personal API key.
@@ -31,6 +34,7 @@ get_giedata <- function(country = NULL,
                         date = NULL,
                         size = 30,
                         type = NULL,
+                        timeout = 3,
                         database = "agsi",
                         verbose = FALSE,
                         apikey) {
@@ -47,6 +51,7 @@ get_giedata <- function(country = NULL,
                      date = date,
                      size = size,
                      type = type,
+                     timeout = timeout,
                      database = database,
                      verbose = verbose,
                      apikey = apikey)
@@ -61,6 +66,7 @@ get_giedata <- function(country = NULL,
                             date = date,
                             size = size,
                             type = type,
+                            timeout = timeout,
                             database = database,
                             verbose = verbose,
                             apikey = apikey)
@@ -125,6 +131,12 @@ get_giedata <- function(country = NULL,
 
     first_page <- parseresult(raw_results)
 
+    if (pages > 60L & isTRUE(verbose)) {
+
+      message("!~~~ Large request, slowing down querying process by ", timeout, " seconds per API call.")
+
+    }
+
     raw_results <- purrr::map(c(2:pages),
                               .f = ~ getrequest(country = country,
                                                 company = company,
@@ -132,9 +144,11 @@ get_giedata <- function(country = NULL,
                                                 from = from,
                                                 to = to,
                                                 page = .x,
+                                                pagelength = pages,
                                                 date = date,
                                                 size = size,
                                                 type = type,
+                                                timeout = timeout,
                                                 database = database,
                                                 pages = pages,
                                                 verbose = verbose,

@@ -35,6 +35,7 @@ get_giedatabulk <- function(countries = NULL,
                             date = NULL,
                             size = 30,
                             type = NULL,
+                            timeout = 3,
                             database = "agsi",
                             verbose = FALSE,
                             apikey) {
@@ -44,16 +45,17 @@ get_giedatabulk <- function(countries = NULL,
 
   # Loop over the countries vector
   results <- purrr::map_dfr(.x = countries,
-                           .f = ~ get_giedata(country = .,
-                                              from = from,
-                                              to = to,
-                                              page = page,
-                                              date = date,
-                                              size = size,
-                                              type = type,
-                                              database = database,
-                                              verbose = verbose,
-                                              apikey = apikey))
+                            .f = ~ get_giedata(country = .,
+                                               from = from,
+                                               to = to,
+                                               page = page,
+                                               date = date,
+                                               size = size,
+                                               type = type,
+                                               timeout = timeout,
+                                               database = database,
+                                               verbose = verbose,
+                                               apikey = apikey))
 
   return(results)
 
@@ -78,6 +80,7 @@ get_giedatabulk <- function(countries = NULL,
                                                   date = date,
                                                   size = size,
                                                   type = type,
+                                                  timeout = timeout,
                                                   database = database,
                                                   verbose = verbose,
                                                   apikey = apikey))
@@ -109,6 +112,7 @@ get_giedatabulk <- function(countries = NULL,
                                                   date = date,
                                                   size = size,
                                                   type = type,
+                                                  timeout = timeout,
                                                   database = database,
                                                   verbose = verbose,
                                                   apikey = apikey))

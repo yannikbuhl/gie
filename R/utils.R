@@ -22,9 +22,11 @@ getrequest <- function(country,
                        from,
                        to,
                        page,
+                       pagelength = NULL,
                        date,
                        size,
                        type,
+                       timeout,
                        database,
                        pages = NULL,
                        verbose,
@@ -63,6 +65,8 @@ getrequest <- function(country,
 
   # Execute GET request
   raw_request <- send_getrequest(url = url, apikey = apikey)
+
+  if (!is.null(pagelength) && pagelength > 60) Sys.sleep(timeout)
 
   raw_results <- raw_request %>% httr::content(as = "parsed")
 
@@ -181,6 +185,7 @@ check_giedatainput <- function(country,
                                date,
                                size,
                                type,
+                               timeout,
                                database,
                                verbose,
                                apikey) {
@@ -207,6 +212,10 @@ check_giedatainput <- function(country,
 
   if (!is.character(database) | length(database) != 1) {
     stop("Parameter 'type' needs to be type character and length 1.")
+  }
+
+  if (!is.numeric(timeout) | length(timeout) != 1) {
+    stop("Parameter 'timeout' needs to be type character and length 1.")
   }
 }
 
