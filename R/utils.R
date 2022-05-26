@@ -19,8 +19,6 @@
 #' @param pages Total number of pages
 #' @param verbose Verbose mode
 #'
-#' @import httr
-#'
 getrequest <- function(country,
                        company,
                        facility,
@@ -123,7 +121,6 @@ construct_url <- function(url, query) {
 #'
 #' @param raw_results Raw results from GET request
 #'
-#' @import dplyr purrr lubridate magrittr
 #'
 parseresult <- function(raw_results) {
 
@@ -133,7 +130,7 @@ parseresult <- function(raw_results) {
     purrr::map_dfr(.f = bind_rows) %>%
     dplyr::arrange(gasDayStart) %>%
     dplyr::mutate(gasDayStart = lubridate::as_date(gasDayStart),
-           across(!c(status, gasDayStart, name, code, url), as.numeric)) %>%
+           dplyr::across(!c(status, gasDayStart, name, code, url), as.numeric)) %>%
     suppressWarnings()
 
   return(results)
@@ -288,10 +285,10 @@ get_listinghierarchy <- function(raw_results,
   if (!is.null(region) & is.null(country) & isFALSE(facilities)) {
 
     results <- raw_results %>%
-      pluck("SSO") %>%
-      pluck(region) %>%
-      map(.f = ~ map(.x, .f = ~ setnull(., c("facilities", "data", "image")))) %>%
-      map_dfr(.f = bind_rows, .id = "country")
+      purrr::pluck("SSO") %>%
+      purrr::pluck(region) %>%
+      purrr::map(.f = ~ purrr::map(.x, .f = ~ setnull(., c("facilities", "data", "image")))) %>%
+      purrr::map_dfr(.f = bind_rows, .id = "country")
 
     return(results)
 
@@ -300,21 +297,21 @@ get_listinghierarchy <- function(raw_results,
   # Get all data for a given country in a given region
 
     results <- raw_results %>%
-      pluck("SSO") %>%
-      pluck(region) %>%
-      map(.f = ~ map(.x, .f = ~ setnull(., c("facilities", "data", "image")))) %>%
-      map_dfr(.f = bind_rows, .id = "country") %>%
-      filter(country == {{ country }})
+      purrr::pluck("SSO") %>%
+      purrr::pluck(region) %>%
+      purrr::map(.f = ~ purrr::map(.x, .f = ~ setnull(., c("facilities", "data", "image")))) %>%
+      purrr::map_dfr(.f = bind_rows, .id = "country") %>%
+      dplyr::filter(country == {{ country }})
 
     return(results)
 
   } else if (!is.null(region) & !is.null(country) & isTRUE(facilities)) {
 
     results <- raw_results %>%
-      pluck("SSO") %>%
-      pluck(region) %>%
-      pluck(country) %>%
-      map_dfr(.x, .f = ~ extract_listelements(.))
+      purrr::pluck("SSO") %>%
+      purrr::pluck(region) %>%
+      purrr::pluck(country) %>%
+      purrr::map_dfr(.x, .f = ~ extract_listelements(.))
 
     return(results)
 
@@ -335,7 +332,7 @@ get_listinghierarchy <- function(raw_results,
 #'
 extract_listelements <- function(listelement) {
 
-  company <- tibble(country = listelement$data$country$name,
+  company <- dplyr::tibble(country = listelement$data$country$name,
                     country_code = listelement$data$country$code,
                     company_shortname = listelement$short_name,
                     company_name = listelement$name,
@@ -344,15 +341,15 @@ extract_listelements <- function(listelement) {
 
   facilities <- listelement %>%
     setnull(., "data") %>%
-    pluck(., "facilities") %>%
-    map(.x, .f = ~ setnull(., "country")) %>%
-    map_dfr(bind_rows) %>%
-    mutate(company_eic = listelement$eic) %>%
-    rename(facility_name = name,
+    purrr::pluck(., "facilities") %>%
+    purrr::map(.x, .f = ~ setnull(., "country")) %>%
+    purrr::map_dfr(bind_rows) %>%
+    dplyr::mutate(company_eic = listelement$eic) %>%
+    dplyr::rename(facility_name = name,
            facility_eic = eic,
            facility_type = type)
 
-  data <- facilities %>% left_join(., company, by = "company_eic")
+  data <- facilities %>% dplyr::left_join(., company, by = "company_eic")
 
   return(data)
 
