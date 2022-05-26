@@ -1,4 +1,10 @@
 # giedata
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/yannikbuhl/giedata/workflows/R-CMD-check/badge.svg)](https://github.com/yannikbuhl/giedata/actions)
+[![Lifecycle: experimental](https://lifecycle.r-lib.org/articles/figures/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
 A wrapper for Gas Infrastructure Europe's (GIE) AGSI+ (and soon also ALSI+) transparency platform API
 
 ## AGSI+ API update
