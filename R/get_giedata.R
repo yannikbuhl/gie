@@ -22,7 +22,8 @@
 #' @param verbose Logical. Prints information on function progress to the console (default: FALSE).
 #' @param apikey Character. Your personal API key.
 #'
-#' @import dplyr httr lubridate magrittr purrr
+#' @import dplyr httr lubridate purrr
+#' @importFrom magrittr extract2 %>%
 #'
 #' @return A data.frame or list with the results.
 #' @export
