@@ -2,18 +2,23 @@
 # Helper functions for {giedata}
 ################################################################################
 
-#' Function to execute GET request
+#' getrequest
 #'
-#' @param country
-#' @param from
-#' @param to
-#' @param page
-#' @param date
-#' @param size
-#' @param database
-#' @param apikey
+#' @param country Country to get data for
+#' @param from Date for extraction start
+#' @param to Date for extraction end
+#' @param page Page number if multiple pages available
+#' @param date Date for extraction
+#' @param size Page size
+#' @param database Database name
+#' @param apikey API key
+#' @param company Company EIC code
+#' @param facility Facility EIC code
+#' @param type Type of facility or company, etc.
+#' @param timeout Seconds to timeout if query is large
+#' @param pages Total number of pages
+#' @param verbose Verbose mode
 #'
-#' @return
 #' @import httr
 #'
 getrequest <- function(country,
@@ -22,7 +27,6 @@ getrequest <- function(country,
                        from,
                        to,
                        page,
-                       pagelength = NULL,
                        date,
                        size,
                        type,
@@ -66,7 +70,7 @@ getrequest <- function(country,
   # Execute GET request
   raw_request <- send_getrequest(url = url, apikey = apikey)
 
-  if (!is.null(pagelength) && pagelength > 60) Sys.sleep(timeout)
+  if (!is.null(pages) && pages > 60) Sys.sleep(timeout)
 
   raw_results <- raw_request %>% httr::content(as = "parsed")
 
@@ -78,10 +82,8 @@ getrequest <- function(country,
 
 #' send_getrequest
 #'
-#' @param url
-#' @param apikey
-#'
-#' @return
+#' @param url URL for GET request
+#' @param apikey API key
 #'
 send_getrequest <- function(url, apikey) {
 
@@ -102,10 +104,8 @@ send_getrequest <- function(url, apikey) {
 
 #' construct_url
 #'
-#' @param url
-#' @param query
-#'
-#' @return
+#' @param url Base URL
+#' @param query Query list
 #'
 construct_url <- function(url, query) {
 
@@ -119,12 +119,10 @@ construct_url <- function(url, query) {
 
 ## ---------------------------------------------------------------------------##
 
-#' Process results from GET request
+#' parseresult
 #'
-#' @param raw_results
-#' @param country
+#' @param raw_results Raw results from GET request
 #'
-#' @return
 #' @import dplyr purrr lubridate magrittr
 #'
 parseresult <- function(raw_results) {
@@ -144,12 +142,10 @@ parseresult <- function(raw_results) {
 
 ## ---------------------------------------------------------------------------##
 
-#' Delete elements from list
+#' setnull
 #'
-#' @param data
-#' @param x
-#'
-#' @return
+#' @param data Data.frame or list element
+#' @param x Name of element to delete
 #'
 setnull <- function(data, x) {
 
@@ -160,21 +156,21 @@ setnull <- function(data, x) {
 
 ## ---------------------------------------------------------------------------##
 
-#' Title
+#' check_giedatainput
 #'
-#' @param country
-#' @param company
-#' @param facility
-#' @param from
-#' @param to
-#' @param page
-#' @param date
-#' @param size
-#' @param database
-#' @param verbose
-#' @param apikey
-#'
-#' @return
+#' @param country Passed from data function for check
+#' @param company Passed from data function for check
+#' @param facility Passed from data function for check
+#' @param from Passed from data function for check
+#' @param to Passed from data function for check
+#' @param page Passed from data function for check
+#' @param date Passed from data function for check
+#' @param size Passed from data function for check
+#' @param database Passed from data function for check
+#' @param verbose Passed from data function for check
+#' @param apikey Passed from data function for check
+#' @param type Passed from data function for check
+#' @param timeout Passed from data function for check
 #'
 check_giedatainput <- function(country,
                                company,
@@ -191,44 +187,97 @@ check_giedatainput <- function(country,
                                apikey) {
 
   if (!is.null(company) & is.null(country)) {
-    stop("If 'company' is specified, 'country' must be specified, too.")
+    stop("If 'company' is specified, 'country' must be specified, too.", call. = FALSE)
+  }
+
+  if (!is.character(country) | length(country) != 1) {
+    stop("Parameter 'country' needs to be type character and length 1.", call. = FALSE)
   }
 
   if (!is.null(facility) & is.null(country) & is.null(company)) {
-    stop("If 'facility' is specified, 'country' and 'company' must be specified, too.")
+    stop("If 'facility' is specified, 'country' and 'company' must be specified, too.", call. = FALSE)
   }
 
   if (!is.logical(verbose) | length(verbose) != 1) {
-    stop("Parameter 'verbose' needs to be type logical and length 1.")
+    stop("Parameter 'verbose' needs to be type logical and length 1.", call. = FALSE)
   }
 
   if (!is.numeric(page) | length(page) != 1) {
-    stop("Parameter 'page' needs to be type numeric and length 1.")
+    stop("Parameter 'page' needs to be type numeric and length 1.", call. = FALSE)
   }
 
   if (!is.numeric(size) | length(size) != 1 | size > 300) {
-    stop("Parameter 'size' needs to be type numeric and length 1 and max. 300.")
+    stop("Parameter 'size' needs to be type numeric and length 1 and max. 300.", call. = FALSE)
   }
 
   if (!is.character(database) | length(database) != 1) {
-    stop("Parameter 'type' needs to be type character and length 1.")
+    stop("Parameter 'type' needs to be type character and length 1.", call. = FALSE)
   }
 
   if (!is.numeric(timeout) | length(timeout) != 1) {
-    stop("Parameter 'timeout' needs to be type character and length 1.")
+    stop("Parameter 'timeout' needs to be type character and length 1.", call. = FALSE)
   }
+
+  if (!is.character(apikey) | length(apikey) != 1) {
+    stop("Parameter 'apikey' needs to be type character and length 1.", call. = FALSE)
+  }
+
+}
+
+#------------------------------------------------------------------------------#
+
+#' check_gielistinginput
+#'
+#' @param region Passed from listing function for check
+#' @param country Passed from listing function for check
+#' @param facilities Passed from listing function for check
+#' @param database Passed from listing function for check
+#' @param apikey Passed from listing function for check
+#'
+check_gielistinginput <- function(region,
+                                  country,
+                                  facilities,
+                                  database,
+                                  apikey) {
+
+  if (!is.character(region) | length(region) != 1) {
+    stop("Parameter 'country' needs to be type character and length 1.", call. = FALSE)
+  }
+
+  if (!(region %in% c("Europe", "Non-EU"))) {
+    stop("Parameter 'region' must be either 'Europe' or 'Non-EU'.", call. = FALSE)
+  }
+
+  if (!is.logical(facilities) | length(facilities) != 1) {
+    stop("Parameter 'facilities'  needs to be type logical and length 1.", call. = FALSE)
+  }
+
+  if (!is.character(country) | length(country) != 1) {
+    stop("Parameter 'country' needs to be type character and length 1.", call. = FALSE)
+  }
+
+  if (!is.character(database) | length(database) != 1) {
+    stop("Parameter 'database' needs to be type character and length 1.", call. = FALSE)
+  }
+
+  if (!(database %in% c("agsi", "alsi"))) {
+    stop("Parameter 'database' can only be 'agsi' or 'alsi'.", call. = FALSE)
+  }
+
+  if (length(apikey) != 1) {
+    stop("Parameter 'apikey' must be of length 1.", call. = FALSE)
+  }
+
 }
 
 #------------------------------------------------------------------------------#
 
 #' get_listinghierarchy
 #'
-#' @param raw_results
-#' @param region
-#' @param country
-#' @param facilities
-#'
-#' @return
+#' @param raw_results Raw results from API call
+#' @param region Region to filter for
+#' @param country Country to filter for
+#' @param facilities Should facilties be exported as well
 #'
 get_listinghierarchy <- function(raw_results,
                                  region,
@@ -282,9 +331,7 @@ get_listinghierarchy <- function(raw_results,
 
 #' extract_listelements
 #'
-#' @param listelement
-#'
-#' @return
+#' @param listelement List element to extract from
 #'
 extract_listelements <- function(listelement) {
 

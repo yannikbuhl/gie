@@ -7,10 +7,9 @@
 construct_url(url, query)
 }
 \arguments{
-\item{query}{}
-}
-\value{
+\item{url}{Base URL}
 
+\item{query}{Query list}
 }
 \description{
 construct_url

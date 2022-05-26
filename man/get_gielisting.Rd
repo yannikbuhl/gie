@@ -9,31 +9,36 @@ get_gielisting(
   country = NULL,
   facilities = FALSE,
   database = "agsi",
-  apikey
+  apikey = Sys.getenv("GIE_APIKEY")
 )
 }
 \arguments{
 \item{region}{Character. The broader region you want results for (can be 'Europe' or 'Non-EU').}
 
-\item{country}{Character. The country you want the results for (two-digit country code). \cr
+\item{country}{Character. The country you want the results for (must be the \cr
+written-out name (e.g., "Germany"), NOT the two-digit country code). \cr
 If you use this parameter, you have to specify the 'region' parameter accordingly.}
 
-\item{facilities}{Logical. If TRUE, facility data will be added to the country results. \cr
+\item{facilities}{Logical. If TRUE, facility data will be added to the country or company results. \cr
 If you use this parameter, 'region' and 'country' have to be set. Defaults to FALSE.}
 
-\item{database}{Character. The type of API you want to address ('agsi' or 'alsi').}
+\item{database}{Character. The type of API you want to address ('agsi' or 'alsi'). \cr
+As of yet, only 'agsi' works, 'alsi' support is expected at a later time.}
 
 \item{apikey}{Character. Your personal API key.}
 }
 \value{
-
+Data.frame with results
 }
 \description{
 Function to download raw or parsed results for the countries, \cr
-companies and facilities available from the AGSI+ API of GIE. The EIC codes \cr
+companies and facilities available from the AGSI/ALSI+ API of GIE. The EIC codes \cr
 of the results can be used to in turn download the actual data \cr
 using \code{get_giedata()}.
 }
 \examples{
+\dontrun{
+get_gielisting(region = "Europe", country = "Germany", facilities = TRUE)
+}
 
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{check_giedatainput}
 \alias{check_giedatainput}
-\title{Title}
+\title{check_giedatainput}
 \usage{
 check_giedatainput(
   country,
@@ -14,17 +14,39 @@ check_giedatainput(
   date,
   size,
   type,
+  timeout,
   database,
   verbose,
   apikey
 )
 }
 \arguments{
-\item{apikey}{}
-}
-\value{
+\item{country}{Passed from data function for check}
 
+\item{company}{Passed from data function for check}
+
+\item{facility}{Passed from data function for check}
+
+\item{from}{Passed from data function for check}
+
+\item{to}{Passed from data function for check}
+
+\item{page}{Passed from data function for check}
+
+\item{date}{Passed from data function for check}
+
+\item{size}{Passed from data function for check}
+
+\item{type}{Passed from data function for check}
+
+\item{timeout}{Passed from data function for check}
+
+\item{database}{Passed from data function for check}
+
+\item{verbose}{Passed from data function for check}
+
+\item{apikey}{Passed from data function for check}
 }
 \description{
-Title
+check_giedatainput
 }

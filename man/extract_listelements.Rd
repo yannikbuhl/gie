@@ -7,10 +7,7 @@
 extract_listelements(listelement)
 }
 \arguments{
-\item{listelement}{}
-}
-\value{
-
+\item{listelement}{List element to extract from}
 }
 \description{
 extract_listelements

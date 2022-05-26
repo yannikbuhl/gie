@@ -7,10 +7,13 @@
 get_listinghierarchy(raw_results, region, country, facilities)
 }
 \arguments{
-\item{facilities}{}
-}
-\value{
+\item{raw_results}{Raw results from API call}
 
+\item{region}{Region to filter for}
+
+\item{country}{Country to filter for}
+
+\item{facilities}{Should facilties be exported as well}
 }
 \description{
 get_listinghierarchy

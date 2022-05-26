@@ -1,0 +1,34 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?country=DE&page=1&date=2022-05-01&size=30
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 26 May 2022 16:09:28 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      cf-cache-status: DYNAMIC
+      expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      server: cloudflare
+      cf-ray: 7117c67bb9be9220-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2022-05-24","data":[{"name":"Germany","code":"DE","url":"DE","gasDayStart":"2022-05-01","gasInStorage":"84.5138","consumption":"995.2735","consumptionFull":"8.49","injection":"1278.6","withdrawal":"5.1","workingGasVolume":"238.2891","injectionCapacity":"3936.52","withdrawalCapacity":"6738.01","status":"E","trend":"0.53","full":"35.47","info":[]}]}'
+  recorded_at: 2022-05-26 16:09:28 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0

@@ -1,4 +1,6 @@
-#' Function to download data from GIE's AGSI+ API
+#' get_giedata
+#'
+#' @description Function to download data from GIE's AGSI+ API
 #'
 #' @param country Character. Specify the country of interest.
 #' @param company Character. EIC code for the requested company.
@@ -12,12 +14,12 @@
 #' If you set 'date', you cannot set the 'from' and/or 'to' parameters \cr
 #' (format: YYYY-MM-DD).
 #' @param size Integer. The number of results per page.
-#' @param type
+#' @param type Type of facility or company.
 #' @param timeout Numeric. If the amount of pages of your request exceeds 60, a timeout \cr
 #' will be enforced to prevent the API from timing out. Defaults to 3 seconds, any \cr
 #' values must be set in seconds, too.
 #' @param database Character. The type of API you want to address ('agsi' or 'alsi').
-#' @param verbose Prints information on function progress to the console (default: FALSE).
+#' @param verbose Logical. Prints information on function progress to the console (default: FALSE).
 #' @param apikey Character. Your personal API key.
 #'
 #' @return A data.frame or list with the results.
@@ -25,6 +27,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' get_giedata(country = "DE", date = "2022-01-03")
+#' }
 get_giedata <- function(country = NULL,
                         company = NULL,
                         facility = NULL,
@@ -37,9 +42,7 @@ get_giedata <- function(country = NULL,
                         timeout = 3,
                         database = "agsi",
                         verbose = FALSE,
-                        apikey) {
-
-  if (missing(apikey)) stop("You need to specify an 'apikey' parameter.")
+                        apikey = Sys.getenv("GIE_APIKEY")) {
 
   # First step of error handling -----------------------------------------------
   check_giedatainput(country = country,
@@ -144,7 +147,6 @@ get_giedata <- function(country = NULL,
                                                 from = from,
                                                 to = to,
                                                 page = .x,
-                                                pagelength = pages,
                                                 date = date,
                                                 size = size,
                                                 type = type,

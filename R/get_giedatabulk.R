@@ -1,5 +1,7 @@
 #' get_giedatabulk
 #'
+#' @description Function to download data from GIE's AGSI+ API in bulk
+#'
 #' @param countries A character vector of countries in short format (e.g., "DE")
 #' to get data from. Must be of length one (i.e., one country) if you want to
 #' specify multiple companies and/or multiple facilities.
@@ -16,16 +18,23 @@
 #' If you set 'date', you cannot set the 'from' and/or 'to' parameters \cr
 #' (format: YYYY-MM-DD).
 #' @param size Integer. The number of results per page.
-#' @param type
+#' @param type Type of facility or company.
+#' @param timeout Numeric. If the amount of pages of your request exceeds 60, a timeout \cr
+#' will be enforced to prevent the API from timing out. Defaults to 3 seconds, any \cr
+#' values must be set in seconds, too.
 #' @param database Character. The type of API you want to address ('agsi' or 'alsi').
-#' @param verbose
+#' @param verbose Logical. Prints information on function progress to the console (default: FALSE).
 #' @param apikey Character. Your personal API key.
 
 #'
-#' @return
+#' @return A data.frame with results
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' get_giedatabulk(countries = c("DE", "AT", "FR"), date = "2022-04-01")
+#' }
+#'
 get_giedatabulk <- function(countries = NULL,
                             companies = NULL,
                             facilities = NULL,
@@ -38,7 +47,7 @@ get_giedatabulk <- function(countries = NULL,
                             timeout = 3,
                             database = "agsi",
                             verbose = FALSE,
-                            apikey) {
+                            apikey = Sys.getenv("GIE_APIKEY")) {
 
   # Download bulk data only for countries
   if (!is.null(countries) & is.null(companies) & is.null(facilities)) {

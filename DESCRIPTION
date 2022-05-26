@@ -1,10 +1,9 @@
 Package: giedata
-Title: What the Package Does (One Line, Title Case)
+Title: API wrapper for GIE's AGSI/ALSI transparency platform
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person("Yannik", "Buhl", , "yannik.buhl@posteo.de", role = c("aut", "cre"))
+Description: The package provides functions to access the API for Gas Infrastructure Europe's (GIE) AGSI+/ALSI+ transparency platform.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -16,4 +15,5 @@ Imports:
   magrittr,
   purrr
 Suggests: 
-    vcr (>= 0.6.0)
+    vcr (>= 0.6.0),
+    testthat

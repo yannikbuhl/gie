@@ -2,16 +2,13 @@
 % Please edit documentation in R/utils.R
 \name{parseresult}
 \alias{parseresult}
-\title{Process results from GET request}
+\title{parseresult}
 \usage{
 parseresult(raw_results)
 }
 \arguments{
-\item{country}{}
-}
-\value{
-
+\item{raw_results}{Raw results from GET request}
 }
 \description{
-Process results from GET request
+parseresult
 }

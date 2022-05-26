@@ -7,10 +7,9 @@
 send_getrequest(url, apikey)
 }
 \arguments{
-\item{apikey}{}
-}
-\value{
+\item{url}{URL for GET request}
 
+\item{apikey}{API key}
 }
 \description{
 send_getrequest
