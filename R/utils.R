@@ -237,20 +237,26 @@ check_gielistinginput <- function(region,
                                   database,
                                   apikey) {
 
-  if (!is.character(region) | length(region) != 1) {
-    stop("Parameter 'country' needs to be type character and length 1.", call. = FALSE)
+  if (!is.null(region)) {
+    if (!is.character(region) | length(region) != 1) {
+      stop("Parameter 'region' needs to be type character and length 1.", call. = FALSE)
+    }
   }
 
-  if (!(region %in% c("Europe", "Non-EU"))) {
-    stop("Parameter 'region' must be either 'Europe' or 'Non-EU'.", call. = FALSE)
+  if (!is.null(region)) {
+    if (!(region %in% c("Europe", "Non-EU"))) {
+      stop("Parameter 'region' must be either 'Europe' or 'Non-EU'.", call. = FALSE)
+    }
   }
 
   if (!is.logical(facilities) | length(facilities) != 1) {
     stop("Parameter 'facilities'  needs to be type logical and length 1.", call. = FALSE)
   }
 
-  if (!is.character(country) | length(country) != 1) {
-    stop("Parameter 'country' needs to be type character and length 1.", call. = FALSE)
+  if (!is.null(country)) {
+    if (!is.character(country) | length(country) != 1) {
+      stop("Parameter 'country' needs to be type character and length 1.", call. = FALSE)
+    }
   }
 
   if (!is.character(database) | length(database) != 1) {
