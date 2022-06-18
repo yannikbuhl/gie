@@ -1,10 +1,11 @@
-#' get_giedatabulk
+#' get_giedata2
 #'
 #' @description Function to download data from GIE's AGSI+ API in bulk
 #'
-#' @param countries A character vector of countries in short format (e.g., "DE")
-#' to get data from. Must be of length one (i.e., one country) if you want to
-#' specify multiple companies and/or multiple facilities.
+#' @param countries Character. Specify the countries of interest as two-digit \cr
+#' country codes (e.g., 'DE', 'IE'). \cr
+#' Must be of length one (i.e., one country) if you want to specify multiple \cr
+#' companies and/or multiple facilities.
 #' @param companies A character vector of company EIC codes to get data from. \cr
 #' Must be of length one (i.e., one company) if you want to specify multiple \cr
 #' facilities.
@@ -18,7 +19,6 @@
 #' If you set 'date', you cannot set the 'from' and/or 'to' parameters \cr
 #' (format: YYYY-MM-DD).
 #' @param size Integer. The number of results per page.
-#' @param type Type of facility or company.
 #' @param timeout Numeric. If the amount of pages of your request exceeds 60, a timeout \cr
 #' will be enforced to prevent the API from timing out. Defaults to 3 seconds, any \cr
 #' values must be set in seconds, too.
@@ -32,22 +32,24 @@
 #'
 #' @examples
 #' \dontrun{
-#' get_giedatabulk(countries = c("DE", "AT", "FR"), date = "2022-04-01")
+#' get_giedata2(countries = c("DE", "AT", "FR"), date = "2022-04-01")
 #' }
 #'
-get_giedatabulk <- function(countries = NULL,
-                            companies = NULL,
-                            facilities = NULL,
-                            from = NULL,
-                            to = NULL,
-                            page = 1,
-                            date = NULL,
-                            size = 30,
-                            type = NULL,
-                            timeout = 3,
-                            database = "agsi",
-                            verbose = FALSE,
-                            apikey = Sys.getenv("GIE_APIKEY")) {
+get_giedata2 <- function(countries,
+                         companies = NULL,
+                         facilities = NULL,
+                         from = NULL,
+                         to = NULL,
+                         page = 1,
+                         date = NULL,
+                         size = 30,
+                         timeout = 3,
+                         database = "agsi",
+                         verbose = FALSE,
+                         apikey = Sys.getenv("GIE_APIKEY")) {
+
+  if (missing(countries)) stop("You have to at least specify the 'country' parameter.",
+                             call. = FALSE)
 
   # Download bulk data only for countries
   if (!is.null(countries) & is.null(companies) & is.null(facilities)) {
@@ -60,7 +62,6 @@ get_giedatabulk <- function(countries = NULL,
                                                page = page,
                                                date = date,
                                                size = size,
-                                               type = type,
                                                timeout = timeout,
                                                database = database,
                                                verbose = verbose,
@@ -88,7 +89,6 @@ get_giedatabulk <- function(countries = NULL,
                                                   page = page,
                                                   date = date,
                                                   size = size,
-                                                  type = type,
                                                   timeout = timeout,
                                                   database = database,
                                                   verbose = verbose,
@@ -120,7 +120,6 @@ get_giedatabulk <- function(countries = NULL,
                                                   page = page,
                                                   date = date,
                                                   size = size,
-                                                  type = type,
                                                   timeout = timeout,
                                                   database = database,
                                                   verbose = verbose,

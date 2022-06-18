@@ -13,7 +13,6 @@ getrequest(
   page,
   date,
   size,
-  type,
   timeout,
   database,
   pages = NULL,
@@ -37,8 +36,6 @@ getrequest(
 \item{date}{Date for extraction}
 
 \item{size}{Page size}
-
-\item{type}{Type of facility or company, etc.}
 
 \item{timeout}{Seconds to timeout if query is large}
 

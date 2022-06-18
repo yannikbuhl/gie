@@ -5,7 +5,7 @@
 \title{get_giedata}
 \usage{
 get_giedata(
-  country = NULL,
+  country,
   company = NULL,
   facility = NULL,
   from = NULL,
@@ -13,7 +13,6 @@ get_giedata(
   page = 1,
   date = NULL,
   size = 30,
-  type = NULL,
   timeout = 3,
   database = "agsi",
   verbose = FALSE,
@@ -21,7 +20,7 @@ get_giedata(
 )
 }
 \arguments{
-\item{country}{Character. Specify the country of interest.}
+\item{country}{Character. Specify the country of interest as two-digit country code (e.g., 'DE', 'IE').}
 
 \item{company}{Character. EIC code for the requested company.}
 
@@ -40,8 +39,6 @@ If you set 'date', you cannot set the 'from' and/or 'to' parameters \cr
 (format: YYYY-MM-DD).}
 
 \item{size}{Integer. The number of results per page.}
-
-\item{type}{Type of facility or company.}
 
 \item{timeout}{Numeric. If the amount of pages of your request exceeds 60, a timeout \cr
 will be enforced to prevent the API from timing out. Defaults to 3 seconds, any \cr

@@ -14,14 +14,15 @@ test_that("download single country data", {
 
 #------------------------------------------------------------------------------#
 
-test_that("download single data only works for one country", {
+test_that("check that get_giedata2 works with multiple countries", {
   vcr::use_cassette("test1.2", {
 
-    # This remains empty
+  result <- get_giedata2(countries = c("DE", "AT"),
+                 date = "2022-05-01")
 
   })
 
-  expect_error(object = get_giedata(country = c("DE", "AT"),
-                                    date = "2022-05-01"),
-               regexp = "type character and length 1")
+  expect_s3_class(object = result,
+                  class = "data.frame")
+
 })

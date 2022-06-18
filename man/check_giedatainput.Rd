@@ -13,7 +13,6 @@ check_giedatainput(
   page,
   date,
   size,
-  type,
   timeout,
   database,
   verbose,
@@ -36,8 +35,6 @@ check_giedatainput(
 \item{date}{Passed from data function for check}
 
 \item{size}{Passed from data function for check}
-
-\item{type}{Passed from data function for check}
 
 \item{timeout}{Passed from data function for check}
 

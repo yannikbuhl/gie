@@ -2,7 +2,7 @@
 #'
 #' @description Function to download data from GIE's AGSI+ API
 #'
-#' @param country Character. Specify the country of interest.
+#' @param country Character. Specify the country of interest as two-digit country code (e.g., 'DE', 'IE').
 #' @param company Character. EIC code for the requested company.
 #' @param facility Character. EIC code for the requested facility.
 #' @param from Character. Specify the start of the time span you are \cr
@@ -14,7 +14,6 @@
 #' If you set 'date', you cannot set the 'from' and/or 'to' parameters \cr
 #' (format: YYYY-MM-DD).
 #' @param size Integer. The number of results per page.
-#' @param type Type of facility or company.
 #' @param timeout Numeric. If the amount of pages of your request exceeds 60, a timeout \cr
 #' will be enforced to prevent the API from timing out. Defaults to 3 seconds, any \cr
 #' values must be set in seconds, too.
@@ -32,7 +31,7 @@
 #' \dontrun{
 #' get_giedata(country = "DE", date = "2022-01-03")
 #' }
-get_giedata <- function(country = NULL,
+get_giedata <- function(country,
                         company = NULL,
                         facility = NULL,
                         from = NULL,
@@ -40,13 +39,17 @@ get_giedata <- function(country = NULL,
                         page = 1,
                         date = NULL,
                         size = 30,
-                        type = NULL,
                         timeout = 3,
                         database = "agsi",
                         verbose = FALSE,
                         apikey = Sys.getenv("GIE_APIKEY")) {
 
+
   # First step of error handling -----------------------------------------------
+
+  if (missing(country)) stop("You have to at least specify the 'country' parameter.",
+                             call. = FALSE)
+
   check_giedatainput(country = country,
                      company = company,
                      facility = facility,
@@ -55,7 +58,6 @@ get_giedata <- function(country = NULL,
                      page = page,
                      date = date,
                      size = size,
-                     type = type,
                      timeout = timeout,
                      database = database,
                      verbose = verbose,
@@ -70,7 +72,6 @@ get_giedata <- function(country = NULL,
                             page = page,
                             date = date,
                             size = size,
-                            type = type,
                             timeout = timeout,
                             database = database,
                             verbose = verbose,
@@ -151,7 +152,6 @@ get_giedata <- function(country = NULL,
                                                 page = .x,
                                                 date = date,
                                                 size = size,
-                                                type = type,
                                                 timeout = timeout,
                                                 database = database,
                                                 pages = pages,

@@ -14,7 +14,6 @@
 #' @param apikey API key
 #' @param company Company EIC code
 #' @param facility Facility EIC code
-#' @param type Type of facility or company, etc.
 #' @param timeout Seconds to timeout if query is large
 #' @param pages Total number of pages
 #' @param verbose Verbose mode
@@ -27,7 +26,6 @@ getrequest <- function(country,
                        page,
                        date,
                        size,
-                       type,
                        timeout,
                        database,
                        pages = NULL,
@@ -59,8 +57,7 @@ getrequest <- function(country,
                 to = to,
                 page = page,
                 date = date,
-                size = size,
-                type = type)
+                size = size)
 
   # Parse URL
   url <- construct_url(url = endpoint, query = query)
@@ -166,7 +163,6 @@ setnull <- function(data, x) {
 #' @param database Passed from data function for check
 #' @param verbose Passed from data function for check
 #' @param apikey Passed from data function for check
-#' @param type Passed from data function for check
 #' @param timeout Passed from data function for check
 #'
 check_giedatainput <- function(country,
@@ -177,46 +173,68 @@ check_giedatainput <- function(country,
                                page,
                                date,
                                size,
-                               type,
                                timeout,
                                database,
                                verbose,
                                apikey) {
 
+  if ((!is.null(from) | !is.null(to)) & !is.null(date)) {
+    warning("If 'from' and/or 'to' parameters are set and 'date', too, 'date' will override 'from' and/or 'to'.")
+  }
+
   if (!is.null(company) & is.null(country)) {
-    stop("If 'company' is specified, 'country' must be specified, too.", call. = FALSE)
+    stop("If 'company' is specified, 'country' must be specified, too.",
+         call. = FALSE)
   }
 
   if (!is.character(country) | length(country) != 1) {
-    stop("Parameter 'country' needs to be type character and length 1.", call. = FALSE)
+    stop("Parameter 'country' needs to be type character and length 1.",
+         call. = FALSE)
+  }
+
+  if (!is.null(facility) & is.null(company) & !is.null(country)) {
+    stop("If 'facility' and 'country' are specified, 'company' must be specified, too.",
+         call. = FALSE)
   }
 
   if (!is.null(facility) & is.null(country) & is.null(company)) {
-    stop("If 'facility' is specified, 'country' and 'company' must be specified, too.", call. = FALSE)
+    stop("If 'facility' is specified, 'country' and 'company' must be specified, too.",
+         call. = FALSE)
   }
 
   if (!is.logical(verbose) | length(verbose) != 1) {
-    stop("Parameter 'verbose' needs to be type logical and length 1.", call. = FALSE)
+    stop("Parameter 'verbose' needs to be type logical and length 1.",
+         call. = FALSE)
   }
 
   if (!is.numeric(page) | length(page) != 1) {
-    stop("Parameter 'page' needs to be type numeric and length 1.", call. = FALSE)
+    stop("Parameter 'page' needs to be type numeric and length 1.",
+         call. = FALSE)
   }
 
   if (!is.numeric(size) | length(size) != 1 | size > 300) {
-    stop("Parameter 'size' needs to be type numeric and length 1 and max. 300.", call. = FALSE)
+    stop("Parameter 'size' needs to be type numeric and length 1 and max. 300.",
+         call. = FALSE)
   }
 
   if (!is.character(database) | length(database) != 1) {
-    stop("Parameter 'type' needs to be type character and length 1.", call. = FALSE)
+    stop("Parameter 'type' needs to be type character and length 1.",
+         call. = FALSE)
+  }
+
+  if (database != "agsi") {
+    stop("Currently, only 'agsi' is supported as database. 'alsi' support will be added later.",
+         call. = FALSE)
   }
 
   if (!is.numeric(timeout) | length(timeout) != 1) {
-    stop("Parameter 'timeout' needs to be type character and length 1.", call. = FALSE)
+    stop("Parameter 'timeout' needs to be type character and length 1.",
+         call. = FALSE)
   }
 
   if (!is.character(apikey) | length(apikey) != 1) {
-    stop("Parameter 'apikey' needs to be type character and length 1.", call. = FALSE)
+    stop("Parameter 'apikey' needs to be type character and length 1.",
+         call. = FALSE)
   }
 
 }
@@ -263,8 +281,12 @@ check_gielistinginput <- function(region,
     stop("Parameter 'database' needs to be type character and length 1.", call. = FALSE)
   }
 
-  if (!(database %in% c("agsi", "alsi"))) {
-    stop("Parameter 'database' can only be 'agsi' or 'alsi'.", call. = FALSE)
+  # if (!(database %in% c("agsi", "alsi"))) {
+  #   stop("Parameter 'database' can only be 'agsi' or 'alsi'.", call. = FALSE)
+  # }
+
+  if (database != "agsi") {
+    stop("Currently, only 'agsi' is supported as database. 'alsi' support will be added later.", call. = FALSE)
   }
 
   if (length(apikey) != 1) {
