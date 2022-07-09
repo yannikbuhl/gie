@@ -157,7 +157,6 @@ setnull <- function(data, x) {
 #' @param facility Passed from data function for check
 #' @param from Passed from data function for check
 #' @param to Passed from data function for check
-#' @param page Passed from data function for check
 #' @param date Passed from data function for check
 #' @param size Passed from data function for check
 #' @param database Passed from data function for check
@@ -170,7 +169,6 @@ check_giedatainput <- function(country,
                                facility,
                                from,
                                to,
-                               page,
                                date,
                                size,
                                timeout,
@@ -204,11 +202,6 @@ check_giedatainput <- function(country,
 
   if (!is.logical(verbose) | length(verbose) != 1) {
     stop("Parameter 'verbose' needs to be type logical and length 1.",
-         call. = FALSE)
-  }
-
-  if (!is.numeric(page) | length(page) != 1) {
-    stop("Parameter 'page' needs to be type numeric and length 1.",
          call. = FALSE)
   }
 

@@ -10,7 +10,6 @@ get_giedata(
   facility = NULL,
   from = NULL,
   to = NULL,
-  page = 1,
   date = NULL,
   size = 30,
   timeout = 3,
@@ -31,8 +30,6 @@ interested in downloading (format: YYYY-MM-DD).}
 
 \item{to}{Character. Specify the end of the time span you are \cr
 interested in downloading (format: YYYY-MM-DD).}
-
-\item{page}{Integer. The page of a multi-page query you want to get.}
 
 \item{date}{Character. If you want to have data only for one date. \cr
 If you set 'date', you cannot set the 'from' and/or 'to' parameters \cr

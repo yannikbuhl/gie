@@ -9,7 +9,6 @@
 #' interested in downloading (format: YYYY-MM-DD).
 #' @param to Character. Specify the end of the time span you are \cr
 #' interested in downloading (format: YYYY-MM-DD).
-#' @param page Integer. The page of a multi-page query you want to get.
 #' @param date Character. If you want to have data only for one date. \cr
 #' If you set 'date', you cannot set the 'from' and/or 'to' parameters \cr
 #' (format: YYYY-MM-DD).
@@ -36,7 +35,6 @@ get_giedata <- function(country,
                         facility = NULL,
                         from = NULL,
                         to = NULL,
-                        page = 1,
                         date = NULL,
                         size = 30,
                         timeout = 3,
@@ -55,7 +53,6 @@ get_giedata <- function(country,
                      facility = facility,
                      from = from,
                      to = to,
-                     page = page,
                      date = date,
                      size = size,
                      timeout = timeout,
@@ -69,7 +66,7 @@ get_giedata <- function(country,
                             facility = facility,
                             from = from,
                             to = to,
-                            page = page,
+                            page = 1,
                             date = date,
                             size = size,
                             timeout = timeout,

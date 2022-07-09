@@ -74,7 +74,7 @@ companydata <- giedata::get_giedata2(countries = c("DE", "IE", "NL"),
 
 ## Disclaimer
 
-This package has been developed independently and is not in any way
+This package has been developed independently of and is not in any way
 associated to GIE or the AGSI/ALSI+ transparency platform. Some parts of
-the API may exhibit unforeseen behaviour due to the API still being
-subject to changes.
+or calls to the API may exhibit unforeseen behaviour due to the API
+still being subject to changes.

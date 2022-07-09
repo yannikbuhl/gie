@@ -10,7 +10,6 @@ check_giedatainput(
   facility,
   from,
   to,
-  page,
   date,
   size,
   timeout,
@@ -29,8 +28,6 @@ check_giedatainput(
 \item{from}{Passed from data function for check}
 
 \item{to}{Passed from data function for check}
-
-\item{page}{Passed from data function for check}
 
 \item{date}{Passed from data function for check}
 
