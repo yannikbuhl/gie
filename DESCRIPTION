@@ -13,7 +13,8 @@ Imports:
     httr,
     lubridate,
     magrittr,
-    purrr
+    purrr,
+    rlang
 Suggests: 
     vcr (>= 0.6.0),
     testthat

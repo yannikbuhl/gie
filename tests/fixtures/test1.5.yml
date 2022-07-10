@@ -1,0 +1,33 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?country=DE&company=21X000000001160J&page=1&date=2022-05-01&size=30
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 09 Jul 2022 12:14:17 GMT
+      content-type: application/json
+      cache-control: no-cache, private
+      cf-cache-status: DYNAMIC
+      expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      server: cloudflare
+      cf-ray: 7280fa7cfb27bb65-FRA
+      content-encoding: br
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2022-07-07","data":[{"name":"astora
+        (Germany)","code":"21X000000001160J","url":"21X000000001160J\/DE","gasDayStart":"2022-05-01","gasInStorage":"1.8757","injection":"56.78","withdrawal":"1.7","workingGasVolume":"51.805","injectionCapacity":"512.61","withdrawalCapacity":"739.65","status":"C","trend":"0.11","full":"3.62","info":[]}]}'
+  recorded_at: 2022-07-09 12:14:17 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0

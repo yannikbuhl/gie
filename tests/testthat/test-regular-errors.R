@@ -9,3 +9,62 @@ test_that("download single data only works for one country", {
                regexp = "type character and length 1")
 
 })
+
+#------------------------------------------------------------------------------#
+
+test_that("company must be specified if facility is specified", {
+
+  expect_error(object = get_giedata(country = "DE",
+                                    date = "2022-05-01",
+                                    facility = "mock_facility"),
+                 regexp = "specified, too")
+
+})
+
+#------------------------------------------------------------------------------#
+
+test_that("warning pops up if date, from and to are set", {
+
+  expect_warning(object = get_giedata(country = "DE",
+                                      date = "2022-05-01",
+                                      from = "2022-05-01",
+                                      to = "2022-05-15"),
+                 regexp = "override")
+
+})
+
+test_that("warning pops up if date, from and to are set", {
+
+  expect_warning(object = get_giedata2(countries = c("DE", "AT"),
+                                       date = "2022-05-01",
+                                       from = "2022-05-01",
+                                       to = "2022-05-15"),
+                 regexp = "override")
+
+})
+
+#------------------------------------------------------------------------------#
+
+test_that("companies must be specified if facility is specified", {
+
+  expect_error(object = get_giedata2(countries = "DE",
+                                     date = "2022-05-01",
+                                     facilities = c("mock_facilities",
+                                                    "mock2_facilities")),
+               regexp = "specified, too")
+
+})
+
+#------------------------------------------------------------------------------#
+
+test_that("companies must be of length one if facility is specified", {
+
+  expect_error(object = get_giedata2(countries = "DE",
+                                     date = "2022-05-01",
+                                     companies = c("mock_facility",
+                                                   "mock2_facility"),
+                                     facilities = c("mock_facilities",
+                                                  "mock2_facilities")),
+               regexp = "must only contain one company EIC")
+
+})

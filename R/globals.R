@@ -1,0 +1,8 @@
+utils::globalVariables(c(".",
+                         ".x",
+                         "code",
+                         "eic",
+                         "gasDayStart",
+                         "name",
+                         "status",
+                         "type"))

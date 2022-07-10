@@ -118,7 +118,6 @@ construct_url <- function(url, query) {
 #'
 #' @param raw_results Raw results from GET request
 #'
-#'
 parseresult <- function(raw_results) {
 
   results <- raw_results %>%
@@ -127,7 +126,11 @@ parseresult <- function(raw_results) {
     purrr::map_dfr(.f = bind_rows) %>%
     dplyr::arrange(gasDayStart) %>%
     dplyr::mutate(gasDayStart = lubridate::as_date(gasDayStart),
-           dplyr::across(!c(status, gasDayStart, name, code, url), as.numeric)) %>%
+           dplyr::across(!c(status,
+                            gasDayStart,
+                            name,
+                            code,
+                            url), as.numeric)) %>%
     suppressWarnings()
 
   return(results)
@@ -180,11 +183,6 @@ check_giedatainput <- function(country,
     warning("If 'from' and/or 'to' parameters are set and 'date', too, 'date' will override 'from' and/or 'to'.")
   }
 
-  if (!is.null(company) & is.null(country)) {
-    stop("If 'company' is specified, 'country' must be specified, too.",
-         call. = FALSE)
-  }
-
   if (!is.character(country) | length(country) != 1) {
     stop("Parameter 'country' needs to be type character and length 1.",
          call. = FALSE)
@@ -195,8 +193,8 @@ check_giedatainput <- function(country,
          call. = FALSE)
   }
 
-  if (!is.null(facility) & is.null(country) & is.null(company)) {
-    stop("If 'facility' is specified, 'country' and 'company' must be specified, too.",
+  if (!is.null(facility) & is.null(company)) {
+    stop("If 'facility' is specified, 'company' must be specified, too.",
          call. = FALSE)
   }
 
@@ -373,5 +371,79 @@ extract_listelements <- function(listelement) {
   data <- facilities %>% dplyr::left_join(., company, by = "company_eic")
 
   return(data)
+
+}
+
+#------------------------------------------------------------------------------#
+
+#' check_giedata2input
+#'
+#' @param countries Passed from data function for check
+#' @param companies Passed from data function for check
+#' @param facilities Passed from data function for check
+#' @param from Passed from data function for check
+#' @param to Passed from data function for check
+#' @param date Passed from data function for check
+#' @param size Passed from data function for check
+#' @param database Passed from data function for check
+#' @param verbose Passed from data function for check
+#' @param apikey Passed from data function for check
+#' @param timeout Passed from data function for check
+#'
+check_giedata2input <- function(countries,
+                                companies,
+                                facilities,
+                                from,
+                                to,
+                                date,
+                                size,
+                                timeout,
+                                database,
+                                verbose,
+                                apikey) {
+
+  if ((!is.null(from) | !is.null(to)) & !is.null(date)) {
+    warning("If 'from' and/or 'to' parameters are set and 'date', too, 'date' will override 'from' and/or 'to'.")
+  }
+
+  if (!is.null(facilities) & is.null(companies)) {
+    stop("If 'facilities' is specified, 'companies' must be specified, too.",
+         call. = FALSE)
+  }
+
+  if (!is.null(facilities) & length(companies) != 1) {
+    stop("If 'facilities' is specified, 'companies' must only contain one company EIC.",
+         call. = FALSE)
+  }
+
+  if (!is.logical(verbose) | length(verbose) != 1) {
+    stop("Parameter 'verbose' needs to be type logical and length 1.",
+         call. = FALSE)
+  }
+
+  if (!is.numeric(size) | length(size) != 1 | size > 300) {
+    stop("Parameter 'size' needs to be type numeric and length 1 and max. 300.",
+         call. = FALSE)
+  }
+
+  if (!is.character(database) | length(database) != 1) {
+    stop("Parameter 'type' needs to be type character and length 1.",
+         call. = FALSE)
+  }
+
+  if (database != "agsi") {
+    stop("Currently, only 'agsi' is supported as database. 'alsi' support will be added later.",
+         call. = FALSE)
+  }
+
+  if (!is.numeric(timeout) | length(timeout) != 1) {
+    stop("Parameter 'timeout' needs to be type character and length 1.",
+         call. = FALSE)
+  }
+
+  if (!is.character(apikey) | length(apikey) != 1) {
+    stop("Parameter 'apikey' needs to be type character and length 1.",
+         call. = FALSE)
+  }
 
 }

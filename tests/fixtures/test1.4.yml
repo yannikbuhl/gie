@@ -1,0 +1,33 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?country=DE&company=21X000000001160J&facility=21Z000000000271O&page=1&date=2022-05-01&size=30
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 09 Jul 2022 12:11:29 GMT
+      content-type: application/json
+      cache-control: no-cache, private
+      cf-cache-status: DYNAMIC
+      expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      server: cloudflare
+      cf-ray: 7280f662d9e55b4a-FRA
+      content-encoding: br
+      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2022-07-07","data":[{"name":"UGS
+        Rehden","code":"21Z000000000271O","url":"21Z000000000271O\/DE\/21X000000001160J","gasDayStart":"2022-05-01","gasInStorage":"0.2677","injection":"14.8","withdrawal":"1.7","workingGasVolume":"43.68","injectionCapacity":"344.76","withdrawalCapacity":"530.4","status":"C","trend":"0.03","full":"0.61","info":[]}]}'
+  recorded_at: 2022-07-09 12:11:29 GMT
+  recorded_with: vcr/1.0.2, webmockr/0.8.0

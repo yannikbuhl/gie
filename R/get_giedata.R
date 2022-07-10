@@ -173,7 +173,7 @@ get_giedata <- function(country,
 
       },{
 
-        results <- raw_results %>% purrr::map_dfr(., .f = ~ parseresult(.x))
+        results <- raw_results %>% purrr::map_dfr(rlang::.data, .f = ~ parseresult(.x))
 
         results <- dplyr::bind_rows(first_page, results)
 

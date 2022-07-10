@@ -49,6 +49,18 @@ get_giedata2 <- function(countries,
   if (missing(countries)) stop("You have to at least specify the 'country' parameter.",
                              call. = FALSE)
 
+  check_giedata2input(countries = countries,
+                      companies = companies,
+                      facilities = facilities,
+                      from = from,
+                      to = to,
+                      date = date,
+                      size = size,
+                      timeout = timeout,
+                      database = database,
+                      verbose = verbose,
+                      apikey = apikey)
+
   # Download bulk data only for countries
   if (!is.null(countries) & is.null(companies) & is.null(facilities)) {
 
