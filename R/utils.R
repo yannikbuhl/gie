@@ -399,7 +399,8 @@ check_giedata2input <- function(countries,
                                 apikey) {
 
   if ((!is.null(from) | !is.null(to)) & !is.null(date)) {
-    warning("If 'from' and/or 'to' parameters are set and 'date', too, 'date' will override 'from' and/or 'to'.")
+    warning("If 'from' and/or 'to' parameters are set and 'date', too, 'date' will override 'from' and/or 'to'.",
+            call. = FALSE)
   }
 
   if (!is.null(facilities) & is.null(companies)) {
