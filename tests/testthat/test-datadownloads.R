@@ -125,3 +125,49 @@ test_that("check that get_giedata2 works with company and facilities", {
 })
 
 #------------------------------------------------------------------------------#
+
+test_that("check that get_gielisting outputs a list without specifying any parameters", {
+
+  vcr::use_cassette("test1.8", {
+
+    result <- get_gielisting()
+
+  })
+
+  expect_type(object = result,
+              type = "list")
+
+})
+
+#------------------------------------------------------------------------------#
+
+test_that("check that get_gielisting outputs a data.frame specifying parameters", {
+
+  vcr::use_cassette("test1.9", {
+
+    result <- get_gielisting(region = "Europe")
+
+  })
+
+  expect_s3_class(object = result,
+                  class = "data.frame")
+
+})
+
+#------------------------------------------------------------------------------#
+
+test_that("check that get_gielisting outputs facilities if TRUE", {
+
+  vcr::use_cassette("test1.10", {
+
+    result <- get_gielisting(region = "Europe",
+                             country = "Germany",
+                             facilities = TRUE)
+
+  })
+
+  expect_match(object = names(result),
+               regexp = "facility_eic",
+               all = FALSE)
+
+})

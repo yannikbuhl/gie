@@ -68,3 +68,5 @@ test_that("companies must be of length one if facility is specified", {
                regexp = "must only contain one company EIC")
 
 })
+
+#------------------------------------------------------------------------------#

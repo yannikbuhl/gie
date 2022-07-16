@@ -259,7 +259,7 @@ check_gielistinginput <- function(region,
   }
 
   if (!is.logical(facilities) | length(facilities) != 1) {
-    stop("Parameter 'facilities'  needs to be type logical and length 1.", call. = FALSE)
+    stop("Parameter 'facilities' needs to be type logical and length 1.", call. = FALSE)
   }
 
   if (!is.null(country)) {
@@ -271,10 +271,6 @@ check_gielistinginput <- function(region,
   if (!is.character(database) | length(database) != 1) {
     stop("Parameter 'database' needs to be type character and length 1.", call. = FALSE)
   }
-
-  # if (!(database %in% c("agsi", "alsi"))) {
-  #   stop("Parameter 'database' can only be 'agsi' or 'alsi'.", call. = FALSE)
-  # }
 
   if (database != "agsi") {
     stop("Currently, only 'agsi' is supported as database. 'alsi' support will be added later.", call. = FALSE)
