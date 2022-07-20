@@ -13,14 +13,15 @@ ALSI+) transparency platform API
 
 ## Collecting data on natural gas storages
 
-[Gas Infrastructure Europe (GIE)](gie.eu/) is an organisation that
-represents the vast majority of operators of natural gas storage units
-in Europe and some non-EU countries (such as the United Kingdom and
-Ukraine). They provide a REST API for their AGSI+ transparency platform
-to retrieve data on country level, operator level and facility level.
-Data include information on, e.g., the filling level, overall capacity,
-inflow or outflow. In order to use `{giedata}`, you have to register for
-an API key on the [AGSI+ website](https://agsi.gie.eu/).
+[Gas Infrastructure Europe (GIE)](https://www.gie.eu/) is an
+organisation that represents the vast majority of operators of natural
+gas storage units in Europe and some non-EU countries (such as the
+United Kingdom and Ukraine). They provide a REST API for their AGSI+
+transparency platform to retrieve data on country level, operator level
+and facility level. Data include information on, e.g., the filling
+level, overall capacity, inflow or outflow. In order to use `{giedata}`,
+you have to register for an API key on the [AGSI+
+website](https://agsi.gie.eu/).
 
 In spring of 2022, Gas Infrastructure Europe (GIE) provided a complete
 makeover of its API, introducing, among changes to parameters and
