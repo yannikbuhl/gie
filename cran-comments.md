@@ -1,9 +1,8 @@
 ## Resubmission
-This is a resubmission. In this version we have:
+This is a resubmission. In this version I have:
 
-* Added more details to the Description field of the DESCRIPTION file
-* Added a web reference to the API to the Description field of the DESCRIPTION file
-* Adjusted the package version number in DESCRIPTION (from 0.0.1 to 0.1.0)
+* Adjusted two unit tests so they will not be able to fail on CRAN tests anymore
+* Made sure the function to get API results fails gracefully, including all information possible, if the online resource is giving back a status other than 200
 
 ## R CMD check results
 There were no ERRORs, WARNINGs or NOTEs.

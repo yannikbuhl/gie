@@ -31,6 +31,8 @@ test_that("warning pops up if date, from and to are set", {
                                       to = "2022-05-15"),
                  regexp = "override")
 
+  skip_on_cran()
+
 })
 
 test_that("warning pops up if date, from and to are set", {
@@ -40,6 +42,8 @@ test_that("warning pops up if date, from and to are set", {
                                        from = "2022-05-01",
                                        to = "2022-05-15"),
                  regexp = "override")
+
+  skip_on_cran()
 
 })
 

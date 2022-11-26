@@ -82,14 +82,27 @@ getrequest <- function(country,
 #'
 send_getrequest <- function(url, apikey) {
 
+  if (!curl::has_internet()) stop("There seems to be no internet connection.")
+
   raw_request <- httr::GET(url, httr::add_headers(`x-key` = apikey))
 
   status <- httr::status_code(raw_request)
   error_message <- httr::http_status(raw_request)
 
-  if (isTRUE(verbose) & status != 200) print(error_message)
+  if (status != 200) {
 
-  if (status != 200) stop("HTTP error with code: ", status, ".", call. = FALSE)
+    print(paste0("There has been the following error message: ",
+                 error_message))
+
+    stop("The request was unsuccessful, the API returned HTTP error code ",
+         status,
+         ". More information can be found in the API error message printed above.",
+         call. = FALSE)
+
+  }
+
+  # if (isTRUE(verbose) & status != 200) {}
+  # if (status != 200) stop("HTTP error with code: ", status, ".", call. = FALSE)
 
   return(raw_request)
 

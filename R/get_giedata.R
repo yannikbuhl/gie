@@ -80,7 +80,7 @@ get_giedata <- function(country,
   # Check if there was an empty response with 0 pages --------------------------
   if (pages == 0) {
 
-    warning("No results found for your query. Invisibly returning raw results.",
+    warning("No results found for your query (possibly). Invisibly returning raw return object.",
             call. = FALSE)
 
     invisible(return(raw_results))
