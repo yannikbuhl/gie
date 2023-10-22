@@ -1,20 +1,28 @@
 Package: giedata
-Title: API Wrapper for GIE's AGSI+/ALSI+ Natural Gas Storage Transparency Platform
-Version: 0.1.1
+Title: API Wrapper for GIE's AGSI+/ALSI+ Natural Gas Storage Transparency
+    Platform
+Version: 0.1.2
 Authors@R: 
     person("Yannik", "Buhl", , "ybuhl@posteo.de", role = c("aut", "cre"))
-Description: Functions to access the API for Gas Infrastructure Europe's (GIE) AGSI+/ALSI+ natural gas storage transparency platform (<https://agsi.gie.eu/> and <https://alsi.gie.eu/>). Lets the user easily download metadata on companies and gas storage units covered by the API as well as the respective data on regional, country, company or facility level.
+Description: Functions to access the API for Gas Infrastructure Europe's
+    (GIE) AGSI+/ALSI+ natural gas storage transparency platform
+    (<https://agsi.gie.eu/> and <https://alsi.gie.eu/>). Lets the user
+    easily download metadata on companies and gas storage units covered by
+    the API as well as the respective data on regional, country, company
+    or facility level.
 License: MIT + file LICENSE
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.0
 Imports:
+    curl,
     dplyr,
     httr,
     lubridate,
     magrittr,
     purrr,
-    curl
+    stringr
 Suggests: 
-    vcr (>= 0.6.0),
-    testthat
+    testthat,
+    textutils,
+    vcr (>= 0.6.0)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0

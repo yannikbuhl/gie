@@ -82,29 +82,34 @@ getrequest <- function(country,
 #'
 send_getrequest <- function(url, apikey) {
 
+  # Check if there is an internet connection
   if (!curl::has_internet()) stop("There seems to be no internet connection.")
 
-  raw_request <- httr::GET(url, httr::add_headers(`x-key` = apikey))
+  # Check if the resource/API is available and the request successful
+  if (isTRUE(httr::http_error(httr::GET(url, httr::add_headers(`x-key` = apikey))))) {
 
-  status <- httr::status_code(raw_request)
-  error_message <- httr::http_status(raw_request)
+    raw_request <- httr::GET(url, httr::add_headers(`x-key` = apikey))
 
-  if (status != 200) {
+    status <- httr::status_code(raw_request)
+    error_description <- httr::http_status(raw_request)
 
-    print(paste0("There has been the following error message: ",
-                 error_message))
+    error_message <- paste0("The API returned the HTTP error code ",
+                            status,
+                            ". The error message was: '",
+                            error_description,
+                            "'. In case of failure, function invisibly returns 'NULL'.")
 
-    stop("The request was unsuccessful, the API returned HTTP error code ",
-         status,
-         ". More information can be found in the API error message printed above.",
-         call. = FALSE)
+    message(error_message)
+
+    return(invisible(NULL))
+
+  } else {
+
+    raw_request <- httr::GET(url, httr::add_headers(`x-key` = apikey))
+
+    return(raw_request)
 
   }
-
-  # if (isTRUE(verbose) & status != 200) {}
-  # if (status != 200) stop("HTTP error with code: ", status, ".", call. = FALSE)
-
-  return(raw_request)
 
 }
 
@@ -455,5 +460,23 @@ check_giedata2input <- function(countries,
     stop("Parameter 'apikey' needs to be type character and length 1.",
          call. = FALSE)
   }
+
+}
+
+#-------------------------------------------------------------------------------
+
+#' strip_html
+#'
+#' @description A function to HTML decode a character vector of length > 1
+#'
+#' @param string
+#'
+#' @return A vector with HTML decoded text
+#'
+strip_html <- function(string) {
+
+  parsed <- map_chr(.x = string, .f = ~ html_text2(read_html(charToRaw(.))))
+
+  return(parsed)
 
 }

@@ -15,22 +15,58 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 10 Jul 2022 08:16:56 GMT
+      date: Sun, 30 Jul 2023 13:08:47 GMT
       content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
       cache-control: no-cache, private
+      x-robots-tag: noindex
       cf-cache-status: DYNAMIC
-      expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       server: cloudflare
-      cf-ray: 7287dc2dff59698f-FRA
-      content-encoding: br
-      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+      cf-ray: 7eedd5158b54912b-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2022-07-08","data":[{"name":"astora
-        (Germany)","code":"21X000000001160J","url":"21X000000001160J\/DE","gasDayStart":"2022-05-01","gasInStorage":"1.8757","injection":"56.78","withdrawal":"1.7","workingGasVolume":"51.805","injectionCapacity":"512.61","withdrawalCapacity":"739.65","status":"C","trend":"0.11","full":"3.62","info":[]}]}'
-  recorded_at: 2022-07-10 08:16:56 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2023-07-28","data":[{"name":"astora
+        (Germany)","code":"21X000000001160J","publication_link":"http:\/\/www.astora.de","transparency_template":"https:\/\/www.astora.de\/en\/transparency-template","url":"21X000000001160J\/DE","gasDayStart":"2022-05-01","gasInStorage":"1.8757","injection":"56.78","withdrawal":"1.7","netWithdrawal":"-55.1","workingGasVolume":"51.805","injectionCapacity":"512.61","withdrawalCapacity":"739.65","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.11","full":"3.62","info":[]}]}'
+  recorded_at: 2023-07-30 13:08:51 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?country=DE&company=21X000000001160J&page=1&date=2022-05-01&size=30
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sun, 30 Jul 2023 13:08:48 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 7eedd517ee89912b-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2023-07-28","data":[{"name":"astora
+        (Germany)","code":"21X000000001160J","publication_link":"http:\/\/www.astora.de","transparency_template":"https:\/\/www.astora.de\/en\/transparency-template","url":"21X000000001160J\/DE","gasDayStart":"2022-05-01","gasInStorage":"1.8757","injection":"56.78","withdrawal":"1.7","netWithdrawal":"-55.1","workingGasVolume":"51.805","injectionCapacity":"512.61","withdrawalCapacity":"739.65","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.11","full":"3.62","info":[]}]}'
+  recorded_at: 2023-07-30 13:08:51 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: https://agsi.gie.eu/api?country=DE&company=21X0000000011756&page=1&date=2022-05-01&size=30
@@ -47,19 +83,57 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 10 Jul 2022 08:16:56 GMT
+      date: Sun, 30 Jul 2023 13:08:48 GMT
       content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
       cache-control: no-cache, private
+      x-robots-tag: noindex
       cf-cache-status: DYNAMIC
-      expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       server: cloudflare
-      cf-ray: 7287dc2eb856698f-FRA
-      content-encoding: br
-      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+      cf-ray: 7eedd51aca8f912b-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2022-07-08","data":[{"name":"EWE
-        Gasspeicher","code":"21X0000000011756","url":"21X0000000011756\/DE","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","status":"C","trend":"0.76","full":"40.01","info":[]}]}'
-  recorded_at: 2022-07-10 08:16:56 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2023-07-28","data":[{"name":"EWE
+        Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
+        https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.76","full":"40.01","info":[]}]}'
+  recorded_at: 2023-07-30 13:08:51 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?country=DE&company=21X0000000011756&page=1&date=2022-05-01&size=30
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sun, 30 Jul 2023 13:08:49 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 7eedd51cbd94912b-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2023-07-28","data":[{"name":"EWE
+        Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
+        https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.76","full":"40.01","info":[]}]}'
+  recorded_at: 2023-07-30 13:08:51 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2

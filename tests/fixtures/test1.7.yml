@@ -15,22 +15,58 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 10 Jul 2022 08:16:56 GMT
+      date: Sun, 30 Jul 2023 13:08:49 GMT
       content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
       cache-control: no-cache, private
+      x-robots-tag: noindex
       cf-cache-status: DYNAMIC
-      expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       server: cloudflare
-      cf-ray: 7287dc2fa9bd698f-FRA
-      content-encoding: br
-      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+      cf-ray: 7eedd51fa9f9912b-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2022-07-08","data":[{"name":"UGS
-        Rehden","code":"21Z000000000271O","url":"21Z000000000271O\/DE\/21X000000001160J","gasDayStart":"2022-05-01","gasInStorage":"0.2677","injection":"14.8","withdrawal":"1.7","workingGasVolume":"43.68","injectionCapacity":"344.76","withdrawalCapacity":"530.4","status":"C","trend":"0.03","full":"0.61","info":[]}]}'
-  recorded_at: 2022-07-10 08:16:56 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2023-07-28","data":[{"name":"UGS
+        Rehden","code":"21Z000000000271O","url":"21Z000000000271O\/DE\/21X000000001160J","longitude":"8.4864","latitude":"52.6026","gasDayStart":"2022-05-01","gasInStorage":"0.2677","injection":"14.8","withdrawal":"1.7","netWithdrawal":"-13.1","workingGasVolume":"43.68","injectionCapacity":"344.76","withdrawalCapacity":"530.4","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.03","full":"0.61","info":[]}]}'
+  recorded_at: 2023-07-30 13:08:54 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?country=DE&company=21X000000001160J&facility=21Z000000000271O&page=1&date=2022-05-01&size=30
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sun, 30 Jul 2023 13:08:50 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 7eedd5235ea0912b-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2023-07-28","data":[{"name":"UGS
+        Rehden","code":"21Z000000000271O","url":"21Z000000000271O\/DE\/21X000000001160J","longitude":"8.4864","latitude":"52.6026","gasDayStart":"2022-05-01","gasInStorage":"0.2677","injection":"14.8","withdrawal":"1.7","netWithdrawal":"-13.1","workingGasVolume":"43.68","injectionCapacity":"344.76","withdrawalCapacity":"530.4","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.03","full":"0.61","info":[]}]}'
+  recorded_at: 2023-07-30 13:08:54 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: https://agsi.gie.eu/api?country=DE&company=21X000000001160J&facility=21W0000000001148&page=1&date=2022-05-01&size=30
@@ -47,22 +83,58 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 10 Jul 2022 08:16:56 GMT
+      date: Sun, 30 Jul 2023 13:08:50 GMT
       content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
       cache-control: no-cache, private
+      x-robots-tag: noindex
       cf-cache-status: DYNAMIC
-      expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       server: cloudflare
-      cf-ray: 7287dc30cb77698f-FRA
-      content-encoding: br
-      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+      cf-ray: 7eedd5262a81912b-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2022-07-08","data":[{"name":"UGS
-        Jemgum H (astora)","code":"21W0000000001148","url":"21W0000000001148\/DE\/21X000000001160J","gasDayStart":"2022-05-01","gasInStorage":"1.6079","injection":"41.98","withdrawal":"0","workingGasVolume":"8.125","injectionCapacity":"167.85","withdrawalCapacity":"209.25","status":"C","trend":"0.52","full":"19.79","info":[]}]}'
-  recorded_at: 2022-07-10 08:16:56 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2023-07-28","data":[{"name":"UGS
+        Jemgum H (astora)","code":"21W0000000001148","url":"21W0000000001148\/DE\/21X000000001160J","longitude":"7.2819","latitude":"53.2841","gasDayStart":"2022-05-01","gasInStorage":"1.6079","injection":"41.98","withdrawal":"0","netWithdrawal":"-42","workingGasVolume":"8.125","injectionCapacity":"167.85","withdrawalCapacity":"209.25","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.52","full":"19.79","info":[]}]}'
+  recorded_at: 2023-07-30 13:08:54 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?country=DE&company=21X000000001160J&facility=21W0000000001148&page=1&date=2022-05-01&size=30
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sun, 30 Jul 2023 13:08:50 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 7eedd5283d37912b-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2023-07-28","data":[{"name":"UGS
+        Jemgum H (astora)","code":"21W0000000001148","url":"21W0000000001148\/DE\/21X000000001160J","longitude":"7.2819","latitude":"53.2841","gasDayStart":"2022-05-01","gasInStorage":"1.6079","injection":"41.98","withdrawal":"0","netWithdrawal":"-42","workingGasVolume":"8.125","injectionCapacity":"167.85","withdrawalCapacity":"209.25","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.52","full":"19.79","info":[]}]}'
+  recorded_at: 2023-07-30 13:08:54 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
 - request:
     method: get
     uri: https://agsi.gie.eu/api?country=DE&company=21X000000001160J&facility=21W0000000001261&page=1&date=2022-05-01&size=30
@@ -79,19 +151,55 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 10 Jul 2022 08:16:56 GMT
+      date: Sun, 30 Jul 2023 13:08:51 GMT
       content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
       cache-control: no-cache, private
+      x-robots-tag: noindex
       cf-cache-status: DYNAMIC
-      expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       server: cloudflare
-      cf-ray: 7287dc317c86698f-FRA
-      content-encoding: br
-      alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+      cf-ray: 7eedd52ad95b912b-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
     body:
-      encoding: UTF-8
+      encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2022-07-08","data":[{"name":"VSP
-        NORD (Rehden, Jemgum)","code":"21W0000000001261","url":"21W0000000001261\/DE\/21X000000001160J","gasDayStart":"2022-05-01","gasInStorage":"0","injection":"0","withdrawal":"0","workingGasVolume":"0","injectionCapacity":"0","withdrawalCapacity":"0","status":"C","trend":"0","full":"0","info":[]}]}'
-  recorded_at: 2022-07-10 08:16:56 GMT
-  recorded_with: vcr/1.0.2, webmockr/0.8.0
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2023-07-28","data":[{"name":"VSP
+        NORD (Rehden, Jemgum)","code":"21W0000000001261","url":"21W0000000001261\/DE\/21X000000001160J","longitude":"7.6958","latitude":"53.3555","gasDayStart":"2022-05-01","gasInStorage":"0","injection":"0","withdrawal":"0","netWithdrawal":"0","workingGasVolume":"0","injectionCapacity":"0","withdrawalCapacity":"0","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0","full":"0","info":[]}]}'
+  recorded_at: 2023-07-30 13:08:54 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?country=DE&company=21X000000001160J&facility=21W0000000001261&page=1&date=2022-05-01&size=30
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sun, 30 Jul 2023 13:08:51 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 7eedd52d8d87912b-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2023-07-28","data":[{"name":"VSP
+        NORD (Rehden, Jemgum)","code":"21W0000000001261","url":"21W0000000001261\/DE\/21X000000001160J","longitude":"7.6958","latitude":"53.3555","gasDayStart":"2022-05-01","gasInStorage":"0","injection":"0","withdrawal":"0","netWithdrawal":"0","workingGasVolume":"0","injectionCapacity":"0","withdrawalCapacity":"0","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0","full":"0","info":[]}]}'
+  recorded_at: 2023-07-30 13:08:54 GMT
+  recorded_with: vcr/1.2.0, webmockr/0.8.2

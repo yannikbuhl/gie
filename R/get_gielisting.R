@@ -2,7 +2,7 @@
 #'
 #' @description Function to download raw or parsed results for the countries, \cr
 #' companies and facilities available from the AGSI/ALSI+ API of GIE. The EIC codes \cr
-#' of the results can be used to in turn download the actual data \cr
+#' of the results can be used in turn to download the actual data \cr
 #' using \code{get_giedata()}.
 #'
 #' @param region Character. The broader region you want results for (can be 'Europe' or 'Non-EU').
