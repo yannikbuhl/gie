@@ -1,6 +1,6 @@
 #' get_giedata2
 #'
-#' @description Function to download data from GIE's AGSI+ API in bulk
+#' @description Function to download data from GIE's AGSI+/ALSI+ API in bulk
 #'
 #' @param countries Character. Specify the countries of interest as two-digit \cr
 #' country codes (e.g., 'DE', 'IE'). \cr

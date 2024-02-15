@@ -1,7 +1,7 @@
 #' get_gielisting
 #'
 #' @description Function to download raw or parsed results for the countries, \cr
-#' companies and facilities available from the AGSI/ALSI+ API of GIE. The EIC codes \cr
+#' companies and facilities available from the AGSI+/ALSI+ API of GIE. The EIC codes \cr
 #' of the results can be used in turn to download the actual data \cr
 #' using \code{get_giedata()}.
 #'
@@ -11,8 +11,7 @@
 #'  If you use this parameter, you have to specify the 'region' parameter accordingly.
 #' @param facilities Logical. If TRUE, facility data will be added to the country or company results. \cr
 #' If you use this parameter, 'region' and 'country' have to be set. Defaults to FALSE.
-#' @param database Character. The type of API you want to address ('agsi' or 'alsi'). \cr
-#' As of yet, only 'agsi' works, 'alsi' support is expected at a later time.
+#' @param database Character. The type of API you want to address ('agsi' or 'alsi').
 #' @param apikey Character. Your personal API key.
 #'
 #' @return Data.frame with results
@@ -36,29 +35,52 @@ get_gielisting <- function(region = NULL,
                         database = database,
                         apikey = apikey)
 
+  # Create endpoint URL
   endpoint <- paste0("https://", database, ".gie.eu/api/about")
 
+  # Create empty query list
   query <- list()
 
+  # Construct URL
   url <- construct_url(url = endpoint, query = query)
 
+  # Send HTTP request
   raw_request <- send_getrequest(url = url, apikey = apikey)
 
+  # Extract raw results from HTTP response
   raw_results <- raw_request %>% httr::content(as = "parsed")
+
+  # Parse results depending on database queried
 
   if (is.null(region) & is.null(country) & isFALSE(facilities)) {
 
     return(raw_results)
 
-  } else {
+  } else if (database == "agsi") {
 
-    # Parse results according to region, country, company parameters
+    # ALSI: Parse results according to region, country, company parameters
     results <- get_listinghierarchy(raw_results = raw_results,
                                     region = region,
                                     country = country,
-                                    facilities = facilities)
+                                    facilities = facilities,
+                                    database = database)
 
     return(results)
+
+  } else if (database == "alsi") {
+
+    # ALSI: Parse results according to region, country, company parameters
+    results <- get_listinghierarchy(raw_results = raw_results,
+                                    region = region,
+                                    country = country,
+                                    facilities = facilities,
+                                    database = database)
+
+    return(results)
+
+  } else {
+
+    stop("Something went wrong parsing your results.", call. = FALSE)
 
   }
 }

@@ -136,7 +136,10 @@ construct_url <- function(url, query) {
 #'
 #' @param raw_results Raw results from GET request
 #'
-parseresult <- function(raw_results) {
+parseresult <- function(raw_results,
+                        database) {
+
+  if (database == "agsi") {
 
   results <- raw_results %>%
     magrittr::extract2("data") %>%
@@ -146,10 +149,47 @@ parseresult <- function(raw_results) {
     dplyr::mutate(gasDayStart = lubridate::as_date(gasDayStart),
            dplyr::across(!c(status,
                             gasDayStart,
+                            updatedAt,
                             name,
                             code,
                             url), as.numeric)) %>%
     suppressWarnings()
+
+  } else if (database == "alsi") {
+
+    results <- raw_results %>%
+      magrittr::extract2("data") %>%
+      purrr::map(., ~ setnull(.x, c("info", "children"))) %>%
+      purrr::map(.f = unlist) %>%
+      purrr::map_dfr(.f = bind_rows) %>%
+      dplyr::arrange(gasDayStart) %>%
+      dplyr::mutate(gasDayStart = lubridate::as_date(gasDayStart),
+                    dplyr::across(!c(status,
+                                     gasDayStart,
+                                     updatedAt,
+                                     name,
+                                     code,
+                                     url), as.numeric)) %>%
+      suppressWarnings()
+
+    names(results) <- purrr::map_chr(.x = names(results),
+                                     .f = ~ stringr::str_replace(.x,
+                                                                 "\\.(.)",
+                                                                 function(match) {
+
+                                                                   toupper(match[[1]])
+
+                                                                 })) %>%
+                      purrr::map_chr(.,
+                                     .f = ~ stringr::str_replace(.x,
+                                                                 "[.]",
+                                                                 ""))
+
+  } else {
+
+    stop("Something went wrong parsing your raw results (Error 1).", call. = FALSE)
+
+  }
 
   return(results)
 
@@ -231,8 +271,8 @@ check_giedatainput <- function(country,
          call. = FALSE)
   }
 
-  if (database != "agsi") {
-    stop("Currently, only 'agsi' is supported as database. 'alsi' support will be added later.",
+  if (!(database %in% c("agsi", "alsi"))) {
+    stop("Incorrectly specified database name. Choose between 'agsi' or 'alsi'.",
          call. = FALSE)
   }
 
@@ -290,8 +330,9 @@ check_gielistinginput <- function(region,
     stop("Parameter 'database' needs to be type character and length 1.", call. = FALSE)
   }
 
-  if (database != "agsi") {
-    stop("Currently, only 'agsi' is supported as database. 'alsi' support will be added later.", call. = FALSE)
+  if (!(database %in% c("agsi", "alsi"))) {
+    stop("Incorrectly specified database name. Choose between 'agsi' or 'alsi'.",
+         call. = FALSE)
   }
 
   if (length(apikey) != 1) {
@@ -312,45 +353,102 @@ check_gielistinginput <- function(region,
 get_listinghierarchy <- function(raw_results,
                                  region,
                                  country,
-                                 facilities) {
+                                 facilities,
+                                 database) {
 
-  # Get all data from a region
-  if (!is.null(region) & is.null(country) & isFALSE(facilities)) {
+  # AGSI ---------------------------------------------------------------------
 
-    results <- raw_results %>%
-      purrr::pluck("SSO") %>%
-      purrr::pluck(region) %>%
-      purrr::map(.f = ~ purrr::map(.x, .f = ~ setnull(., c("facilities", "data", "image")))) %>%
-      purrr::map_dfr(.f = bind_rows, .id = "country")
+  if (database == "agsi") {
 
-    return(results)
+    # Get all data from a region
+    if (!is.null(region) & is.null(country) & isFALSE(facilities)) {
 
-  } else if (!is.null(region) & !is.null(country) & isFALSE(facilities)) {
+      results <- raw_results %>%
+        purrr::pluck("SSO") %>%
+        purrr::pluck(region) %>%
+        purrr::map(.f = ~ purrr::map(.x, .f = ~ setnull(., c("facilities", "data", "image")))) %>%
+        purrr::map_dfr(.f = bind_rows, .id = "country")
 
-  # Get all data for a given country in a given region
+      return(results)
 
-    results <- raw_results %>%
-      purrr::pluck("SSO") %>%
-      purrr::pluck(region) %>%
-      purrr::map(.f = ~ purrr::map(.x, .f = ~ setnull(., c("facilities", "data", "image")))) %>%
-      purrr::map_dfr(.f = bind_rows, .id = "country") %>%
-      dplyr::filter(country == {{ country }})
+    } else if (!is.null(region) & !is.null(country) & isFALSE(facilities)) {
 
-    return(results)
+    # Get all data for a given country in a given region
 
-  } else if (!is.null(region) & !is.null(country) & isTRUE(facilities)) {
+      results <- raw_results %>%
+        purrr::pluck("SSO") %>%
+        purrr::pluck(region) %>%
+        purrr::map(.f = ~ purrr::map(.x, .f = ~ setnull(., c("facilities", "data", "image")))) %>%
+        purrr::map_dfr(.f = bind_rows, .id = "country") %>%
+        dplyr::filter(country == {{ country }})
 
-    results <- raw_results %>%
-      purrr::pluck("SSO") %>%
-      purrr::pluck(region) %>%
-      purrr::pluck(country) %>%
-      purrr::map_dfr(.x, .f = ~ extract_listelements(.))
+      return(results)
 
-    return(results)
+    } else if (!is.null(region) & !is.null(country) & isTRUE(facilities)) {
+
+      results <- raw_results %>%
+        purrr::pluck("SSO") %>%
+        purrr::pluck(region) %>%
+        purrr::pluck(country) %>%
+        purrr::map_dfr(.x, .f = ~ extract_listelements(.))
+
+      return(results)
+
+    } else {
+
+      stop("Misspecified parameters. Please check parameter combination.",
+           call. = FALSE)
+
+    }
+
+  # ALSI -----------------------------------------------------------------------
+
+  } else if (database == "alsi") {
+
+    # Get all data from a region
+    if (!is.null(region) & is.null(country) & isFALSE(facilities)) {
+
+      results <- raw_results %>%
+        purrr::pluck("LSO") %>%
+        purrr::pluck(region) %>%
+        purrr::map(.f = ~ purrr::map(.x, .f = ~ setnull(., c("facilities", "data", "image")))) %>%
+        purrr::map_dfr(.f = bind_rows, .id = "country")
+
+      return(results)
+
+    } else if (!is.null(region) & !is.null(country) & isFALSE(facilities)) {
+
+      # Get all data for a given country in a given region
+
+      results <- raw_results %>%
+        purrr::pluck("LSO") %>%
+        purrr::pluck(region) %>%
+        purrr::map(.f = ~ purrr::map(.x, .f = ~ setnull(., c("facilities", "data", "image")))) %>%
+        purrr::map_dfr(.f = bind_rows, .id = "country") %>%
+        dplyr::filter(country == {{ country }})
+
+      return(results)
+
+    } else if (!is.null(region) & !is.null(country) & isTRUE(facilities)) {
+
+      results <- raw_results %>%
+        purrr::pluck("LSO") %>%
+        purrr::pluck(region) %>%
+        purrr::pluck(country) %>%
+        purrr::map_dfr(.x, .f = ~ extract_listelements(.))
+
+      return(results)
+
+    } else {
+
+      stop("Misspecified parameters. Please check parameter combination.",
+           call. = FALSE)
+
+    }
 
   } else {
 
-    stop("Misspecified parameters. Please check parameter combination.",
+    stop("Something went wrong specifying the 'database' parameter ('agsi' or 'alsi') or parsing your results.",
          call. = FALSE)
 
   }
@@ -366,21 +464,40 @@ get_listinghierarchy <- function(raw_results,
 extract_listelements <- function(listelement) {
 
   company <- dplyr::tibble(country = listelement$data$country$name,
-                    country_code = listelement$data$country$code,
-                    company_shortname = listelement$short_name,
-                    company_name = listelement$name,
-                    company_url = listelement$url,
-                    company_eic = listelement$eic)
+                           country_code = listelement$data$country$code,
+                           company_shortname = listelement$short_name,
+                           company_name = listelement$name,
+                           company_url = listelement$url,
+                           company_eic = listelement$eic)
 
-  facilities <- listelement %>%
-    setnull(., "data") %>%
-    purrr::pluck(., "facilities") %>%
-    purrr::map(.x, .f = ~ setnull(., "country")) %>%
-    purrr::map_dfr(bind_rows) %>%
-    dplyr::mutate(company_eic = listelement$eic) %>%
-    dplyr::rename(facility_name = name,
-           facility_eic = eic,
-           facility_type = type)
+  if (length(purrr::pluck(listelement, "facilities")) != 0) {
+
+    facilities <- listelement %>%
+      setnull(., "data") %>%
+      purrr::pluck(., "facilities") %>%
+      purrr::map(.x, .f = ~ setnull(., "country")) %>%
+      purrr::map_dfr(bind_rows) %>%
+      dplyr::mutate(company_eic = listelement$eic) %>%
+      dplyr::rename(facility_name = name,
+                    facility_eic = eic,
+                    facility_type = type)
+
+  } else if (length(purrr::pluck(listelement, "facilities")) == 0) {
+
+    # If there has been a empty 'facilities' field, create a data.frame with NAs
+    facilities <- data.frame(facility_eic = NA,
+                             facility_name = NA,
+                             facility_type = NA,
+                             operational_start_date = NA,
+                             operational_end_date = NA,
+                             company_eic = listelement$eic)
+
+  } else {
+
+    stop("There has been an error parsing your 'facilities = TRUE' call.",
+         call. = FALSE)
+
+  }
 
   data <- facilities %>% dplyr::left_join(., company, by = "company_eic")
 
@@ -446,10 +563,10 @@ check_giedata2input <- function(countries,
          call. = FALSE)
   }
 
-  if (database != "agsi") {
-    stop("Currently, only 'agsi' is supported as database. 'alsi' support will be added later.",
-         call. = FALSE)
-  }
+  # if (database != "agsi") {
+  #   stop("Currently, only 'agsi' is supported as database. 'alsi' support will be added later.",
+  #        call. = FALSE)
+  # }
 
   if (!is.numeric(timeout) | length(timeout) != 1) {
     stop("Parameter 'timeout' needs to be type character and length 1.",

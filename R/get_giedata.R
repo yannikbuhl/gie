@@ -1,6 +1,6 @@
 #' get_giedata
 #'
-#' @description Function to download data from GIE's AGSI+ API
+#' @description Function to download data from GIE's AGSI+ and ALSI+ API
 #'
 #' @param country Character. Specify the country of interest as two-digit country code (e.g., 'DE', 'IE').
 #' @param company Character. EIC code for the requested company.
@@ -28,7 +28,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' get_giedata(country = "DE", date = "2022-01-03")
+#' get_giedata(country = "DE", date = "2022-01-03", database = "alsi")
 #' }
 get_giedata <- function(country,
                         company = NULL,
@@ -78,7 +78,7 @@ get_giedata <- function(country,
   pages <- raw_results[["last_page"]]
 
   # Check if there was an empty response with 0 pages --------------------------
-  if (pages == 0) {
+  if (pages == 0 | length(raw_results[["data"]]) == 0) {
 
     warning("No results found for your query (possibly). Invisibly returning raw return object.",
             call. = FALSE)
@@ -113,7 +113,7 @@ get_giedata <- function(country,
       {
 
         # Parse results from GET request
-        results <- parseresult(raw_results)
+        results <- parseresult(raw_results, database)
 
         # Return parsed results
         return(results)
@@ -132,7 +132,7 @@ get_giedata <- function(country,
 
     }
 
-    first_page <- parseresult(raw_results)
+    first_page <- parseresult(raw_results, database)
 
     if (pages > 60L & isTRUE(verbose)) {
 
@@ -173,7 +173,7 @@ get_giedata <- function(country,
 
       },{
 
-        results <- raw_results %>% purrr::map_dfr(., .f = ~ parseresult(.x))
+        results <- raw_results %>% purrr::map_dfr(., .f = ~ parseresult(.x, database))
 
         results <- dplyr::bind_rows(first_page, results)
 

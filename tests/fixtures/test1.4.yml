@@ -7,7 +7,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      x-key: <<<GIE_APIKEY>>>
+      x-key: ''
   response:
     status:
       status_code: 200
@@ -15,7 +15,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 30 Jul 2023 13:08:46 GMT
+      date: Thu, 15 Feb 2024 09:43:05 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -23,16 +23,17 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 7eedd50aec7b912b-FRA
+      cf-ray: 855c9abf5cfa1d86-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
       encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2023-07-28","data":[{"name":"UGS
-        Rehden","code":"21Z000000000271O","url":"21Z000000000271O\/DE\/21X000000001160J","longitude":"8.4864","latitude":"52.6026","gasDayStart":"2022-05-01","gasInStorage":"0.2677","injection":"14.8","withdrawal":"1.7","netWithdrawal":"-13.1","workingGasVolume":"43.68","injectionCapacity":"344.76","withdrawalCapacity":"530.4","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.03","full":"0.61","info":[]}]}'
-  recorded_at: 2023-07-30 13:08:48 GMT
-  recorded_with: vcr/1.2.0, webmockr/0.8.2
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-13","data":[{"name":"UGS
+        Rehden","code":"21Z000000000271O","url":"21Z000000000271O\/DE\/21X000000001160J","longitude":"8.4864","latitude":"52.6026","type":"DSR","updatedAt":"2022-05-02
+        00:00:00","gasDayStart":"2022-05-01","gasInStorage":"0.2677","injection":"14.8","withdrawal":"1.7","netWithdrawal":"-13.1","workingGasVolume":"43.68","injectionCapacity":"344.76","withdrawalCapacity":"530.4","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.03","full":"0.61","info":[]}]}'
+  recorded_at: 2024-02-15 09:43:08 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
     uri: https://agsi.gie.eu/api?country=DE&company=21X000000001160J&facility=21Z000000000271O&page=1&date=2022-05-01&size=30
@@ -41,7 +42,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      x-key: <<<GIE_APIKEY>>>
+      x-key: ''
   response:
     status:
       status_code: 200
@@ -49,7 +50,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 30 Jul 2023 13:08:46 GMT
+      date: Thu, 15 Feb 2024 09:43:06 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -57,13 +58,14 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 7eedd50d5ff6912b-FRA
+      cf-ray: 855c9ac2d9c71d86-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
       encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2023-07-28","data":[{"name":"UGS
-        Rehden","code":"21Z000000000271O","url":"21Z000000000271O\/DE\/21X000000001160J","longitude":"8.4864","latitude":"52.6026","gasDayStart":"2022-05-01","gasInStorage":"0.2677","injection":"14.8","withdrawal":"1.7","netWithdrawal":"-13.1","workingGasVolume":"43.68","injectionCapacity":"344.76","withdrawalCapacity":"530.4","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.03","full":"0.61","info":[]}]}'
-  recorded_at: 2023-07-30 13:08:48 GMT
-  recorded_with: vcr/1.2.0, webmockr/0.8.2
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-13","data":[{"name":"UGS
+        Rehden","code":"21Z000000000271O","url":"21Z000000000271O\/DE\/21X000000001160J","longitude":"8.4864","latitude":"52.6026","type":"DSR","updatedAt":"2022-05-02
+        00:00:00","gasDayStart":"2022-05-01","gasInStorage":"0.2677","injection":"14.8","withdrawal":"1.7","netWithdrawal":"-13.1","workingGasVolume":"43.68","injectionCapacity":"344.76","withdrawalCapacity":"530.4","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.03","full":"0.61","info":[]}]}'
+  recorded_at: 2024-02-15 09:43:08 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
