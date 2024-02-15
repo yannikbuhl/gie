@@ -6,8 +6,8 @@ test_that("download single country data", {
 
   vcr::use_cassette("test1.1", {
 
-    result <- get_giedata(country = "DE",
-                          date = "2022-05-01")
+    result <- gie_load(country = "DE",
+                       date = "2022-05-01")
 
   })
 
@@ -22,9 +22,9 @@ test_that("download single country data with from/to", {
 
   vcr::use_cassette("test1.2", {
 
-    result <- get_giedata(country = "AT",
-                          from = "2022-02-01",
-                          to = "2022-02-15")
+    result <- gie_load(country = "AT",
+                       from = "2022-02-01",
+                       to = "2022-02-15")
 
   })
 
@@ -37,12 +37,12 @@ test_that("download single country data with from/to", {
 
 #------------------------------------------------------------------------------#
 
-test_that("check that get_giedata2 works with multiple countries", {
+test_that("check that gie_batchload works with multiple countries", {
 
   vcr::use_cassette("test1.3", {
 
-    result <- get_giedata2(countries = c("DE", "AT"),
-                           date = "2022-05-01")
+    result <- gie_batchload(countries = c("DE", "AT"),
+                            date = "2022-05-01")
 
   })
 
@@ -53,14 +53,14 @@ test_that("check that get_giedata2 works with multiple countries", {
 
 #------------------------------------------------------------------------------#
 
-test_that("check that get_giedata works with company & facilities", {
+test_that("check that gie_load works with company & facilities", {
 
   vcr::use_cassette("test1.4", {
 
-    result <- get_giedata(country = c("DE"),
-                          date = "2022-05-01",
-                          company = "21X000000001160J",
-                          facility = "21Z000000000271O")
+    result <- gie_load(country = c("DE"),
+                       date = "2022-05-01",
+                       company = "21X000000001160J",
+                       facility = "21Z000000000271O")
 
   })
 
@@ -71,13 +71,13 @@ test_that("check that get_giedata works with company & facilities", {
 
 #------------------------------------------------------------------------------#
 
-test_that("check that get_giedata works with company", {
+test_that("check that gie_load works with company", {
 
   vcr::use_cassette("test1.5", {
 
-    result <- get_giedata(country = c("DE"),
-                          date = "2022-05-01",
-                          company = "21X000000001160J")
+    result <- gie_load(country = c("DE"),
+                       date = "2022-05-01",
+                       company = "21X000000001160J")
 
   })
 
@@ -88,14 +88,14 @@ test_that("check that get_giedata works with company", {
 
 #------------------------------------------------------------------------------#
 
-test_that("check that get_giedata2 works with companies", {
+test_that("check that gie_batchload works with companies", {
 
   vcr::use_cassette("test1.6", {
 
-    result <- get_giedata2(countries = "DE",
-                           date = "2022-05-01",
-                           companies = c("21X000000001160J",
-                                         "21X0000000011756"))
+    result <- gie_batchload(countries = "DE",
+                            date = "2022-05-01",
+                            companies = c("21X000000001160J",
+                                          "21X0000000011756"))
 
   })
 
@@ -106,16 +106,16 @@ test_that("check that get_giedata2 works with companies", {
 
 #------------------------------------------------------------------------------#
 
-test_that("check that get_giedata2 works with company and facilities", {
+test_that("check that gie_batchload works with company and facilities", {
 
   vcr::use_cassette("test1.7", {
 
-    result <- get_giedata2(countries = "DE",
-                           date = "2022-05-01",
-                           companies = "21X000000001160J",
-                           facilities = c("21Z000000000271O",
-                                          "21W0000000001148",
-                                          "21W0000000001261"))
+    result <- gie_batchload(countries = "DE",
+                            date = "2022-05-01",
+                            companies = "21X000000001160J",
+                            facilities = c("21Z000000000271O",
+                                           "21W0000000001148",
+                                           "21W0000000001261"))
 
   })
 
@@ -126,11 +126,11 @@ test_that("check that get_giedata2 works with company and facilities", {
 
 #------------------------------------------------------------------------------#
 
-test_that("check that get_gielisting outputs a list without specifying any parameters", {
+test_that("check that gie_listing outputs a list without specifying any parameters", {
 
   vcr::use_cassette("test1.8", {
 
-    result <- get_gielisting()
+    result <- gie_listing()
 
   })
 
@@ -141,11 +141,11 @@ test_that("check that get_gielisting outputs a list without specifying any param
 
 #------------------------------------------------------------------------------#
 
-test_that("check that get_gielisting outputs a data.frame specifying parameters", {
+test_that("check that gie_listing outputs a data.frame specifying parameters", {
 
   vcr::use_cassette("test1.9", {
 
-    result <- get_gielisting(region = "Europe")
+    result <- gie_listing(region = "Europe")
 
   })
 
@@ -156,11 +156,11 @@ test_that("check that get_gielisting outputs a data.frame specifying parameters"
 
 #------------------------------------------------------------------------------#
 
-test_that("check that get_gielisting outputs facilities if TRUE", {
+test_that("check that gie_listing outputs facilities if TRUE", {
 
   vcr::use_cassette("test1.10", {
 
-    result <- get_gielisting(region = "Europe",
+    result <- gie_listing(region = "Europe",
                              country = "Germany",
                              facilities = TRUE)
 

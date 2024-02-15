@@ -4,8 +4,8 @@
 
 test_that("download single data only works for one country", {
 
-  expect_error(object = get_giedata(country = c("DE", "AT"),
-                                    date = "2022-05-01"),
+  expect_error(object = gie_load(country = c("DE", "AT"),
+                                 date = "2022-05-01"),
                regexp = "type character and length 1")
 
 })
@@ -14,9 +14,9 @@ test_that("download single data only works for one country", {
 
 test_that("company must be specified if facility is specified", {
 
-  expect_error(object = get_giedata(country = "DE",
-                                    date = "2022-05-01",
-                                    facility = "mock_facility"),
+  expect_error(object = gie_load(country = "DE",
+                                 date = "2022-05-01",
+                                 facility = "mock_facility"),
                  regexp = "specified, too")
 
 })
@@ -25,10 +25,10 @@ test_that("company must be specified if facility is specified", {
 
 test_that("warning pops up if date, from and to are set", {
 
-  expect_warning(object = get_giedata(country = "DE",
-                                      date = "2022-05-01",
-                                      from = "2022-05-01",
-                                      to = "2022-05-15"),
+  expect_warning(object = gie_load(country = "DE",
+                                   date = "2022-05-01",
+                                   from = "2022-05-01",
+                                   to = "2022-05-15"),
                  regexp = "override")
 
   skip_on_cran()
@@ -37,10 +37,10 @@ test_that("warning pops up if date, from and to are set", {
 
 test_that("warning pops up if date, from and to are set", {
 
-  expect_warning(object = get_giedata2(countries = c("DE", "AT"),
-                                       date = "2022-05-01",
-                                       from = "2022-05-01",
-                                       to = "2022-05-15"),
+  expect_warning(object = gie_batchload(countries = c("DE", "AT"),
+                                        date = "2022-05-01",
+                                        from = "2022-05-01",
+                                        to = "2022-05-15"),
                  regexp = "override")
 
   skip_on_cran()
@@ -51,10 +51,10 @@ test_that("warning pops up if date, from and to are set", {
 
 test_that("companies must be specified if facility is specified", {
 
-  expect_error(object = get_giedata2(countries = "DE",
-                                     date = "2022-05-01",
-                                     facilities = c("mock_facilities",
-                                                    "mock2_facilities")),
+  expect_error(object = gie_batchload(countries = "DE",
+                                      date = "2022-05-01",
+                                      facilities = c("mock_facilities",
+                                                     "mock2_facilities")),
                regexp = "specified, too")
 
 })
@@ -63,12 +63,12 @@ test_that("companies must be specified if facility is specified", {
 
 test_that("companies must be of length one if facility is specified", {
 
-  expect_error(object = get_giedata2(countries = "DE",
-                                     date = "2022-05-01",
-                                     companies = c("mock_facility",
-                                                   "mock2_facility"),
-                                     facilities = c("mock_facilities",
-                                                  "mock2_facilities")),
+  expect_error(object = gie_batchload(countries = "DE",
+                                      date = "2022-05-01",
+                                      companies = c("mock_facility",
+                                                    "mock2_facility"),
+                                      facilities = c("mock_facilities",
+                                                     "mock2_facilities")),
                regexp = "must only contain one company EIC")
 
 })

@@ -4,7 +4,7 @@
 \alias{parseresult}
 \title{parseresult}
 \usage{
-parseresult(raw_results)
+parseresult(raw_results, database)
 }
 \arguments{
 \item{raw_results}{Raw results from GET request}

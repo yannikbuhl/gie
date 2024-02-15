@@ -1,4 +1,4 @@
-#' gie_getnews
+#' gie_getnews -- Get AGSI+/ALSI+ news
 #'
 #' @description A function that conveniently outputs all 'News' items published by GIE with regards to AGSI+ or ALSI+ platforms
 #'

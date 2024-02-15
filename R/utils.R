@@ -343,14 +343,14 @@ check_gielistinginput <- function(region,
 
 #------------------------------------------------------------------------------#
 
-#' get_listinghierarchy
+#' gie_listinghierarchy
 #'
 #' @param raw_results Raw results from API call
 #' @param region Region to filter for
 #' @param country Country to filter for
 #' @param facilities Should facilties be exported as well
 #'
-get_listinghierarchy <- function(raw_results,
+gie_listinghierarchy <- function(raw_results,
                                  region,
                                  country,
                                  facilities,
@@ -595,5 +595,90 @@ strip_html <- function(string) {
   parsed <- map_chr(.x = string, .f = ~ html_text2(read_html(charToRaw(.))))
 
   return(parsed)
+
+}
+
+#-------------------------------------------------------------------------------
+
+#' parse_unav
+#'
+#' @description A function to parse unavailability results
+#'
+#' @param raw_results
+#'
+#' @return A data.frame
+#'
+parse_unav <- function(raw_results) {
+
+  results <- raw_results %>%
+    purrr::pluck(., "data") %>%
+    purrr::map(.x = .,
+               .f = unlist) %>%
+    purrr::map_dfr(.x = .,
+                   .f = dplyr::bind_rows)
+
+  names(results) <- purrr::map_chr(.x = names(results),
+                                   .f = ~ stringr::str_replace(.x,
+                                                               "\\.(.)",
+                                                               function(match) {
+
+                                                                 toupper(match[[1]])
+
+                                                               })) %>%
+                    purrr::map_chr(.x = .,
+                                   .f = ~ stringr::str_replace(.x,
+                                                               "[.]",
+                                                               ""))
+
+  return(results)
+
+}
+
+#-------------------------------------------------------------------------------
+
+#' getrequest_general
+#'
+#' @param database Database name
+#' @param page The page to retrieve
+#' @param size The page size of the request
+#' @param timeout Seconds to delay the batch request
+#' @param pages Number of total pages of existing request
+#' @param apikey API key
+#' @param ... Further valid API parameters
+#'
+#' @return Raw results
+#'
+getrequest_general <- function(database,
+                               target,
+                               page,
+                               size,
+                               timeout,
+                               pages = NULL,
+                               apikey,
+                               ...) {
+
+  print(page)
+
+  # Construct base URL
+  endpoint <- paste0("https://", database, ".gie.eu/api/", target)
+
+  # Create list with HTTP parameters
+  query <- list(page = page,
+                size = size,
+                ...)
+
+  # Parse URL
+  url <- construct_url(url = endpoint,
+                       query = query)
+
+  # Execute GET request
+  raw_request <- send_getrequest(url = url,
+                                 apikey = apikey)
+
+  if (!is.null(pages) && pages > 60) Sys.sleep(timeout)
+
+  raw_results <- raw_request %>% httr::content(as = "parsed")
+
+  return(raw_results)
 
 }

@@ -1,4 +1,4 @@
-#' get_giedata
+#' gie_load -- Main download function
 #'
 #' @description Function to download data from GIE's AGSI+ and ALSI+ API
 #'
@@ -28,19 +28,19 @@
 #'
 #' @examples
 #' \dontrun{
-#' get_giedata(country = "DE", date = "2022-01-03", database = "alsi")
+#' gie_load(country = "DE", date = "2022-01-03", database = "alsi")
 #' }
-get_giedata <- function(country,
-                        company = NULL,
-                        facility = NULL,
-                        from = NULL,
-                        to = NULL,
-                        date = NULL,
-                        size = 30,
-                        timeout = 3,
-                        database = "agsi",
-                        verbose = FALSE,
-                        apikey = Sys.getenv("GIE_APIKEY")) {
+gie_load <- function(country,
+                     company = NULL,
+                     facility = NULL,
+                     from = NULL,
+                     to = NULL,
+                     date = NULL,
+                     size = 30,
+                     timeout = 3,
+                     database = "agsi",
+                     verbose = FALSE,
+                     apikey = Sys.getenv("GIE_APIKEY")) {
 
 
   # First step of error handling -----------------------------------------------
@@ -77,7 +77,9 @@ get_giedata <- function(country,
   # Get number of pages to the request
   pages <- raw_results[["last_page"]]
 
+  #-----------------------------------------------------------------------------
   # Check if there was an empty response with 0 pages --------------------------
+
   if (pages == 0 | length(raw_results[["data"]]) == 0) {
 
     warning("No results found for your query (possibly). Invisibly returning raw return object.",
@@ -136,11 +138,11 @@ get_giedata <- function(country,
 
     if (pages > 60L & isTRUE(verbose)) {
 
-      message("!~~~ Large request, slowing down querying process by ", timeout, " seconds per API call.")
+      message("!~~~ Large request, slowing down querying process by ", timeout, " seconds per API call. You can adjust this using the 'timeout' parameter.")
 
     }
 
-    raw_results <- purrr::map(c(2:pages),
+    raw_results <- purrr::map(.x = c(2:pages),
                               .f = ~ getrequest(country = country,
                                                 company = company,
                                                 facility = facility,

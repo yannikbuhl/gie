@@ -1,9 +1,9 @@
-#' get_gielisting
+#' gie_listing -- Load info on companies and facilities
 #'
 #' @description Function to download raw or parsed results for the countries, \cr
 #' companies and facilities available from the AGSI+/ALSI+ API of GIE. The EIC codes \cr
 #' of the results can be used in turn to download the actual data \cr
-#' using \code{get_giedata()}.
+#' using \code{gie_load()}.
 #'
 #' @param region Character. The broader region you want results for (can be 'Europe' or 'Non-EU').
 #' @param country Character. The country you want the results for (must be the \cr
@@ -19,14 +19,14 @@
 #'
 #' @examples
 #' \dontrun{
-#' get_gielisting(region = "Europe", country = "Germany", facilities = TRUE)
+#' gie_listing(region = "Europe", country = "Germany", facilities = TRUE)
 #' }
 #'
-get_gielisting <- function(region = NULL,
-                           country = NULL,
-                           facilities = FALSE,
-                           database = "agsi",
-                           apikey = Sys.getenv("GIE_APIKEY")) {
+gie_listing <- function(region = NULL,
+                        country = NULL,
+                        facilities = FALSE,
+                        database = "agsi",
+                        apikey = Sys.getenv("GIE_APIKEY")) {
 
   # Error handling
   check_gielistinginput(region = region,
@@ -59,7 +59,7 @@ get_gielisting <- function(region = NULL,
   } else if (database == "agsi") {
 
     # ALSI: Parse results according to region, country, company parameters
-    results <- get_listinghierarchy(raw_results = raw_results,
+    results <- gie_listinghierarchy(raw_results = raw_results,
                                     region = region,
                                     country = country,
                                     facilities = facilities,
@@ -70,7 +70,7 @@ get_gielisting <- function(region = NULL,
   } else if (database == "alsi") {
 
     # ALSI: Parse results according to region, country, company parameters
-    results <- get_listinghierarchy(raw_results = raw_results,
+    results <- gie_listinghierarchy(raw_results = raw_results,
                                     region = region,
                                     country = country,
                                     facilities = facilities,

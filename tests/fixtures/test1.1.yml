@@ -15,7 +15,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Thu, 15 Feb 2024 09:43:00 GMT
+      date: Thu, 15 Feb 2024 17:14:57 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -23,7 +23,7 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 855c9aa41faa1d86-FRA
+      cf-ray: 855f30acab7d1da4-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
@@ -31,7 +31,7 @@ http_interactions:
       file: no
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-13","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2023-12-21
         01:48:09","gasDayStart":"2022-05-01","gasInStorage":"86.2235","consumption":"888.8300","consumptionFull":"9.7","injection":"1282.99","withdrawal":"7.7","netWithdrawal":"-1275.3","workingGasVolume":"241.8803","injectionCapacity":"4010.35","withdrawalCapacity":"6823.18","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.61","full":"35.65","info":[]}]}'
-  recorded_at: 2024-02-15 09:43:03 GMT
+  recorded_at: 2024-02-15 17:14:58 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -49,7 +49,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Thu, 15 Feb 2024 09:43:01 GMT
+      date: Thu, 15 Feb 2024 17:14:58 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -57,7 +57,7 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 855c9aa76c001d86-FRA
+      cf-ray: 855f30af486b1da4-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
@@ -65,5 +65,5 @@ http_interactions:
       file: no
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-13","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2023-12-21
         01:48:09","gasDayStart":"2022-05-01","gasInStorage":"86.2235","consumption":"888.8300","consumptionFull":"9.7","injection":"1282.99","withdrawal":"7.7","netWithdrawal":"-1275.3","workingGasVolume":"241.8803","injectionCapacity":"4010.35","withdrawalCapacity":"6823.18","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.61","full":"35.65","info":[]}]}'
-  recorded_at: 2024-02-15 09:43:03 GMT
+  recorded_at: 2024-02-15 17:14:58 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0

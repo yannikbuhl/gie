@@ -15,7 +15,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Thu, 15 Feb 2024 09:43:06 GMT
+      date: Thu, 15 Feb 2024 17:15:02 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -23,7 +23,7 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 855c9ac8091e1d86-FRA
+      cf-ray: 855f30c899381da4-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
@@ -32,7 +32,7 @@ http_interactions:
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-13","data":[{"name":"astora
         (Germany)","code":"21X000000001160J","publication_link":"http:\/\/www.astora.de","transparency_template":"https:\/\/www.astora.de\/en\/transparency-template","url":"21X000000001160J\/DE","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"1.8757","injection":"56.78","withdrawal":"1.7","netWithdrawal":"-55.1","workingGasVolume":"51.805","injectionCapacity":"512.61","withdrawalCapacity":"739.65","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.11","full":"3.62","info":[]}]}'
-  recorded_at: 2024-02-15 09:43:09 GMT
+  recorded_at: 2024-02-15 17:15:03 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -50,7 +50,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Thu, 15 Feb 2024 09:43:07 GMT
+      date: Thu, 15 Feb 2024 17:15:02 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -58,7 +58,7 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 855c9acafd5d1d86-FRA
+      cf-ray: 855f30cc08851da4-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
@@ -67,5 +67,5 @@ http_interactions:
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-13","data":[{"name":"astora
         (Germany)","code":"21X000000001160J","publication_link":"http:\/\/www.astora.de","transparency_template":"https:\/\/www.astora.de\/en\/transparency-template","url":"21X000000001160J\/DE","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"1.8757","injection":"56.78","withdrawal":"1.7","netWithdrawal":"-55.1","workingGasVolume":"51.805","injectionCapacity":"512.61","withdrawalCapacity":"739.65","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.11","full":"3.62","info":[]}]}'
-  recorded_at: 2024-02-15 09:43:09 GMT
+  recorded_at: 2024-02-15 17:15:03 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0

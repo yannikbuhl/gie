@@ -15,7 +15,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Thu, 15 Feb 2024 09:43:02 GMT
+      date: Thu, 15 Feb 2024 17:14:58 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -23,7 +23,7 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 855c9aab39781d86-FRA
+      cf-ray: 855f30b32f621da4-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
@@ -46,7 +46,7 @@ http_interactions:
         23:15:23","gasDayStart":"2022-02-03","gasInStorage":"20.5444","consumption":"91.0000","consumptionFull":"22.58","injection":"54.62","withdrawal":"241.9","netWithdrawal":"187.2","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.2","full":"21.51","info":[]},{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
         23:15:23","gasDayStart":"2022-02-02","gasInStorage":"20.7316","consumption":"91.0000","consumptionFull":"22.78","injection":"3.33","withdrawal":"277.9","netWithdrawal":"274.6","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.31","full":"21.71","info":[]},{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
         23:15:23","gasDayStart":"2022-02-01","gasInStorage":"21.0236","consumption":"91.0000","consumptionFull":"23.1","injection":"0","withdrawal":"243.4","netWithdrawal":"243.4","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.24","full":"22.01","info":[]}]}'
-  recorded_at: 2024-02-15 09:43:04 GMT
+  recorded_at: 2024-02-15 17:14:59 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -64,7 +64,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Thu, 15 Feb 2024 09:43:02 GMT
+      date: Thu, 15 Feb 2024 17:14:59 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -72,7 +72,7 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 855c9aae8e461d86-FRA
+      cf-ray: 855f30b5bc0f1da4-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
@@ -95,5 +95,5 @@ http_interactions:
         23:15:23","gasDayStart":"2022-02-03","gasInStorage":"20.5444","consumption":"91.0000","consumptionFull":"22.58","injection":"54.62","withdrawal":"241.9","netWithdrawal":"187.2","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.2","full":"21.51","info":[]},{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
         23:15:23","gasDayStart":"2022-02-02","gasInStorage":"20.7316","consumption":"91.0000","consumptionFull":"22.78","injection":"3.33","withdrawal":"277.9","netWithdrawal":"274.6","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.31","full":"21.71","info":[]},{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
         23:15:23","gasDayStart":"2022-02-01","gasInStorage":"21.0236","consumption":"91.0000","consumptionFull":"23.1","injection":"0","withdrawal":"243.4","netWithdrawal":"243.4","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.24","full":"22.01","info":[]}]}'
-  recorded_at: 2024-02-15 09:43:04 GMT
+  recorded_at: 2024-02-15 17:14:59 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0

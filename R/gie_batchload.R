@@ -1,4 +1,4 @@
-#' get_giedata2
+#' gie_batchload -- Load data in batch
 #'
 #' @description Function to download data from GIE's AGSI+/ALSI+ API in bulk
 #'
@@ -31,20 +31,20 @@
 #'
 #' @examples
 #' \dontrun{
-#' get_giedata2(countries = c("DE", "AT", "FR"), date = "2022-04-01")
+#' gie_batchload(countries = c("DE", "AT", "FR"), date = "2022-04-01")
 #' }
 #'
-get_giedata2 <- function(countries,
-                         companies = NULL,
-                         facilities = NULL,
-                         from = NULL,
-                         to = NULL,
-                         date = NULL,
-                         size = 30,
-                         timeout = 3,
-                         database = "agsi",
-                         verbose = FALSE,
-                         apikey = Sys.getenv("GIE_APIKEY")) {
+gie_batchload <- function(countries,
+                          companies = NULL,
+                          facilities = NULL,
+                          from = NULL,
+                          to = NULL,
+                          date = NULL,
+                          size = 30,
+                          timeout = 3,
+                          database = "agsi",
+                          verbose = FALSE,
+                          apikey = Sys.getenv("GIE_APIKEY")) {
 
   if (missing(countries)) stop("You have to at least specify the 'country' parameter.",
                              call. = FALSE)
@@ -66,15 +66,15 @@ get_giedata2 <- function(countries,
 
   # Loop over the countries vector
   results <- purrr::map_dfr(.x = countries,
-                            .f = ~ get_giedata(country = .,
-                                               from = from,
-                                               to = to,
-                                               date = date,
-                                               size = size,
-                                               timeout = timeout,
-                                               database = database,
-                                               verbose = verbose,
-                                               apikey = apikey))
+                            .f = ~ gie_load(country = .,
+                                            from = from,
+                                            to = to,
+                                            date = date,
+                                            size = size,
+                                            timeout = timeout,
+                                            database = database,
+                                            verbose = verbose,
+                                            apikey = apikey))
 
   return(results)
 
@@ -91,16 +91,16 @@ get_giedata2 <- function(countries,
 
     results <- purrr::map2_dfr(.x = countries,
                                .y = companies,
-                               .f = ~ get_giedata(country = .x,
-                                                  company = .y,
-                                                  from = from,
-                                                  to = to,
-                                                  date = date,
-                                                  size = size,
-                                                  timeout = timeout,
-                                                  database = database,
-                                                  verbose = verbose,
-                                                  apikey = apikey))
+                               .f = ~ gie_load(country = .x,
+                                               company = .y,
+                                               from = from,
+                                               to = to,
+                                               date = date,
+                                               size = size,
+                                               timeout = timeout,
+                                               database = database,
+                                               verbose = verbose,
+                                               apikey = apikey))
 
    return(results)
 
@@ -120,17 +120,17 @@ get_giedata2 <- function(countries,
                            facility = facilities)
 
     results <- purrr::pmap_dfr(pmap_arguments,
-                               .f = ~ get_giedata(country = ..1,
-                                                  company = ..2,
-                                                  facility = ..3,
-                                                  from = from,
-                                                  to = to,
-                                                  date = date,
-                                                  size = size,
-                                                  timeout = timeout,
-                                                  database = database,
-                                                  verbose = verbose,
-                                                  apikey = apikey))
+                               .f = ~ gie_load(country = ..1,
+                                               company = ..2,
+                                               facility = ..3,
+                                               from = from,
+                                               to = to,
+                                               date = date,
+                                               size = size,
+                                               timeout = timeout,
+                                               database = database,
+                                               verbose = verbose,
+                                               apikey = apikey))
 
     return(results)
 
