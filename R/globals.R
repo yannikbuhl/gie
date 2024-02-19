@@ -5,4 +5,6 @@ utils::globalVariables(c(".",
                          "gasDayStart",
                          "name",
                          "status",
-                         "type"))
+                         "type",
+                         "details",
+                         "updatedAt"))

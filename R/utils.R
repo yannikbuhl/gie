@@ -101,7 +101,7 @@ try_GET <- function(url, apikey, ...) {
 
 #' is_response
 #'
-#' @param x
+#' @param x Object to check
 #'
 is_response <- function(x) {
 
@@ -115,6 +115,7 @@ is_response <- function(x) {
 #'
 #' @param url URL for GET request
 #' @param apikey API key
+#' @param ... Further API parameters
 #'
 send_getrequest <- function(url, apikey, ...) {{
 
@@ -213,6 +214,7 @@ construct_url <- function(url, query) {
 #' parseresult
 #'
 #' @param raw_results Raw results from GET request
+#' @param database The database to be used
 #'
 parseresult <- function(raw_results,
                         database) {
@@ -427,6 +429,7 @@ check_gielistinginput <- function(region,
 #' @param region Region to filter for
 #' @param country Country to filter for
 #' @param facilities Should facilties be exported as well
+#' @param database Database to get info from
 #'
 gie_listinghierarchy <- function(raw_results,
                                  region,
@@ -664,7 +667,7 @@ check_giedata2input <- function(countries,
 #'
 #' @description A function to HTML decode a character vector of length > 1
 #'
-#' @param string
+#' @param string String to strip HTML tags from
 #'
 #' @return A vector with HTML decoded text
 #'
@@ -682,7 +685,7 @@ strip_html <- function(string) {
 #'
 #' @description A function to parse unavailability results
 #'
-#' @param raw_results
+#' @param raw_results Raw results
 #'
 #' @return A data.frame
 #'
@@ -717,6 +720,7 @@ parse_unav <- function(raw_results) {
 #' getrequest_general
 #'
 #' @param database Database name
+#' @param target The API endpoint to target
 #' @param page The page to retrieve
 #' @param size The page size of the request
 #' @param timeout Seconds to delay the batch request

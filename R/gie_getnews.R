@@ -38,7 +38,7 @@ gie_getnews <- function(database,
   # Parse response content based on whether HTML tags should be removed or not
   if (isTRUE(html_parsed)) {
 
-    if (isFALSE(require("rvest"))) {
+    if (!requireNamespace("rvest", quietly = TRUE)) {
 
       stop("If you set the 'html_parsed' parameter to TRUE, the package {rvest} needs to be installed.",
            call. = FALSE)

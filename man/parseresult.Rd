@@ -8,6 +8,8 @@ parseresult(raw_results, database)
 }
 \arguments{
 \item{raw_results}{Raw results from GET request}
+
+\item{database}{The database to be used}
 }
 \description{
 parseresult

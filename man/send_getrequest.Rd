@@ -4,12 +4,14 @@
 \alias{send_getrequest}
 \title{send_getrequest}
 \usage{
-send_getrequest(url, apikey)
+send_getrequest(url, apikey, ...)
 }
 \arguments{
 \item{url}{URL for GET request}
 
 \item{apikey}{API key}
+
+\item{...}{Further API parameters}
 }
 \description{
 send_getrequest

@@ -14,6 +14,8 @@ gie_listinghierarchy(raw_results, region, country, facilities, database)
 \item{country}{Country to filter for}
 
 \item{facilities}{Should facilties be exported as well}
+
+\item{database}{Database to get info from}
 }
 \description{
 gie_listinghierarchy

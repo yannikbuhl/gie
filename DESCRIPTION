@@ -20,6 +20,7 @@ Imports:
     purrr,
     stringr
 Suggests: 
+    rvest,
     testthat,
     textutils,
     vcr (>= 0.6.0)

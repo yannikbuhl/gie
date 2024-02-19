@@ -5,11 +5,13 @@
 \title{gie_unav -- Download info on unavailabilities}
 \usage{
 gie_unav(
-  country,
+  country = NULL,
   start = NULL,
   end = NULL,
   type = NULL,
   end_flag = NULL,
+  timeout = 3,
+  size = 30,
   database = "agsi",
   apikey = Sys.getenv("GIE_APIKEY")
 )
@@ -17,31 +19,25 @@ gie_unav(
 \arguments{
 \item{country}{Character. Specify the country of interest as two-digit country code (e.g., 'DE', 'IE').}
 
-\item{database}{Character. The type of API you want to address ('agsi' or 'alsi').}
-
-\item{apikey}{Character. Your personal API key.}
-
-\item{company}{Character. EIC code for the requested company.}
-
-\item{facility}{Character. EIC code for the requested facility.}
-
-\item{from}{Character. Specify the start of the time span you are \cr
+\item{start}{Character. Specify the start of the time span you are \cr
 interested in downloading (format: YYYY-MM-DD).}
 
-\item{to}{Character. Specify the end of the time span you are \cr
+\item{end}{Character. Specify the end of the time span you are \cr
 interested in downloading (format: YYYY-MM-DD).}
 
-\item{date}{Character. If you want to have data only for one date. \cr
-If you set 'date', you cannot set the 'from' and/or 'to' parameters \cr
-(format: YYYY-MM-DD).}
+\item{type}{Character. The type of unavailability info you want (choose between 'planned' and 'unplanned').}
 
-\item{size}{Integer. The number of results per page.}
+\item{end_flag}{Character. The end flag for the unavailability info (choose between 'confirmed' and 'estimate').}
 
 \item{timeout}{Numeric. If the amount of pages of your request exceeds 60, a timeout \cr
 will be enforced to prevent the API from timing out. Defaults to 3 seconds, any \cr
 values must be set in seconds, too.}
 
-\item{verbose}{Logical. Prints information on function progress to the console (default: FALSE).}
+\item{size}{Integer. The number of results per page.}
+
+\item{database}{Character. The type of API you want to address ('agsi' or 'alsi').}
+
+\item{apikey}{Character. Your personal API key.}
 }
 \value{
 A data.frame or list with the results.

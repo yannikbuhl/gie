@@ -3,21 +3,17 @@
 #' @description Function to download data on AGSI+ and ALSI+ unavailability
 #'
 #' @param country Character. Specify the country of interest as two-digit country code (e.g., 'DE', 'IE').
-#' @param company Character. EIC code for the requested company.
-#' @param facility Character. EIC code for the requested facility.
-#' @param from Character. Specify the start of the time span you are \cr
+#' @param start Character. Specify the start of the time span you are \cr
 #' interested in downloading (format: YYYY-MM-DD).
-#' @param to Character. Specify the end of the time span you are \cr
+#' @param end Character. Specify the end of the time span you are \cr
 #' interested in downloading (format: YYYY-MM-DD).
-#' @param date Character. If you want to have data only for one date. \cr
-#' If you set 'date', you cannot set the 'from' and/or 'to' parameters \cr
-#' (format: YYYY-MM-DD).
+#' @param type Character. The type of unavailability info you want (choose between 'planned' and 'unplanned').
+#' @param end_flag Character. The end flag for the unavailability info (choose between 'confirmed' and 'estimate').
 #' @param size Integer. The number of results per page.
 #' @param timeout Numeric. If the amount of pages of your request exceeds 60, a timeout \cr
 #' will be enforced to prevent the API from timing out. Defaults to 3 seconds, any \cr
 #' values must be set in seconds, too.
 #' @param database Character. The type of API you want to address ('agsi' or 'alsi').
-#' @param verbose Logical. Prints information on function progress to the console (default: FALSE).
 #' @param apikey Character. Your personal API key.
 #'
 #' @import dplyr httr lubridate purrr

@@ -7,7 +7,7 @@
 strip_html(string)
 }
 \arguments{
-\item{string}{}
+\item{string}{String to strip HTML tags from}
 }
 \value{
 A vector with HTML decoded text
