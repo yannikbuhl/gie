@@ -79,8 +79,6 @@ gie_unav <- function(country = NULL,
 
   #-----------------------------------------------------------------------------
 
-  print(pages)
-
   # Parse results depending on database queried
   if (pages == 1L) {
 
@@ -114,7 +112,7 @@ gie_unav <- function(country = NULL,
 
       if (pages > 60L) {
 
-        message("!~~~ Large request, slowing down querying process by ", timeout, " seconds per API call. You can adjust this using the 'timeout' parameter.")
+        message(paste0("!~~~ Large request (total of ", pages, " pages), slowing down querying process by ", timeout, "seconds per API call. \n You can adjust this using the 'timeout' parameter."))
 
       }
 

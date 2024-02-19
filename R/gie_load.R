@@ -45,7 +45,7 @@ gie_load <- function(country,
 
   # First step of error handling -----------------------------------------------
 
-  if (missing(country)) stop("You have to at least specify the 'country' parameter.",
+  if (missing(country)) stop("You have to at least specify the 'country' parameter (Error 1).",
                              call. = FALSE)
 
   check_giedatainput(country = country,
@@ -82,7 +82,7 @@ gie_load <- function(country,
 
   if (pages == 0 | length(raw_results[["data"]]) == 0) {
 
-    warning("No results found for your query (possibly). Invisibly returning raw return object.",
+    warning("No results found for your query (possibly). Invisibly returning raw return object (Error 2).",
             call. = FALSE)
 
     invisible(return(raw_results))
@@ -107,7 +107,7 @@ gie_load <- function(country,
       error = function(cnd) {
 
         # In case of error, warn and return raw results
-        warning("!~~~ Parsing failed. Returning raw response.", call. = FALSE)
+        warning("!~~~ Parsing failed. Returning raw response (Error 3).", call. = FALSE)
 
         return(raw_results)
 
@@ -138,7 +138,7 @@ gie_load <- function(country,
 
     if (pages > 60L & isTRUE(verbose)) {
 
-      message("!~~~ Large request, slowing down querying process by ", timeout, " seconds per API call. You can adjust this using the 'timeout' parameter.")
+      message(paste0("!~~~ Large request (total of ", pages, " pages), slowing down querying process by ", timeout, "seconds per API call. \n You can adjust this using the 'timeout' parameter."))
 
     }
 
@@ -169,7 +169,7 @@ gie_load <- function(country,
 
       error = function(cnd) {
 
-        warning("!~~~ Parsing failed. Returning raw response.", call. = FALSE)
+        warning("!~~~ Parsing failed. Returning raw response (Error 4).", call. = FALSE)
 
         return(raw_results)
 

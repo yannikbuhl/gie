@@ -73,6 +73,42 @@ getrequest <- function(country,
 
 }
 
+##----------------------------------------------------------------------------##
+
+#' try_GET
+#'
+#' @param url URL for API call
+#' @param apikey API key
+#' @param ... Further parameter for httr::GET
+#'
+try_GET <- function(url, apikey, ...) {
+
+  tryCatch(
+
+    httr::GET(url,
+              httr::add_headers(`x-key` = apikey),
+              httr::timeout(1),
+              ...),
+
+    error = function(e) conditionMessage(e),
+
+    warning = function(w) conditionMessage(w)
+
+
+  )}
+
+##----------------------------------------------------------------------------##
+
+#' is_response
+#'
+#' @param x
+#'
+is_response <- function(x) {
+
+  class(x) == "response"
+
+}
+
 ## ---------------------------------------------------------------------------##
 
 #' send_getrequest
@@ -80,37 +116,79 @@ getrequest <- function(country,
 #' @param url URL for GET request
 #' @param apikey API key
 #'
-send_getrequest <- function(url, apikey) {
+send_getrequest <- function(url, apikey, ...) {{
 
-  # Check if there is an internet connection
-  if (!curl::has_internet()) stop("There seems to be no internet connection.")
+  # First check internet connection
+  if (!curl::has_internet()) {
 
-  # Check if the resource/API is available and the request successful
-  if (isTRUE(httr::http_error(httr::GET(url, httr::add_headers(`x-key` = apikey))))) {
-
-    raw_request <- httr::GET(url, httr::add_headers(`x-key` = apikey))
-
-    status <- httr::status_code(raw_request)
-    error_description <- httr::http_status(raw_request)
-
-    error_message <- paste0("The API returned the HTTP error code ",
-                            status,
-                            ". The error message was: '",
-                            error_description,
-                            "'. In case of failure, function invisibly returns 'NULL'.")
-
-    message(error_message)
+    message("There seems to be no internet connection.")
 
     return(invisible(NULL))
 
-  } else {
+  }
 
-    raw_request <- httr::GET(url, httr::add_headers(`x-key` = apikey))
+  # Then try for timeout problems
+  resp <- try_GET(url, apikey, ...)
 
-    return(raw_request)
+  if (!is_response(resp)) {
+
+    message(resp)
+
+    return(invisible(NULL))
 
   }
 
+  # Then stop if status > 400
+  if (httr::http_error(resp)) {
+
+    httr::message_for_status(resp)
+
+    return(invisible(NULL))
+
+  }
+
+  # If everything is OK, return raw results
+  raw_request <- httr::GET(url, httr::add_headers(`x-key` = apikey))
+
+  return(raw_request)
+
+}
+
+  #-----------------------------------------------------------------------------
+  # OLD CODE FOR send_getrequest
+
+  # Check if there is an internet connection
+  # if (!curl::has_internet()) {
+  #
+  #   message("There seems to be no internet connection.")
+  #   return(invisible(NULL))
+  #
+  # }
+  #
+  # Check if the resource/API is available and the request successful
+  # if (isTRUE(httr::http_error(httr::GET(url, httr::add_headers(`x-key` = apikey))))) {
+  #
+  #   raw_request <- httr::GET(url, httr::add_headers(`x-key` = apikey))
+  #
+  #   status <- httr::status_code(raw_request)
+  #   error_description <- httr::http_status(raw_request)
+  #
+  #   error_message <- paste0("The API returned the HTTP error code ",
+  #                           status,
+  #                           ". The error message was: '",
+  #                           error_description,
+  #                           "'. In case of failure, function invisibly returns 'NULL'.")
+  #
+  #   message(error_message)
+  #
+  #   return(invisible(NULL))
+  #
+  # } else {
+  #
+  # raw_request <- httr::GET(url, httr::add_headers(`x-key` = apikey))
+  #
+  # return(raw_request)
+  # }
 }
 
 ## ---------------------------------------------------------------------------##
@@ -563,10 +641,10 @@ check_giedata2input <- function(countries,
          call. = FALSE)
   }
 
-  # if (database != "agsi") {
-  #   stop("Currently, only 'agsi' is supported as database. 'alsi' support will be added later.",
-  #        call. = FALSE)
-  # }
+  if (!(database %in% c("agsi", "alsi"))) {
+    stop("Incorrectly specified database name. Choose between 'agsi' or 'alsi'.",
+         call. = FALSE)
+  }
 
   if (!is.numeric(timeout) | length(timeout) != 1) {
     stop("Parameter 'timeout' needs to be type character and length 1.",
@@ -657,8 +735,6 @@ getrequest_general <- function(database,
                                apikey,
                                ...) {
 
-  print(page)
-
   # Construct base URL
   endpoint <- paste0("https://", database, ".gie.eu/api/", target)
 
@@ -682,3 +758,5 @@ getrequest_general <- function(database,
   return(raw_results)
 
 }
+
+##----------------------------------------------------------------------------##
