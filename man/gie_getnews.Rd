@@ -4,17 +4,17 @@
 \alias{gie_getnews}
 \title{gie_getnews -- Get AGSI+/ALSI+ news}
 \usage{
-gie_getnews(database, apikey = Sys.getenv("GIE_APIKEY"), html_parsed = FALSE)
+gie_getnews(database, html_parsed = FALSE, apikey = Sys.getenv("GIE_APIKEY"))
 }
 \arguments{
 \item{database}{Character. The data base for which the 'News' items should be returned ('agsi' or 'alsi').}
-
-\item{apikey}{Character. Your personal API key.}
 
 \item{html_parsed}{Logical. Some of the columns in the resulting data.frame might contain HTML \cr
 tags and other encodings. If set to 'TRUE', this parameter will result in the respective column \cr
 values being decoded so there are no HTML residuals left. This requires the 'rvest' package to be installed and loaded.\cr
 Defaults to 'FALSE'.}
+
+\item{apikey}{Character. Your personal API key.}
 }
 \value{
 A data.frame with all the news for the respective data base.
