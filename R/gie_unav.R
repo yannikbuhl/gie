@@ -40,7 +40,15 @@ gie_unav <- function(country = NULL,
   # First step of error handling -----------------------------------------------
 
   # Error handling
-  # check_gieunavinput()
+  check_gieunavinput(country = country,
+                     start = start,
+                     end = end,
+                     type = type,
+                     end_flag = end_flag,
+                     timeout = timeout,
+                     size = size,
+                     database = database,
+                     apikey = apikey)
 
   # Get raw results
   raw_results <- getrequest_general(database = database,

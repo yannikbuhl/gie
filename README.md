@@ -45,48 +45,48 @@ remotes::install_github("yannikbuhl/giedata")
 
 ## Usage
 
-The function `get_gielisting()` returns a nested list with all gas
+The function `gie_listing()` returns a nested list with all gas
 facilities available, including the EIC codes for companies and
 facilities (to do so, do not set the ‘region’ and ‘country’ parameter
 and ‘facilities’ to `FALSE`). Also, it is possible to get parsed results
 (as `data.frame`) for the region and country level. Setting the
 ‘facilities’ parameter to `TRUE`, the function returns all the available
 facilities within a country (including company and facility EIC codes
-for further use in the download functions `get_giedata()` and
-`get_giedata2()`).
+for further use in the download functions `gie_load()` and
+`gie_batchload()`).
 
 ``` r
-german_facilities <- giedata::get_gielisting(region = "Europe",
-                                             country = "Germany",
-                                             facilities = TRUE,
-                                             apikey = apikey)
+german_facilities <- giedata::gie_listing(region = "Europe",
+                                          country = "Germany",
+                                          facilities = TRUE,
+                                          apikey = apikey)
 ```
 
-One main function for data download is called `get_giedata()` and can be
+One main function for data download is called `gie_load()` and can be
 used to download data from AGSI+, either for one country, for one
 operator in a certain country or for a certain facility (see
 documentation for info on all parameters).
 
 ``` r
-gasdata <- giedata::get_giedata(country = "de",
-                                from = "2022-01-01",
-                                to = "2022-03-31",
-                                size = 50,
-                                verbose = TRUE,
-                                apikey = apikey)
+gasdata <- giedata::gie_load(country = "de",
+                             from = "2022-01-01",
+                             to = "2022-03-31",
+                             size = 50,
+                             verbose = TRUE,
+                             apikey = apikey)
 ```
 
-The second download function `get_giedata2()` lets you download data for
-multiple countries, companies or facilities at once. Note, however, that
-as of yet, it is only possible to download a set of various companies
-for within one country; also, you can only download multiple facilities
-if the country and the company are fixed (due to the way the API is
-built).
+The second download function `gie_batchload()` lets you download data
+for multiple countries, companies or facilities at once. Note, however,
+that as of yet, it is only possible to download a set of various
+companies for within one country; also, you can only download multiple
+facilities if the country and the company are fixed (due to the way the
+API is built).
 
 ``` r
-companydata <- giedata::get_giedata2(countries = c("DE", "IE", "NL"), 
-                                     from = "2022-01-01",
-                                     apikey = apikey)
+companydata <- giedata::gie_batchload(countries = c("DE", "IE", "NL"), 
+                                      from = "2022-01-01",
+                                      apikey = apikey)
 ```
 
 ## Development

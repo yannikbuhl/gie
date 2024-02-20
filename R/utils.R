@@ -663,6 +663,82 @@ check_giedata2input <- function(countries,
 
 #-------------------------------------------------------------------------------
 
+#' check_gieunavinput
+#'
+#' @param country Passed from data function for check
+#' @param start Passed from data function for check
+#' @param end Passed from data function for check
+#' @param type Passed from data function for check
+#' @param end_flag Passed from data function for check
+#' @param timeout Passed from data function for check
+#' @param size Passed from data function for check
+#' @param database Passed from data function for check
+#' @param apikey Passed from data function for check
+#'
+check_gieunavinput <- function(country,
+                               start,
+                               end,
+                               type,
+                               end_flag,
+                               timeout,
+                               size,
+                               database,
+                               apikey) {
+
+  if (!is.null(country) & (!is.character(country) | length(country) != 1)) {
+    stop("Parameter 'country' needs to be type character and length 1.",
+         call. = FALSE)
+  }
+
+  if (!is.null(start) & (!is.character(start) | length(start) != 1)) {
+    stop("Parameter 'start' needs to be type character and length 1 (and format 'YYYY-MM-DD').",
+         call. = FALSE)
+  }
+
+  if (!is.null(end) & (!is.character(end) | length(end) != 1)) {
+    stop("Parameter 'end' needs to be type character and length 1 (and format 'YYYY-MM-DD').",
+         call. = FALSE)
+  }
+
+  if (!is.null(type) && (!is.character(type) | length(type) != 1 | !(type %in% c("planned", "unplanned")))) {
+    stop("Parameter 'type' needs to be type character, length 1 and either 'planned' or 'unplanned'.",
+         call. = FALSE)
+  }
+
+  if (!is.null(end_flag) && (!is.character(end_flag) | length(end_flag) != 1 | !(end_flag %in% c("confirmed", "estimate")))) {
+    stop("Parameter 'end_flag' needs to be type character, length 1 and either 'confirmed' or 'estimate'.",
+         call. = FALSE)
+  }
+
+  if (!is.numeric(size) | length(size) != 1 | size > 300) {
+    stop("Parameter 'size' needs to be type numeric and length 1 and max. 300.",
+         call. = FALSE)
+  }
+
+  if (!is.character(database) | length(database) != 1) {
+    stop("Parameter 'type' needs to be type character and length 1.",
+         call. = FALSE)
+  }
+
+  if (!(database %in% c("agsi", "alsi"))) {
+    stop("Incorrectly specified database name. Choose between 'agsi' or 'alsi'.",
+         call. = FALSE)
+  }
+
+  if (!is.numeric(timeout) | length(timeout) != 1) {
+    stop("Parameter 'timeout' needs to be type character and length 1.",
+         call. = FALSE)
+  }
+
+  if (!is.character(apikey) | length(apikey) != 1) {
+    stop("Parameter 'apikey' needs to be type character and length 1.",
+         call. = FALSE)
+  }
+
+}
+
+#-------------------------------------------------------------------------------
+
 #' strip_html
 #'
 #' @description A function to HTML decode a character vector of length > 1

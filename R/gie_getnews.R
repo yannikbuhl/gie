@@ -3,11 +3,11 @@
 #' @description A function that conveniently outputs all 'News' items published by GIE with regards to AGSI+ or ALSI+ platforms
 #'
 #' @param database Character. The data base for which the 'News' items should be returned ('agsi' or 'alsi').
-#' @param apikey Character. Your personal API key.
 #' @param html_parsed Logical. Some of the columns in the resulting data.frame might contain HTML \cr
 #' tags and other encodings. If set to 'TRUE', this parameter will result in the respective column \cr
 #' values being decoded so there are no HTML residuals left. This requires the 'rvest' package to be installed and loaded.\cr
 #' Defaults to 'FALSE'.
+#' @param apikey Character. Your personal API key.
 #'
 #' @return A data.frame with all the news for the respective data base.
 #' @export
@@ -18,8 +18,23 @@
 #' }
 #'
 gie_getnews <- function(database,
-                        apikey = Sys.getenv("GIE_APIKEY"),
-                        html_parsed = FALSE) {
+                        html_parsed = FALSE,
+                        apikey = Sys.getenv("GIE_APIKEY")) {
+
+  # Input check
+  if (base::missing(database) | !(database %in% c("agsi", "alsi"))) {
+
+    stop("You have to provide a parameter 'database' (either 'alsi' or 'agsi').",
+         call. = FALSE)
+
+  }
+
+  if (!is.logical(html_parsed) | length(html_parsed) != 1) {
+
+    stop("Misspecified parameter 'html_parsed'.",
+         call. = FALSE)
+
+  }
 
   # Create endpoint URL
   endpoint <- paste0("https://", database, ".gie.eu/api/news")
