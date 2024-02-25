@@ -1,7 +1,7 @@
 #' Mapping of country name and two-character country code used by GIE
 #'
 #' A dataset to help you switch between country name and country code
-#' in the usage of {giedata}, as gie_listing() and gie_load() work
+#' in the usage of 'giedata', as gie_listing() and gie_load() work
 #' with different modes of the country (name vs. two-character code).
 #'
 #' @format ## `countryinfo`

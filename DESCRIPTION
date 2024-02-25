@@ -1,11 +1,11 @@
 Package: giedata
-Title: API Wrapper for GIE's AGSI+/ALSI+ Natural Gas Storage Transparency
+Title: API Wrapper for AGSI/ALSI Natural Gas Storage Transparency by GIE
     Platform
 Version: 0.1.2
 Authors@R: 
     person("Yannik", "Buhl", , "ybuhl@posteo.de", role = c("aut", "cre"))
 Description: Functions to access the API for Gas Infrastructure Europe's
-    (GIE) AGSI+/ALSI+ natural gas storage transparency platform
+    (GIE) AGSI/ALSI natural gas storage transparency platform
     (<https://agsi.gie.eu/> and <https://alsi.gie.eu/>). Lets the user
     easily download metadata on companies and gas storage units covered by
     the API as well as the respective data on regional, country, company
