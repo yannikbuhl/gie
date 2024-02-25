@@ -12,6 +12,7 @@ getrequest_general(
   timeout,
   pages = NULL,
   apikey,
+  verbose = FALSE,
   ...
 )
 }
@@ -29,6 +30,8 @@ getrequest_general(
 \item{pages}{Number of total pages of existing request}
 
 \item{apikey}{API key}
+
+\item{verbose}{Enable verbose mode}
 
 \item{...}{Further valid API parameters}
 }

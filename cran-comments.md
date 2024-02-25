@@ -5,6 +5,7 @@ This is a resubmission. In this version I have:
 * Significantly broadened the possible use of the package by adding support for another essential database
 * Simplified function names
 * Added two new functions to the package
+* Added a helper dataset
 
 ## R CMD check results
 There were no ERRORs, WARNINGs or NOTEs.

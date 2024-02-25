@@ -58,6 +58,7 @@ gie_unav <- function(country = NULL,
                                     page = 1,
                                     # pages = NULL, # implicitly
                                     apikey = apikey,
+                                    # verbose = FALSE, # implicitly
                                     # API parameters hereafter
                                     country = country,
                                     start = start,
@@ -116,7 +117,7 @@ gie_unav <- function(country = NULL,
 
       if (pages > 60L) {
 
-        message(paste0("!~~~ Large request (total of ", pages, " pages), slowing down querying process by ", timeout, "seconds per API call. \n You can adjust this using the 'timeout' parameter."))
+        message(paste0("!~~~ Large request (total of ", pages, " pages), slowing down querying process by ", timeout, " seconds per API call. \n You can adjust this using the 'timeout' parameter."))
 
       }
 

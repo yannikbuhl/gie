@@ -57,4 +57,5 @@ Function to download data from GIE's AGSI+ and ALSI+ API
 \dontrun{
 gie_load(country = "DE", date = "2022-01-03", database = "alsi")
 }
+
 }

@@ -30,6 +30,7 @@
 #' \dontrun{
 #' gie_load(country = "DE", date = "2022-01-03", database = "alsi")
 #' }
+#'
 gie_load <- function(country,
                      company = NULL,
                      facility = NULL,
@@ -61,18 +62,21 @@ gie_load <- function(country,
                      apikey = apikey)
 
   # Execute first GET request --------------------------------------------------
-  raw_results <- getrequest(country = country,
-                            company = company,
-                            facility = facility,
-                            from = from,
-                            to = to,
-                            page = 1,
-                            date = date,
-                            size = size,
-                            timeout = timeout,
-                            database = database,
-                            verbose = verbose,
-                            apikey = apikey)
+  raw_results <- getrequest_general(database = database,
+                                    target = "",
+                                    page = 1,
+                                    size = size,
+                                    timeout = timeout,
+                                    # pages = pages, # implicitly = NULL
+                                    verbose = verbose,
+                                    apikey = apikey,
+                                    # Beginning of optional parameters
+                                    country = country,
+                                    company = company,
+                                    facility = facility,
+                                    from = from,
+                                    to = to,
+                                    date = date)
 
   # Get number of pages to the request
   pages <- raw_results[["last_page"]]
@@ -91,6 +95,7 @@ gie_load <- function(country,
 
   }
 
+  #-----------------------------------------------------------------------------
   # If there is only one page, proceed -----------------------------------------
   if (pages == 1L) {
 
@@ -138,24 +143,26 @@ gie_load <- function(country,
 
     if (pages > 60L & isTRUE(verbose)) {
 
-      message(paste0("!~~~ Large request (total of ", pages, " pages), slowing down querying process by ", timeout, "seconds per API call. \n You can adjust this using the 'timeout' parameter."))
+      message(paste0("!~~~ Large request (total of ", pages, " pages), slowing down querying process by ", timeout, " seconds per API call. \n You can adjust this using the 'timeout' parameter."))
 
     }
 
     raw_results <- purrr::map(.x = c(2:pages),
-                              .f = ~ getrequest(country = country,
-                                                company = company,
-                                                facility = facility,
-                                                from = from,
-                                                to = to,
-                                                page = .x,
-                                                date = date,
-                                                size = size,
-                                                timeout = timeout,
-                                                database = database,
-                                                pages = pages,
-                                                verbose = verbose,
-                                                apikey = apikey))
+                              .f = ~ getrequest_general(database = database,
+                                                        target = "",
+                                                        page = .x,
+                                                        size = size,
+                                                        timeout = timeout,
+                                                        pages = pages,
+                                                        verbose = verbose,
+                                                        apikey = apikey,
+                                                        # Beginnig of optional parameters
+                                                        country = country,
+                                                        company = company,
+                                                        facility = facility,
+                                                        from = from,
+                                                        to = to,
+                                                        date = date))
 
     if (isTRUE(verbose)) {
 
@@ -171,11 +178,14 @@ gie_load <- function(country,
 
         warning("!~~~ Parsing failed. Returning raw response (Error 4).", call. = FALSE)
 
-        return(raw_results)
+        # Return raw remainder of request as well as the already parsed first page as list
+        return(list(raw_results, parsed_first_page = first_page))
 
       },{
 
-        results <- raw_results %>% purrr::map_dfr(., .f = ~ parseresult(.x, database))
+        results <- raw_results %>% purrr::map_dfr(.,
+                                                  .f = ~ parseresult(.x,
+                                                                     database))
 
         results <- dplyr::bind_rows(first_page, results)
 

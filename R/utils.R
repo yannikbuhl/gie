@@ -2,79 +2,7 @@
 # Helper functions for {giedata}
 ################################################################################
 
-#' getrequest
-#'
-#' @param country Country to get data for
-#' @param from Date for extraction start
-#' @param to Date for extraction end
-#' @param page Page number if multiple pages available
-#' @param date Date for extraction
-#' @param size Page size
-#' @param database Database name
-#' @param apikey API key
-#' @param company Company EIC code
-#' @param facility Facility EIC code
-#' @param timeout Seconds to timeout if query is large
-#' @param pages Total number of pages
-#' @param verbose Verbose mode
-#'
-getrequest <- function(country,
-                       company,
-                       facility,
-                       from,
-                       to,
-                       page,
-                       date,
-                       size,
-                       timeout,
-                       database,
-                       pages = NULL,
-                       verbose,
-                       apikey) {
-
-  # Construct base URL
-  endpoint <- paste0("https://", database, ".gie.eu/api")
-
-  if (isTRUE(verbose)) {
-
-    if (is.null(pages)) {
-
-      message("~~~ Processing page number ", page, ".")
-
-    } else if (!is.null(pages) & is.integer(pages)) {
-
-      message("~~~ Processing page number ", page, " of ", pages, ".")
-
-    }
-
-  }
-
-  # Create list with HTTP parameters
-  query <- list(country = country,
-                company = company,
-                facility = facility,
-                from = from,
-                to = to,
-                page = page,
-                date = date,
-                size = size)
-
-  # Parse URL
-  url <- construct_url(url = endpoint, query = query)
-
-  # Execute GET request
-  raw_request <- send_getrequest(url = url, apikey = apikey)
-
-  if (!is.null(pages) && pages > 60) Sys.sleep(timeout)
-
-  raw_results <- raw_request %>% httr::content(as = "parsed")
-
-  return(raw_results)
-
-}
-
-##----------------------------------------------------------------------------##
-
+#-------------------------------------------------------------------------------
 #' try_GET
 #'
 #' @param url URL for API call
@@ -87,7 +15,7 @@ try_GET <- function(url, apikey, ...) {
 
     httr::GET(url,
               httr::add_headers(`x-key` = apikey),
-              httr::timeout(1),
+              # httr::timeout(20), # Checking for timeouts here proved unstable
               ...),
 
     error = function(e) conditionMessage(e),
@@ -232,7 +160,8 @@ parseresult <- function(raw_results,
                             updatedAt,
                             name,
                             code,
-                            url), as.numeric)) %>%
+                            url),
+                         as.numeric)) %>%
     suppressWarnings()
 
   } else if (database == "alsi") {
@@ -249,7 +178,8 @@ parseresult <- function(raw_results,
                                      updatedAt,
                                      name,
                                      code,
-                                     url), as.numeric)) %>%
+                                     url),
+                                  as.numeric)) %>%
       suppressWarnings()
 
     names(results) <- purrr::map_chr(.x = names(results),
@@ -319,6 +249,11 @@ check_giedatainput <- function(country,
 
   if ((!is.null(from) | !is.null(to)) & !is.null(date)) {
     warning("If 'from' and/or 'to' parameters are set and 'date', too, 'date' will override 'from' and/or 'to'.")
+  }
+
+  if (length(country) == 1 && nchar(country) != 2) {
+    warning("The parameter value for 'country' does not have 2 characters. This might lead to you receiving no results, because gie_load() requires a two-character country code (e.g., 'DE' for Germany). Check the giedata::countryinfo dataset for information on the country codes required.",
+            call. = FALSE)
   }
 
   if (!is.character(country) | length(country) != 1) {
@@ -404,6 +339,11 @@ check_gielistinginput <- function(region,
     if (!is.character(country) | length(country) != 1) {
       stop("Parameter 'country' needs to be type character and length 1.", call. = FALSE)
     }
+  }
+
+  if (!is.null(country) && length(country) == 1 && nchar(country) == 2) {
+    warning("The parameter value for 'country' does have 2 characters. This might lead to you receiving no results, because gie_listing() requires the whole country name (e.g., 'Germany'). Check the giedata::countryinfo dataset for information on the country names required.",
+            call. = FALSE)
   }
 
   if (!is.character(database) | length(database) != 1) {
@@ -802,6 +742,7 @@ parse_unav <- function(raw_results) {
 #' @param timeout Seconds to delay the batch request
 #' @param pages Number of total pages of existing request
 #' @param apikey API key
+#' @param verbose Enable verbose mode
 #' @param ... Further valid API parameters
 #'
 #' @return Raw results
@@ -813,10 +754,29 @@ getrequest_general <- function(database,
                                timeout,
                                pages = NULL,
                                apikey,
+                               verbose = FALSE,
                                ...) {
 
   # Construct base URL
   endpoint <- paste0("https://", database, ".gie.eu/api/", target)
+
+  #-----------------------------------------------------------------------------
+
+  if (isTRUE(verbose)) {
+
+    if (is.null(pages)) {
+
+      message("~~~ Processing page number ", page, ".")
+
+    } else if (!is.null(pages) & is.integer(pages)) {
+
+      message("~~~ Processing page number ", page, " of ", pages, ".")
+
+    }
+
+  }
+
+  #-----------------------------------------------------------------------------
 
   # Create list with HTTP parameters
   query <- list(page = page,
