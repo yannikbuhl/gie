@@ -1,15 +1,15 @@
 
-# giedata
+# gie
 
 <!-- badges: start -->
 
 [![Lifecycle:
 experimental](https://lifecycle.r-lib.org/articles/figures/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R-CMD-check](https://github.com/yannikbuhl/giedata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/yannikbuhl/giedata/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/yannikbuhl/gie/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/yannikbuhl/gie/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-A R wrapper for Gas Infrastructure Europe’s (GIE) AGSI+ (and soon also
-ALSI+) transparency platform API
+A R wrapper for Gas Infrastructure Europe’s (GIE) AGSI+ and ALSI+
+transparency platform API
 
 ## Collecting data on natural gas storages
 
@@ -19,8 +19,8 @@ gas storage units in Europe and some non-EU countries (such as the
 United Kingdom and Ukraine). They provide a REST API for their AGSI+
 transparency platform to retrieve data on country level, operator level
 and facility level. Data include information on, e.g., the filling
-level, overall capacity, inflow or outflow. In order to use `{giedata}`,
-you have to register for an API key on the [AGSI+
+level, overall capacity, inflow or outflow. In order to use `{gie}`, you
+have to register for an API key on the [AGSI+
 website](https://agsi.gie.eu/).
 
 In spring of 2022, Gas Infrastructure Europe (GIE) provided a complete
@@ -34,13 +34,13 @@ within each country.
 Get the package from CRAN:
 
 ``` r
-install.packages("giedata")
+install.packages("gie")
 ```
 
 Install the development version via GitHub:
 
 ``` r
-remotes::install_github("yannikbuhl/giedata")
+remotes::install_github("yannikbuhl/gie")
 ```
 
 ## Usage
@@ -56,10 +56,10 @@ for further use in the download functions `gie_load()` and
 `gie_batchload()`).
 
 ``` r
-german_facilities <- giedata::gie_listing(region = "Europe",
-                                          country = "Germany",
-                                          facilities = TRUE,
-                                          apikey = apikey)
+german_facilities <- gie::gie_listing(region = "Europe",
+                                      country = "Germany",
+                                      facilities = TRUE,
+                                      apikey = apikey)
 ```
 
 One main function for data download is called `gie_load()` and can be
@@ -68,12 +68,12 @@ operator in a certain country or for a certain facility (see
 documentation for info on all parameters).
 
 ``` r
-gasdata <- giedata::gie_load(country = "de",
-                             from = "2022-01-01",
-                             to = "2022-03-31",
-                             size = 50,
-                             verbose = TRUE,
-                             apikey = apikey)
+gasdata <- gie::gie_load(country = "de",
+                         from = "2022-01-01",
+                         to = "2022-03-31",
+                         size = 50,
+                         verbose = TRUE,
+                         apikey = apikey)
 ```
 
 The second download function `gie_batchload()` lets you download data
@@ -84,9 +84,9 @@ facilities if the country and the company are fixed (due to the way the
 API is built).
 
 ``` r
-companydata <- giedata::gie_batchload(countries = c("DE", "IE", "NL"), 
-                                      from = "2022-01-01",
-                                      apikey = apikey)
+companydata <- gie::gie_batchload(countries = c("DE", "IE", "NL"), 
+                                  from = "2022-01-01",
+                                  apikey = apikey)
 ```
 
 ## Development

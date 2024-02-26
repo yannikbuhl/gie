@@ -1,2 +1,2 @@
 library("testthat")
-test_check("giedata")
+test_check("gie")

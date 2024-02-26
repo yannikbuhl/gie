@@ -22,7 +22,7 @@ countryinfo
 }
 \description{
 A dataset to help you switch between country name and country code
-in the usage of {giedata}, as gie_listing() and gie_load() work
+in the usage of 'giedata', as gie_listing() and gie_load() work
 with different modes of the country (name vs. two-character code).
 }
 \keyword{datasets}
