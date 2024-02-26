@@ -1,5 +1,5 @@
 ################################################################################
-# Helper functions for {giedata}
+# Helper functions for {gie}
 ################################################################################
 
 #-------------------------------------------------------------------------------
@@ -252,7 +252,7 @@ check_giedatainput <- function(country,
   }
 
   if (length(country) == 1 && nchar(country) != 2) {
-    warning("The parameter value for 'country' does not have 2 characters. This might lead to you receiving no results, because gie_load() requires a two-character country code (e.g., 'DE' for Germany). Check the giedata::countryinfo dataset for information on the country codes required.",
+    warning("The parameter value for 'country' does not have 2 characters. This might lead to you receiving no results, because gie_load() requires a two-character country code (e.g., 'DE' for Germany). Check the gie::countryinfo dataset for information on the country codes required.",
             call. = FALSE)
   }
 
@@ -342,7 +342,7 @@ check_gielistinginput <- function(region,
   }
 
   if (!is.null(country) && length(country) == 1 && nchar(country) == 2) {
-    warning("The parameter value for 'country' does have 2 characters. This might lead to you receiving no results, because gie_listing() requires the whole country name (e.g., 'Germany'). Check the giedata::countryinfo dataset for information on the country names required.",
+    warning("The parameter value for 'country' does have 2 characters. This might lead to you receiving no results, because gie_listing() requires the whole country name (e.g., 'Germany'). Check the gie::countryinfo dataset for information on the country names required.",
             call. = FALSE)
   }
 
