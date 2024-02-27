@@ -14,6 +14,8 @@ First, the package now complies with CRAN policy on failing gracefully.
 Second, the package now has vastly expanded functionalities.
 Third, the package now has a streamlined API.
 
+Also, to comply comments with the comments of the first submission attempt, I have adjusted the LICENCE file and the DESCRIPTION file.
+
 I have thoroughly tested the package on multiple platforms and R versions, and I believe it meets all CRAN repository guidelines. I welcome any feedback or suggestions for improvement.
 
 Thank you for considering our package for inclusion in the CRAN repository.
