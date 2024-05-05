@@ -1,5 +1,5 @@
 
-# gie
+# gie <img src="hexsticker_gie.png" width="160px" align="right" />
 
 <!-- badges: start -->
 
@@ -100,4 +100,5 @@ pull requests.
 This package has been developed independently of and is not in any way
 associated to GIE or the AGSI/ALSI+ transparency platform. Some parts of
 or calls to the API may exhibit unforeseen behaviour due to the API
-still being subject to changes.
+still being subject to changes. The hex sticker to this package has been
+generated with the use of OpenAI’s image generation.
