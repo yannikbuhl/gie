@@ -5,6 +5,7 @@
 test_that("download single country data", {
 
   skip_on_cran()
+  skip_on_ci()
 
   vcr::use_cassette("test1.1",
                     record = "new_episodes",{
@@ -24,6 +25,7 @@ test_that("download single country data", {
 test_that("download single country data with from/to", {
 
   skip_on_cran()
+  skip_on_ci()
 
   vcr::use_cassette("test1.2",
                     record = "new_episodes", {
@@ -44,6 +46,7 @@ test_that("download single country data with from/to", {
 test_that("check that gie_batchload works with multiple countries", {
 
   skip_on_cran()
+  skip_on_ci()
 
   vcr::use_cassette("test1.3",
                     record = "new_episodes", {
@@ -63,6 +66,7 @@ test_that("check that gie_batchload works with multiple countries", {
 test_that("check that gie_load works with company & facilities", {
 
   skip_on_cran()
+  skip_on_ci()
 
   vcr::use_cassette("test1.4",
                     record = "new_episodes", {
@@ -84,6 +88,7 @@ test_that("check that gie_load works with company & facilities", {
 test_that("check that gie_load works with company", {
 
   skip_on_cran()
+  skip_on_ci()
 
   vcr::use_cassette("test1.5",
                     record = "new_episodes", {
@@ -104,6 +109,7 @@ test_that("check that gie_load works with company", {
 test_that("check that gie_batchload works with companies", {
 
   skip_on_cran()
+  skip_on_ci()
 
   vcr::use_cassette("test1.6",
                     record = "new_episodes", {
@@ -125,6 +131,7 @@ test_that("check that gie_batchload works with companies", {
 test_that("check that gie_batchload works with company and facilities", {
 
   skip_on_cran()
+  skip_on_ci()
 
   vcr::use_cassette("test1.7",
                     record = "new_episodes", {
@@ -148,6 +155,7 @@ test_that("check that gie_batchload works with company and facilities", {
 test_that("check that gie_listing outputs a list without specifying any parameters", {
 
   skip_on_cran()
+  skip_on_ci()
 
   vcr::use_cassette("test1.8", {
 
@@ -165,6 +173,7 @@ test_that("check that gie_listing outputs a list without specifying any paramete
 test_that("check that gie_listing outputs a data.frame specifying parameters", {
 
   skip_on_cran()
+  skip_on_ci()
 
   vcr::use_cassette("test1.9", {
 
@@ -182,6 +191,7 @@ test_that("check that gie_listing outputs a data.frame specifying parameters", {
 test_that("check that gie_listing outputs facilities if TRUE", {
 
   skip_on_cran()
+  skip_on_ci()
 
   vcr::use_cassette("test1.10", {
 
@@ -202,6 +212,7 @@ test_that("check that gie_listing outputs facilities if TRUE", {
 test_that("check that gie_unav outputs are correct", {
 
   skip_on_cran()
+  skip_on_ci()
 
   vcr::use_cassette("test1.11", {
 
@@ -221,6 +232,7 @@ test_that("check that gie_unav outputs are correct", {
 test_that("check that gie_getnews outputs are correct", {
 
   skip_on_cran()
+  skip_on_ci()
 
   vcr::use_cassette("test1.12", {
 
