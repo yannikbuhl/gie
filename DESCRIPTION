@@ -1,6 +1,6 @@
 Package: gie
 Title: API Wrapper for the Natural Gas Transparency Platforms of Gas Infrastructure Europe
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     person("Yannik", "Buhl", email = "ybuhl@posteo.de", role = c("aut", "cre"))
 Description: Providing access to the API for Gas Infrastructure Europe's

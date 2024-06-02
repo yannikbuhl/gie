@@ -7,7 +7,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      x-key: ''
+      x-key: <<<GIE_APIKEY>>>
   response:
     status:
       status_code: 200
@@ -15,7 +15,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 25 Feb 2024 15:42:21 GMT
+      date: Sun, 02 Jun 2024 11:26:45 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -23,16 +23,16 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 85b10ec86d6d915c-FRA
+      cf-ray: 88d7171d2d103a9d-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
       encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-23","data":[{"name":"astora
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"astora
         (Germany)","code":"21X000000001160J","publication_link":"http:\/\/www.astora.de","transparency_template":"https:\/\/www.astora.de\/en\/transparency-template","url":"21X000000001160J\/DE","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"1.8757","injection":"56.78","withdrawal":"1.7","netWithdrawal":"-55.1","workingGasVolume":"51.805","injectionCapacity":"512.61","withdrawalCapacity":"739.65","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.11","full":"3.62","info":[]}]}'
-  recorded_at: 2024-02-25 15:42:25 GMT
+  recorded_at: 2024-06-02 11:26:50 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -42,7 +42,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      x-key: ''
+      x-key: <<<GIE_APIKEY>>>
   response:
     status:
       status_code: 200
@@ -50,7 +50,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 25 Feb 2024 15:42:22 GMT
+      date: Sun, 02 Jun 2024 11:26:46 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -58,16 +58,16 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 85b10ecb1863915c-FRA
+      cf-ray: 88d7171fa8773a9d-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
       encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-23","data":[{"name":"astora
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"astora
         (Germany)","code":"21X000000001160J","publication_link":"http:\/\/www.astora.de","transparency_template":"https:\/\/www.astora.de\/en\/transparency-template","url":"21X000000001160J\/DE","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"1.8757","injection":"56.78","withdrawal":"1.7","netWithdrawal":"-55.1","workingGasVolume":"51.805","injectionCapacity":"512.61","withdrawalCapacity":"739.65","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.11","full":"3.62","info":[]}]}'
-  recorded_at: 2024-02-25 15:42:25 GMT
+  recorded_at: 2024-06-02 11:26:50 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -77,7 +77,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      x-key: ''
+      x-key: <<<GIE_APIKEY>>>
   response:
     status:
       status_code: 200
@@ -85,7 +85,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 25 Feb 2024 15:42:22 GMT
+      date: Sun, 02 Jun 2024 11:26:46 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -93,17 +93,17 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 85b10ece2b0a915c-FRA
+      cf-ray: 88d71722fcc53a9d-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
       encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-23","data":[{"name":"EWE
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"EWE
         Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
         https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
         19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
-  recorded_at: 2024-02-25 15:42:25 GMT
+  recorded_at: 2024-06-02 11:26:50 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -113,7 +113,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      x-key: ''
+      x-key: <<<GIE_APIKEY>>>
   response:
     status:
       status_code: 200
@@ -121,7 +121,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 25 Feb 2024 15:42:23 GMT
+      date: Sun, 02 Jun 2024 11:26:46 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -129,15 +129,15 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 85b10ed10e41915c-FRA
+      cf-ray: 88d71725c8ea3a9d-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
       encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-23","data":[{"name":"EWE
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"EWE
         Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
         https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
         19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
-  recorded_at: 2024-02-25 15:42:25 GMT
+  recorded_at: 2024-06-02 11:26:50 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0

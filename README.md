@@ -1,5 +1,5 @@
 
-# gie <img src="hexsticker_gie.png" width="160px" align="right" />
+# gie <img src="man/figures/hexsticker_gie.png" width="160px" align="right" />
 
 <!-- badges: start -->
 

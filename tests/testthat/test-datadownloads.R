@@ -4,6 +4,8 @@
 
 test_that("download single country data", {
 
+  skip_on_cran()
+
   vcr::use_cassette("test1.1",
                     record = "new_episodes",{
 
@@ -15,13 +17,13 @@ test_that("download single country data", {
   expect_s3_class(result,
                   class = "data.frame")
 
-  skip_on_cran()
-
-})
+  })
 
 #------------------------------------------------------------------------------#
 
 test_that("download single country data with from/to", {
+
+  skip_on_cran()
 
   vcr::use_cassette("test1.2",
                     record = "new_episodes", {
@@ -35,13 +37,13 @@ test_that("download single country data with from/to", {
   expect_s3_class(result,
                   class = "data.frame")
 
-  skip_on_cran()
-
   })
 
 #------------------------------------------------------------------------------#
 
 test_that("check that gie_batchload works with multiple countries", {
+
+  skip_on_cran()
 
   vcr::use_cassette("test1.3",
                     record = "new_episodes", {
@@ -54,13 +56,13 @@ test_that("check that gie_batchload works with multiple countries", {
   expect_s3_class(object = result,
                   class = "data.frame")
 
-  skip_on_cran()
-
 })
 
 #------------------------------------------------------------------------------#
 
 test_that("check that gie_load works with company & facilities", {
+
+  skip_on_cran()
 
   vcr::use_cassette("test1.4",
                     record = "new_episodes", {
@@ -75,13 +77,13 @@ test_that("check that gie_load works with company & facilities", {
   expect_s3_class(object = result,
                   class = "data.frame")
 
-  skip_on_cran()
-
 })
 
 #------------------------------------------------------------------------------#
 
 test_that("check that gie_load works with company", {
+
+  skip_on_cran()
 
   vcr::use_cassette("test1.5",
                     record = "new_episodes", {
@@ -95,13 +97,13 @@ test_that("check that gie_load works with company", {
   expect_s3_class(object = result,
                   class = "data.frame")
 
-  skip_on_cran()
-
 })
 
 #------------------------------------------------------------------------------#
 
 test_that("check that gie_batchload works with companies", {
+
+  skip_on_cran()
 
   vcr::use_cassette("test1.6",
                     record = "new_episodes", {
@@ -116,13 +118,13 @@ test_that("check that gie_batchload works with companies", {
   expect_s3_class(object = result,
                   class = "data.frame")
 
-  skip_on_cran()
-
 })
 
 #------------------------------------------------------------------------------#
 
 test_that("check that gie_batchload works with company and facilities", {
+
+  skip_on_cran()
 
   vcr::use_cassette("test1.7",
                     record = "new_episodes", {
@@ -139,13 +141,13 @@ test_that("check that gie_batchload works with company and facilities", {
   expect_s3_class(object = result,
                   class = "data.frame")
 
-  skip_on_cran()
-
 })
 
 #------------------------------------------------------------------------------#
 
 test_that("check that gie_listing outputs a list without specifying any parameters", {
+
+  skip_on_cran()
 
   vcr::use_cassette("test1.8", {
 
@@ -156,13 +158,13 @@ test_that("check that gie_listing outputs a list without specifying any paramete
   expect_type(object = result,
               type = "list")
 
-  skip_on_cran()
-
 })
 
 #------------------------------------------------------------------------------#
 
 test_that("check that gie_listing outputs a data.frame specifying parameters", {
+
+  skip_on_cran()
 
   vcr::use_cassette("test1.9", {
 
@@ -173,13 +175,13 @@ test_that("check that gie_listing outputs a data.frame specifying parameters", {
   expect_s3_class(object = result,
                   class = "data.frame")
 
-  skip_on_cran()
-
 })
 
 #------------------------------------------------------------------------------#
 
 test_that("check that gie_listing outputs facilities if TRUE", {
+
+  skip_on_cran()
 
   vcr::use_cassette("test1.10", {
 
@@ -193,13 +195,13 @@ test_that("check that gie_listing outputs facilities if TRUE", {
                regexp = "facility_eic",
                all = FALSE)
 
-  skip_on_cran()
-
 })
 
 #-------------------------------------------------------------------------------
 
 test_that("check that gie_unav outputs are correct", {
+
+  skip_on_cran()
 
   vcr::use_cassette("test1.11", {
 
@@ -212,13 +214,13 @@ test_that("check that gie_unav outputs are correct", {
   expect_s3_class(object = result,
                   class = "data.frame")
 
-  skip_on_cran()
-
 })
 
 #-------------------------------------------------------------------------------
 
 test_that("check that gie_getnews outputs are correct", {
+
+  skip_on_cran()
 
   vcr::use_cassette("test1.12", {
 
@@ -229,8 +231,6 @@ test_that("check that gie_getnews outputs are correct", {
 
   expect_s3_class(object = result,
                   class = "data.frame")
-
-  skip_on_cran()
 
 })
 

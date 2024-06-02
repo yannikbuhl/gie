@@ -7,7 +7,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      x-key: ''
+      x-key: <<<GIE_APIKEY>>>
   response:
     status:
       status_code: 200
@@ -15,7 +15,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 25 Feb 2024 15:42:23 GMT
+      date: Sun, 02 Jun 2024 11:26:47 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -23,16 +23,16 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 85b10ed4295f915c-FRA
+      cf-ray: 88d717296e523a9d-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
       encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-23","data":[{"name":"UGS
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"UGS
         Rehden","code":"21Z000000000271O","url":"21Z000000000271O\/DE\/21X000000001160J","longitude":"8.4864","latitude":"52.6026","type":"DSR","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"0.2677","injection":"14.8","withdrawal":"1.7","netWithdrawal":"-13.1","workingGasVolume":"43.68","injectionCapacity":"344.76","withdrawalCapacity":"530.4","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.03","full":"0.61","info":[]}]}'
-  recorded_at: 2024-02-25 15:42:27 GMT
+  recorded_at: 2024-06-02 11:26:53 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -42,7 +42,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      x-key: ''
+      x-key: <<<GIE_APIKEY>>>
   response:
     status:
       status_code: 200
@@ -50,7 +50,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 25 Feb 2024 15:42:24 GMT
+      date: Sun, 02 Jun 2024 11:26:47 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -58,16 +58,16 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 85b10ed6cc1f915c-FRA
+      cf-ray: 88d7172c2a8f3a9d-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
       encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-23","data":[{"name":"UGS
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"UGS
         Rehden","code":"21Z000000000271O","url":"21Z000000000271O\/DE\/21X000000001160J","longitude":"8.4864","latitude":"52.6026","type":"DSR","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"0.2677","injection":"14.8","withdrawal":"1.7","netWithdrawal":"-13.1","workingGasVolume":"43.68","injectionCapacity":"344.76","withdrawalCapacity":"530.4","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.03","full":"0.61","info":[]}]}'
-  recorded_at: 2024-02-25 15:42:27 GMT
+  recorded_at: 2024-06-02 11:26:53 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -77,7 +77,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      x-key: ''
+      x-key: <<<GIE_APIKEY>>>
   response:
     status:
       status_code: 200
@@ -85,7 +85,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 25 Feb 2024 15:42:24 GMT
+      date: Sun, 02 Jun 2024 11:26:48 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -93,16 +93,16 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 85b10ed9bf3e915c-FRA
+      cf-ray: 88d7172f6f073a9d-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
       encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-23","data":[{"name":"UGS
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"UGS
         Jemgum H (astora)","code":"21W0000000001148","url":"21W0000000001148\/DE\/21X000000001160J","longitude":"7.2819","latitude":"53.2841","type":"ASF","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"1.6079","injection":"41.98","withdrawal":"0","netWithdrawal":"-42","workingGasVolume":"8.125","injectionCapacity":"167.85","withdrawalCapacity":"209.25","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.52","full":"19.79","info":[]}]}'
-  recorded_at: 2024-02-25 15:42:27 GMT
+  recorded_at: 2024-06-02 11:26:53 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -112,7 +112,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      x-key: ''
+      x-key: <<<GIE_APIKEY>>>
   response:
     status:
       status_code: 200
@@ -120,7 +120,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 25 Feb 2024 15:42:24 GMT
+      date: Sun, 02 Jun 2024 11:26:49 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -128,16 +128,16 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 85b10edbe963915c-FRA
+      cf-ray: 88d71731e9ee3a9d-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
       encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-23","data":[{"name":"UGS
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"UGS
         Jemgum H (astora)","code":"21W0000000001148","url":"21W0000000001148\/DE\/21X000000001160J","longitude":"7.2819","latitude":"53.2841","type":"ASF","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"1.6079","injection":"41.98","withdrawal":"0","netWithdrawal":"-42","workingGasVolume":"8.125","injectionCapacity":"167.85","withdrawalCapacity":"209.25","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.52","full":"19.79","info":[]}]}'
-  recorded_at: 2024-02-25 15:42:27 GMT
+  recorded_at: 2024-06-02 11:26:53 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -147,7 +147,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      x-key: ''
+      x-key: <<<GIE_APIKEY>>>
   response:
     status:
       status_code: 200
@@ -155,7 +155,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 25 Feb 2024 15:42:25 GMT
+      date: Sun, 02 Jun 2024 11:26:49 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -163,16 +163,16 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 85b10edf0c67915c-FRA
+      cf-ray: 88d71735ef553a9d-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
       encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-23","data":[{"name":"VSP
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"VSP
         NORD (Rehden, Jemgum)","code":"21W0000000001261","url":"21W0000000001261\/DE\/21X000000001160J","longitude":"7.6958","latitude":"53.3555","type":"DSR","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"0","injection":"0","withdrawal":"0","netWithdrawal":"0","workingGasVolume":"0","injectionCapacity":"0","withdrawalCapacity":"0","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"-","full":"0","info":[]}]}'
-  recorded_at: 2024-02-25 15:42:27 GMT
+  recorded_at: 2024-06-02 11:26:53 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -182,7 +182,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      x-key: ''
+      x-key: <<<GIE_APIKEY>>>
   response:
     status:
       status_code: 200
@@ -190,7 +190,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 25 Feb 2024 15:42:25 GMT
+      date: Sun, 02 Jun 2024 11:26:49 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -198,14 +198,14 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 85b10ee13e7c915c-FRA
+      cf-ray: 88d717382a723a9d-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
       encoding: ''
       file: no
-      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-02-23","data":[{"name":"VSP
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"VSP
         NORD (Rehden, Jemgum)","code":"21W0000000001261","url":"21W0000000001261\/DE\/21X000000001160J","longitude":"7.6958","latitude":"53.3555","type":"DSR","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"0","injection":"0","withdrawal":"0","netWithdrawal":"0","workingGasVolume":"0","injectionCapacity":"0","withdrawalCapacity":"0","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"-","full":"0","info":[]}]}'
-  recorded_at: 2024-02-25 15:42:27 GMT
+  recorded_at: 2024-06-02 11:26:53 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0

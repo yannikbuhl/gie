@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-# gie <img src="hexsticker_gie.png" width="160px" align="right" />
+# gie <img src="man/figures/hexsticker_gie.png" width="160px" align="right" />
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://lifecycle.r-lib.org/articles/figures/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)

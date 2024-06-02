@@ -7,7 +7,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      x-key: ''
+      x-key: <<<GIE_APIKEY>>>
   response:
     status:
       status_code: 200
@@ -15,7 +15,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 25 Feb 2024 15:42:17 GMT
+      date: Sun, 02 Jun 2024 11:26:40 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -23,14 +23,14 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 85b10eabda11915c-FRA
+      cf-ray: 88d716fd89b03a9d-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
       encoding: ''
       file: no
       string: '{"last_page":1,"total":15,"dataset":"\u003Ca href=\u0022\/data-overview\/eu\u0022\u003EEU\u003C\/a\u003E
-        \u003E AT","gas_day":"2024-02-23","data":[{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
+        \u003E AT","gas_day":"2024-05-31","data":[{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
         23:15:24","gasDayStart":"2022-02-15","gasInStorage":"17.6331","consumption":"91.0000","consumptionFull":"19.38","injection":"0.65","withdrawal":"465.8","netWithdrawal":"465.2","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.49","full":"18.46","info":[]},{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
         23:15:24","gasDayStart":"2022-02-14","gasInStorage":"18.0983","consumption":"91.0000","consumptionFull":"19.89","injection":"0","withdrawal":"380.9","netWithdrawal":"380.9","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.4","full":"18.95","info":[]},{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
         23:15:24","gasDayStart":"2022-02-13","gasInStorage":"18.4792","consumption":"91.0000","consumptionFull":"20.31","injection":"8.15","withdrawal":"19.3","netWithdrawal":"11.1","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.01","full":"19.35","info":[]},{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
@@ -46,7 +46,7 @@ http_interactions:
         23:15:23","gasDayStart":"2022-02-03","gasInStorage":"20.5444","consumption":"91.0000","consumptionFull":"22.58","injection":"54.62","withdrawal":"241.9","netWithdrawal":"187.2","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.2","full":"21.51","info":[]},{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
         23:15:23","gasDayStart":"2022-02-02","gasInStorage":"20.7316","consumption":"91.0000","consumptionFull":"22.78","injection":"3.33","withdrawal":"277.9","netWithdrawal":"274.6","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.31","full":"21.71","info":[]},{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
         23:15:23","gasDayStart":"2022-02-01","gasInStorage":"21.0236","consumption":"91.0000","consumptionFull":"23.1","injection":"0","withdrawal":"243.4","netWithdrawal":"243.4","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.24","full":"22.01","info":[]}]}'
-  recorded_at: 2024-02-25 15:42:19 GMT
+  recorded_at: 2024-06-02 11:26:44 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -56,7 +56,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      x-key: ''
+      x-key: <<<GIE_APIKEY>>>
   response:
     status:
       status_code: 200
@@ -64,7 +64,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 25 Feb 2024 15:42:17 GMT
+      date: Sun, 02 Jun 2024 11:26:41 GMT
       content-type: application/json
       transfer-encoding: chunked
       connection: keep-alive
@@ -72,14 +72,14 @@ http_interactions:
       x-robots-tag: noindex
       cf-cache-status: DYNAMIC
       server: cloudflare
-      cf-ray: 85b10eae8cf3915c-FRA
+      cf-ray: 88d717003d753a9d-FRA
       content-encoding: gzip
       alt-svc: h3=":443"; ma=86400
     body:
       encoding: ''
       file: no
       string: '{"last_page":1,"total":15,"dataset":"\u003Ca href=\u0022\/data-overview\/eu\u0022\u003EEU\u003C\/a\u003E
-        \u003E AT","gas_day":"2024-02-23","data":[{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
+        \u003E AT","gas_day":"2024-05-31","data":[{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
         23:15:24","gasDayStart":"2022-02-15","gasInStorage":"17.6331","consumption":"91.0000","consumptionFull":"19.38","injection":"0.65","withdrawal":"465.8","netWithdrawal":"465.2","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.49","full":"18.46","info":[]},{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
         23:15:24","gasDayStart":"2022-02-14","gasInStorage":"18.0983","consumption":"91.0000","consumptionFull":"19.89","injection":"0","withdrawal":"380.9","netWithdrawal":"380.9","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.4","full":"18.95","info":[]},{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
         23:15:24","gasDayStart":"2022-02-13","gasInStorage":"18.4792","consumption":"91.0000","consumptionFull":"20.31","injection":"8.15","withdrawal":"19.3","netWithdrawal":"11.1","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.01","full":"19.35","info":[]},{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
@@ -95,5 +95,5 @@ http_interactions:
         23:15:23","gasDayStart":"2022-02-03","gasInStorage":"20.5444","consumption":"91.0000","consumptionFull":"22.58","injection":"54.62","withdrawal":"241.9","netWithdrawal":"187.2","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.2","full":"21.51","info":[]},{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
         23:15:23","gasDayStart":"2022-02-02","gasInStorage":"20.7316","consumption":"91.0000","consumptionFull":"22.78","injection":"3.33","withdrawal":"277.9","netWithdrawal":"274.6","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.31","full":"21.71","info":[]},{"name":"Austria","code":"AT","url":"AT","updatedAt":"2022-11-25
         23:15:23","gasDayStart":"2022-02-01","gasInStorage":"21.0236","consumption":"91.0000","consumptionFull":"23.1","injection":"0","withdrawal":"243.4","netWithdrawal":"243.4","workingGasVolume":"95.5024","injectionCapacity":"841.76","withdrawalCapacity":"1059.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"C","trend":"-0.24","full":"22.01","info":[]}]}'
-  recorded_at: 2024-02-25 15:42:19 GMT
+  recorded_at: 2024-06-02 11:26:44 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
