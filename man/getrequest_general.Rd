@@ -9,7 +9,7 @@ getrequest_general(
   target,
   page,
   size,
-  timeout,
+  timeout = NULL,
   pages = NULL,
   apikey,
   verbose = FALSE,

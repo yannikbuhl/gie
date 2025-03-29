@@ -32,7 +32,7 @@ http_interactions:
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"astora
         (Germany)","code":"21X000000001160J","publication_link":"http:\/\/www.astora.de","transparency_template":"https:\/\/www.astora.de\/en\/transparency-template","url":"21X000000001160J\/DE","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"1.8757","injection":"56.78","withdrawal":"1.7","netWithdrawal":"-55.1","workingGasVolume":"51.805","injectionCapacity":"512.61","withdrawalCapacity":"739.65","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.11","full":"3.62","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:35 GMT
+  recorded_at: 2025-03-29 19:06:05 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -67,7 +67,7 @@ http_interactions:
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"astora
         (Germany)","code":"21X000000001160J","publication_link":"http:\/\/www.astora.de","transparency_template":"https:\/\/www.astora.de\/en\/transparency-template","url":"21X000000001160J\/DE","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"1.8757","injection":"56.78","withdrawal":"1.7","netWithdrawal":"-55.1","workingGasVolume":"51.805","injectionCapacity":"512.61","withdrawalCapacity":"739.65","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.11","full":"3.62","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:35 GMT
+  recorded_at: 2025-03-29 19:06:05 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -103,7 +103,7 @@ http_interactions:
         Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
         https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
         19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:35 GMT
+  recorded_at: 2025-03-29 19:06:05 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -139,7 +139,7 @@ http_interactions:
         Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
         https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
         19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:35 GMT
+  recorded_at: 2025-03-29 19:06:05 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -174,7 +174,7 @@ http_interactions:
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"astora
         (Germany)","code":"21X000000001160J","publication_link":"http:\/\/www.astora.de","transparency_template":"https:\/\/www.astora.de\/en\/transparency-template","url":"21X000000001160J\/DE","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"1.8757","injection":"56.78","withdrawal":"1.7","netWithdrawal":"-55.1","workingGasVolume":"51.805","injectionCapacity":"512.61","withdrawalCapacity":"739.65","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.11","full":"3.62","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:35 GMT
+  recorded_at: 2025-03-29 19:06:05 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -209,7 +209,7 @@ http_interactions:
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"astora
         (Germany)","code":"21X000000001160J","publication_link":"http:\/\/www.astora.de","transparency_template":"https:\/\/www.astora.de\/en\/transparency-template","url":"21X000000001160J\/DE","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"1.8757","injection":"56.78","withdrawal":"1.7","netWithdrawal":"-55.1","workingGasVolume":"51.805","injectionCapacity":"512.61","withdrawalCapacity":"739.65","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.11","full":"3.62","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:35 GMT
+  recorded_at: 2025-03-29 19:06:05 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -245,7 +245,7 @@ http_interactions:
         Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
         https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
         19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:35 GMT
+  recorded_at: 2025-03-29 19:06:05 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -281,5 +281,715 @@ http_interactions:
         Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
         https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
         19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:35 GMT
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 17:04:40 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9280f29b9c04d2ab-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-27","data":[{"name":"EWE
+        Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
+        https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
+        19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 17:04:40 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9280f29dd8ccd2ab-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-27","data":[{"name":"EWE
+        Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
+        https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
+        19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X000000001368W&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 17:04:41 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9280f2a0aeadd2ab-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-27","data":[{"name":"Equinor
+        Storage Deutschland","code":"21X000000001368W","publication_link":"https:\/\/www.equinorstorage.de","transparency_template":"","url":"21X000000001368W\/DE","updatedAt":"2022-05-02
+        00:00:00","gasDayStart":"2022-05-01","gasInStorage":"2.0541","injection":"0","withdrawal":"0","netWithdrawal":"0","workingGasVolume":"2.1541","injectionCapacity":"210.67","withdrawalCapacity":"361.15","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.45","full":"95.36","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X000000001368W&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 17:04:41 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9280f2a2aa9ed2ab-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-27","data":[{"name":"Equinor
+        Storage Deutschland","code":"21X000000001368W","publication_link":"https:\/\/www.equinorstorage.de","transparency_template":"","url":"21X000000001368W\/DE","updatedAt":"2022-05-02
+        00:00:00","gasDayStart":"2022-05-01","gasInStorage":"2.0541","injection":"0","withdrawal":"0","netWithdrawal":"0","workingGasVolume":"2.1541","injectionCapacity":"210.67","withdrawalCapacity":"361.15","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.45","full":"95.36","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 18:59:35 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819aef0ce4d27a-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"EWE
+        Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
+        https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
+        19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 18:59:35 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819af17a5cd27a-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"EWE
+        Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
+        https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
+        19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X000000001368W&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 18:59:36 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819af4a9cfd27a-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Equinor
+        Storage Deutschland","code":"21X000000001368W","publication_link":"https:\/\/www.equinorstorage.de","transparency_template":"","url":"21X000000001368W\/DE","updatedAt":"2022-05-02
+        00:00:00","gasDayStart":"2022-05-01","gasInStorage":"2.0541","injection":"0","withdrawal":"0","netWithdrawal":"0","workingGasVolume":"2.1541","injectionCapacity":"210.67","withdrawalCapacity":"361.15","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.45","full":"95.36","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X000000001368W&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 18:59:36 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819af6eed8d27a-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Equinor
+        Storage Deutschland","code":"21X000000001368W","publication_link":"https:\/\/www.equinorstorage.de","transparency_template":"","url":"21X000000001368W\/DE","updatedAt":"2022-05-02
+        00:00:00","gasDayStart":"2022-05-01","gasInStorage":"2.0541","injection":"0","withdrawal":"0","netWithdrawal":"0","workingGasVolume":"2.1541","injectionCapacity":"210.67","withdrawalCapacity":"361.15","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.45","full":"95.36","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:02:41 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819f7e9893dc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"EWE
+        Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
+        https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
+        19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:02:42 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819f80fd3edc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"EWE
+        Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
+        https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
+        19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X000000001368W&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:02:42 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819f851d30dc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Equinor
+        Storage Deutschland","code":"21X000000001368W","publication_link":"https:\/\/www.equinorstorage.de","transparency_template":"","url":"21X000000001368W\/DE","updatedAt":"2022-05-02
+        00:00:00","gasDayStart":"2022-05-01","gasInStorage":"2.0541","injection":"0","withdrawal":"0","netWithdrawal":"0","workingGasVolume":"2.1541","injectionCapacity":"210.67","withdrawalCapacity":"361.15","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.45","full":"95.36","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X000000001368W&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:03:17 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819f87facddc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Equinor
+        Storage Deutschland","code":"21X000000001368W","publication_link":"https:\/\/www.equinorstorage.de","transparency_template":"","url":"21X000000001368W\/DE","updatedAt":"2022-05-02
+        00:00:00","gasDayStart":"2022-05-01","gasInStorage":"2.0541","injection":"0","withdrawal":"0","netWithdrawal":"0","workingGasVolume":"2.1541","injectionCapacity":"210.67","withdrawalCapacity":"361.15","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.45","full":"95.36","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:05:09 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a319bce2dc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"EWE
+        Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
+        https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
+        19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:05:10 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a31c399cdc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"EWE
+        Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
+        https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
+        19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X000000001368W&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:05:10 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a31f6fa0dc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Equinor
+        Storage Deutschland","code":"21X000000001368W","publication_link":"https:\/\/www.equinorstorage.de","transparency_template":"","url":"21X000000001368W\/DE","updatedAt":"2022-05-02
+        00:00:00","gasDayStart":"2022-05-01","gasInStorage":"2.0541","injection":"0","withdrawal":"0","netWithdrawal":"0","workingGasVolume":"2.1541","injectionCapacity":"210.67","withdrawalCapacity":"361.15","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.45","full":"95.36","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X000000001368W&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:05:10 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a321dc6edc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Equinor
+        Storage Deutschland","code":"21X000000001368W","publication_link":"https:\/\/www.equinorstorage.de","transparency_template":"","url":"21X000000001368W\/DE","updatedAt":"2022-05-02
+        00:00:00","gasDayStart":"2022-05-01","gasInStorage":"2.0541","injection":"0","withdrawal":"0","netWithdrawal":"0","workingGasVolume":"2.1541","injectionCapacity":"210.67","withdrawalCapacity":"361.15","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.45","full":"95.36","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:06:03 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a46a3ceadc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"EWE
+        Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
+        https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
+        19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:06:03 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a46cca3cdc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"EWE
+        Gasspeicher","code":"21X0000000011756","publication_link":"http:\/\/www.ewe-gasspeicher.de","transparency_template":"
+        https:\/\/www.ewe-gasspeicher.de\/en\/legal-framework\/gse-transparency-template\/","url":"21X0000000011756\/DE","updatedAt":"2023-02-13
+        19:33:59","gasDayStart":"2022-05-01","gasInStorage":"7.3171","injection":"138.11","withdrawal":"0","netWithdrawal":"-138.1","workingGasVolume":"18.2878","injectionCapacity":"246.36","withdrawalCapacity":"543.36","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"1.8","full":"40.01","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X000000001368W&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:06:04 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a47008dadc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Equinor
+        Storage Deutschland","code":"21X000000001368W","publication_link":"https:\/\/www.equinorstorage.de","transparency_template":"","url":"21X000000001368W\/DE","updatedAt":"2022-05-02
+        00:00:00","gasDayStart":"2022-05-01","gasInStorage":"2.0541","injection":"0","withdrawal":"0","netWithdrawal":"0","workingGasVolume":"2.1541","injectionCapacity":"210.67","withdrawalCapacity":"361.15","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.45","full":"95.36","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X000000001368W&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:06:04 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a4728e6adc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Equinor
+        Storage Deutschland","code":"21X000000001368W","publication_link":"https:\/\/www.equinorstorage.de","transparency_template":"","url":"21X000000001368W\/DE","updatedAt":"2022-05-02
+        00:00:00","gasDayStart":"2022-05-01","gasInStorage":"2.0541","injection":"0","withdrawal":"0","netWithdrawal":"0","workingGasVolume":"2.1541","injectionCapacity":"210.67","withdrawalCapacity":"361.15","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.45","full":"95.36","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:05 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
