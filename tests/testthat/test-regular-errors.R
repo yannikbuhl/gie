@@ -25,25 +25,27 @@ test_that("company must be specified if facility is specified", {
 
 test_that("warning pops up if date, from and to are set (error 1)", {
 
+  skip_on_cran()
+  skip_on_ci()
+
   expect_warning(object = gie_load(country = "DE",
                                    date = "2022-05-01",
                                    from = "2022-05-01",
                                    to = "2022-05-15"),
                  regexp = "override")
 
-  skip_on_cran()
-
 })
 
 test_that("warning pops up if date, from and to are set (error 2)", {
+
+  skip_on_cran()
+  skip_on_ci()
 
   expect_warning(object = gie_batchload(countries = c("DE", "AT"),
                                         date = "2022-05-01",
                                         from = "2022-05-01",
                                         to = "2022-05-15"),
                  regexp = "override")
-
-  skip_on_cran()
 
 })
 

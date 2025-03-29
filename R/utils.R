@@ -751,7 +751,7 @@ getrequest_general <- function(database,
                                target,
                                page,
                                size,
-                               timeout,
+                               timeout = NULL,
                                pages = NULL,
                                apikey,
                                verbose = FALSE,
@@ -800,3 +800,174 @@ getrequest_general <- function(database,
 }
 
 ##----------------------------------------------------------------------------##
+
+check_gieumminput <- function(from,
+                              to,
+                              published_date,
+                              eic_entity,
+                              eic_participant,
+                              eic_asset,
+                              status,
+                              direction,
+                              timeout,
+                              size,
+                              apikey) {
+
+  #-----------------------------------------------------------------------------
+
+  if (!is.null(from)) {
+
+    if (!is.character(from) || length(from) > 1) {
+
+      stop("Parameter 'from' has to be of type character and of length 1.",
+           call. = FALSE)
+
+    }
+
+    if (!is_valid_date(from)) {
+
+      stop("Parameter 'from' has to be of format 'YYYY-MM-DD.",
+           call. = FALSE)
+
+    }
+
+  }
+
+  #-----------------------------------------------------------------------------
+
+  if (!is.null(to)) {
+
+    if (!is.character(to) || length(to) > 1) {
+
+      stop("Parameter 'to' has to be of type character and of length 1.",
+           call. = FALSE)
+
+    }
+
+    if (!is_valid_date(to)) {
+
+      stop("Parameter 'to' has to be of format 'YYYY-MM-DD.",
+           call. = FALSE)
+
+    }
+
+  }
+
+  #-----------------------------------------------------------------------------
+
+  if (!is.null(published_date) && (!is.character(published_date) || length(published_date) != 1)) {
+
+    stop("Parameter 'published_date' has to be of type character and of length 1.",
+         call. = FALSE)
+
+  }
+
+  #-----------------------------------------------------------------------------
+
+  if (!is.null(eic_entity) && (!is.character(eic_entity) || length(eic_entity) != 1)) {
+
+    stop("Parameter 'eic_entity' has to be of type character and of length 1.",
+         call. = FALSE)
+
+  }
+
+  #-----------------------------------------------------------------------------
+
+  if (!is.null(eic_participant) && (!is.character(eic_participant) || length(eic_participant) != 1)) {
+
+    stop("Parameter 'eic_participant' has to be of type character and of length 1.",
+         call. = FALSE)
+
+  }
+
+  #-----------------------------------------------------------------------------
+
+  if (!is.null(eic_asset) && (!is.character(eic_asset) || length(eic_asset) != 1)) {
+
+    stop("Parameter 'eic_asset' has to be of type character and of length 1.",
+         call. = FALSE)
+
+  }
+
+  #-----------------------------------------------------------------------------
+
+  if (!is.null(status)) {
+
+    if (!is.character(status) || length(status) != 1) {
+
+      stop("Parameter 'status' has to be of type character and of length 1.",
+           call. = FALSE)
+
+    }
+
+    if (!(status %in% c("active", "inactive", "dismissed"))) {
+
+      stop("Parameter 'status' can only be of value 'active', 'inactive' or 'dismissed'.",
+           call. = FALSE)
+
+    }
+
+  }
+
+  #-----------------------------------------------------------------------------
+
+  if (!is.null(direction)) {
+
+    if (!is.character(direction) || length(direction) != 1) {
+
+      stop("Parameter 'direction' has to be of type character and of length 1.",
+           call. = FALSE)
+
+    }
+
+    if (!(direction %in% c("entry", "exit"))) {
+
+      stop("Parameter 'direction' can only be of value 'entry' or 'exit'.",
+           call. = FALSE)
+
+    }
+
+  }
+
+  #-----------------------------------------------------------------------------
+
+  if (!is.numeric(timeout) | length(timeout) != 1) {
+
+    stop("Parameter 'timeout' needs to be type character and length 1.",
+         call. = FALSE)
+
+  }
+
+  #-----------------------------------------------------------------------------
+
+  if (!is.character(apikey) | length(apikey) != 1) {
+
+    stop("Parameter 'apikey' needs to be type character and length 1.",
+         call. = FALSE)
+
+  }
+
+  #-----------------------------------------------------------------------------
+
+  if (!is.numeric(size) | length(size) != 1 | size > 300) {
+
+    stop("Parameter 'size' needs to be type numeric and length 1 and max. 300.",
+         call. = FALSE)
+
+  }
+
+}
+
+#-------------------------------------------------------------------------------
+
+#' Check if a string is a valid date
+#'
+#' @param date_string Date string to check
+#'
+#' @returns TRUE or FALSE
+#'
+is_valid_date <- function(date_string) {
+
+  grepl("^\\d{4}-\\d{2}-\\d{2}$", date_string)
+
+}

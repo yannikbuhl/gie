@@ -2,6 +2,7 @@
 
 export(gie_batchload)
 export(gie_getnews)
+export(gie_getumm)
 export(gie_listing)
 export(gie_load)
 export(gie_unav)

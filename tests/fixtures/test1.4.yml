@@ -32,7 +32,7 @@ http_interactions:
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"UGS
         Rehden","code":"21Z000000000271O","url":"21Z000000000271O\/DE\/21X000000001160J","longitude":"8.4864","latitude":"52.6026","type":"DSR","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"0.2677","injection":"14.8","withdrawal":"1.7","netWithdrawal":"-13.1","workingGasVolume":"43.68","injectionCapacity":"344.76","withdrawalCapacity":"530.4","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.03","full":"0.61","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:31 GMT
+  recorded_at: 2025-03-29 19:06:02 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -67,7 +67,7 @@ http_interactions:
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"UGS
         Rehden","code":"21Z000000000271O","url":"21Z000000000271O\/DE\/21X000000001160J","longitude":"8.4864","latitude":"52.6026","type":"DSR","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"0.2677","injection":"14.8","withdrawal":"1.7","netWithdrawal":"-13.1","workingGasVolume":"43.68","injectionCapacity":"344.76","withdrawalCapacity":"530.4","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.03","full":"0.61","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:31 GMT
+  recorded_at: 2025-03-29 19:06:02 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -102,7 +102,7 @@ http_interactions:
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"UGS
         Rehden","code":"21Z000000000271O","url":"21Z000000000271O\/DE\/21X000000001160J","longitude":"8.4864","latitude":"52.6026","type":"DSR","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"0.2677","injection":"14.8","withdrawal":"1.7","netWithdrawal":"-13.1","workingGasVolume":"43.68","injectionCapacity":"344.76","withdrawalCapacity":"530.4","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.03","full":"0.61","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:31 GMT
+  recorded_at: 2025-03-29 19:06:02 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -137,5 +137,355 @@ http_interactions:
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"UGS
         Rehden","code":"21Z000000000271O","url":"21Z000000000271O\/DE\/21X000000001160J","longitude":"8.4864","latitude":"52.6026","type":"DSR","updatedAt":"2022-05-02
         00:00:00","gasDayStart":"2022-05-01","gasInStorage":"0.2677","injection":"14.8","withdrawal":"1.7","netWithdrawal":"-13.1","workingGasVolume":"43.68","injectionCapacity":"344.76","withdrawalCapacity":"530.4","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.03","full":"0.61","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:31 GMT
+  recorded_at: 2025-03-29 19:06:02 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&facility=21W000000000104B&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 17:04:34 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9280f2787cbfd2ab-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-27","data":[{"name":"UGS
+        N\u00fcttermoor H-2","code":"21W000000000104B","url":"21W000000000104B\/DE\/21X0000000011756","longitude":"7.4162","latitude":"53.2593","type":"ASF","updatedAt":"2023-02-13
+        19:29:51","gasDayStart":"2022-05-01","gasInStorage":"0.7283","injection":"7.16","withdrawal":"0","netWithdrawal":"-7.2","workingGasVolume":"1.84","injectionCapacity":"24.84","withdrawalCapacity":"49.68","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.39","full":"39.58","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:02 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&facility=21W000000000104B&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 17:04:35 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9280f27a9888d2ab-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-27","data":[{"name":"UGS
+        N\u00fcttermoor H-2","code":"21W000000000104B","url":"21W000000000104B\/DE\/21X0000000011756","longitude":"7.4162","latitude":"53.2593","type":"ASF","updatedAt":"2023-02-13
+        19:29:51","gasDayStart":"2022-05-01","gasInStorage":"0.7283","injection":"7.16","withdrawal":"0","netWithdrawal":"-7.2","workingGasVolume":"1.84","injectionCapacity":"24.84","withdrawalCapacity":"49.68","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.39","full":"39.58","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:02 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&facility=21W000000000104B&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 18:59:33 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819ae35ca1d27a-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"UGS
+        N\u00fcttermoor H-2","code":"21W000000000104B","url":"21W000000000104B\/DE\/21X0000000011756","longitude":"7.4162","latitude":"53.2593","type":"ASF","updatedAt":"2023-02-13
+        19:29:51","gasDayStart":"2022-05-01","gasInStorage":"0.7283","injection":"7.16","withdrawal":"0","netWithdrawal":"-7.2","workingGasVolume":"1.84","injectionCapacity":"24.84","withdrawalCapacity":"49.68","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.39","full":"39.58","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:02 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&facility=21W000000000104B&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 18:59:33 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819ae5992ed27a-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"UGS
+        N\u00fcttermoor H-2","code":"21W000000000104B","url":"21W000000000104B\/DE\/21X0000000011756","longitude":"7.4162","latitude":"53.2593","type":"ASF","updatedAt":"2023-02-13
+        19:29:51","gasDayStart":"2022-05-01","gasInStorage":"0.7283","injection":"7.16","withdrawal":"0","netWithdrawal":"-7.2","workingGasVolume":"1.84","injectionCapacity":"24.84","withdrawalCapacity":"49.68","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.39","full":"39.58","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:02 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&facility=21W000000000104B&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:02:39 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819f6f38f4dc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"UGS
+        N\u00fcttermoor H-2","code":"21W000000000104B","url":"21W000000000104B\/DE\/21X0000000011756","longitude":"7.4162","latitude":"53.2593","type":"ASF","updatedAt":"2023-02-13
+        19:29:51","gasDayStart":"2022-05-01","gasInStorage":"0.7283","injection":"7.16","withdrawal":"0","netWithdrawal":"-7.2","workingGasVolume":"1.84","injectionCapacity":"24.84","withdrawalCapacity":"49.68","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.39","full":"39.58","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:02 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&facility=21W000000000104B&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:02:40 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819f712cb2dc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"UGS
+        N\u00fcttermoor H-2","code":"21W000000000104B","url":"21W000000000104B\/DE\/21X0000000011756","longitude":"7.4162","latitude":"53.2593","type":"ASF","updatedAt":"2023-02-13
+        19:29:51","gasDayStart":"2022-05-01","gasInStorage":"0.7283","injection":"7.16","withdrawal":"0","netWithdrawal":"-7.2","workingGasVolume":"1.84","injectionCapacity":"24.84","withdrawalCapacity":"49.68","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.39","full":"39.58","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:02 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&facility=21W000000000104B&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:05:07 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a30c38d9dc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"UGS
+        N\u00fcttermoor H-2","code":"21W000000000104B","url":"21W000000000104B\/DE\/21X0000000011756","longitude":"7.4162","latitude":"53.2593","type":"ASF","updatedAt":"2023-02-13
+        19:29:51","gasDayStart":"2022-05-01","gasInStorage":"0.7283","injection":"7.16","withdrawal":"0","netWithdrawal":"-7.2","workingGasVolume":"1.84","injectionCapacity":"24.84","withdrawalCapacity":"49.68","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.39","full":"39.58","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:02 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&facility=21W000000000104B&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:05:07 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a30f1e67dc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"UGS
+        N\u00fcttermoor H-2","code":"21W000000000104B","url":"21W000000000104B\/DE\/21X0000000011756","longitude":"7.4162","latitude":"53.2593","type":"ASF","updatedAt":"2023-02-13
+        19:29:51","gasDayStart":"2022-05-01","gasInStorage":"0.7283","injection":"7.16","withdrawal":"0","netWithdrawal":"-7.2","workingGasVolume":"1.84","injectionCapacity":"24.84","withdrawalCapacity":"49.68","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.39","full":"39.58","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:02 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&facility=21W000000000104B&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:06:01 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a45ebb15dc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"UGS
+        N\u00fcttermoor H-2","code":"21W000000000104B","url":"21W000000000104B\/DE\/21X0000000011756","longitude":"7.4162","latitude":"53.2593","type":"ASF","updatedAt":"2023-02-13
+        19:29:51","gasDayStart":"2022-05-01","gasInStorage":"0.7283","injection":"7.16","withdrawal":"0","netWithdrawal":"-7.2","workingGasVolume":"1.84","injectionCapacity":"24.84","withdrawalCapacity":"49.68","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.39","full":"39.58","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:02 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&company=21X0000000011756&facility=21W000000000104B&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:06:01 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a460d81ddc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"UGS
+        N\u00fcttermoor H-2","code":"21W000000000104B","url":"21W000000000104B\/DE\/21X0000000011756","longitude":"7.4162","latitude":"53.2593","type":"ASF","updatedAt":"2023-02-13
+        19:29:51","gasDayStart":"2022-05-01","gasInStorage":"0.7283","injection":"7.16","withdrawal":"0","netWithdrawal":"-7.2","workingGasVolume":"1.84","injectionCapacity":"24.84","withdrawalCapacity":"49.68","contractedCapacity":"-","availableCapacity":"-","status":"C","trend":"0.39","full":"39.58","info":[]}]}'
+  recorded_at: 2025-03-29 19:06:02 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0

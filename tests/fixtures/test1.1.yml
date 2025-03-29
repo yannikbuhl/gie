@@ -31,7 +31,7 @@ http_interactions:
       file: no
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2023-12-21
         01:48:09","gasDayStart":"2022-05-01","gasInStorage":"86.2235","consumption":"888.8300","consumptionFull":"9.7","injection":"1282.99","withdrawal":"7.7","netWithdrawal":"-1275.3","workingGasVolume":"241.8803","injectionCapacity":"4010.35","withdrawalCapacity":"6823.18","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.61","full":"35.65","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:25 GMT
+  recorded_at: 2025-03-29 19:05:58 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -65,7 +65,7 @@ http_interactions:
       file: no
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2023-12-21
         01:48:09","gasDayStart":"2022-05-01","gasInStorage":"86.2235","consumption":"888.8300","consumptionFull":"9.7","injection":"1282.99","withdrawal":"7.7","netWithdrawal":"-1275.3","workingGasVolume":"241.8803","injectionCapacity":"4010.35","withdrawalCapacity":"6823.18","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.61","full":"35.65","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:25 GMT
+  recorded_at: 2025-03-29 19:05:58 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -99,7 +99,7 @@ http_interactions:
       file: no
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2023-12-21
         01:48:09","gasDayStart":"2022-05-01","gasInStorage":"86.2235","consumption":"888.8300","consumptionFull":"9.7","injection":"1282.99","withdrawal":"7.7","netWithdrawal":"-1275.3","workingGasVolume":"241.8803","injectionCapacity":"4010.35","withdrawalCapacity":"6823.18","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.61","full":"35.65","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:25 GMT
+  recorded_at: 2025-03-29 19:05:58 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0
 - request:
     method: get
@@ -133,5 +133,345 @@ http_interactions:
       file: no
       string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2024-05-31","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2023-12-21
         01:48:09","gasDayStart":"2022-05-01","gasInStorage":"86.2235","consumption":"888.8300","consumptionFull":"9.7","injection":"1282.99","withdrawal":"7.7","netWithdrawal":"-1275.3","workingGasVolume":"241.8803","injectionCapacity":"4010.35","withdrawalCapacity":"6823.18","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.61","full":"35.65","info":[]}]}'
-  recorded_at: 2024-06-02 11:50:25 GMT
+  recorded_at: 2025-03-29 19:05:58 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 17:04:15 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9280f200ea3ad2ab-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-27","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2025-03-03
+        14:13:58","gasDayStart":"2022-05-01","gasInStorage":"87.4313","consumption":"888.8300","consumptionFull":"9.84","injection":"1304.75","withdrawal":"7.7","netWithdrawal":"-1297.1","workingGasVolume":"244.1803","injectionCapacity":"4047.35","withdrawalCapacity":"6873.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.62","full":"35.81","info":[]}]}'
+  recorded_at: 2025-03-29 19:05:58 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 17:04:31 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9280f202be24d2ab-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-27","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2025-03-03
+        14:13:58","gasDayStart":"2022-05-01","gasInStorage":"87.4313","consumption":"888.8300","consumptionFull":"9.84","injection":"1304.75","withdrawal":"7.7","netWithdrawal":"-1297.1","workingGasVolume":"244.1803","injectionCapacity":"4047.35","withdrawalCapacity":"6873.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.62","full":"35.81","info":[]}]}'
+  recorded_at: 2025-03-29 19:05:58 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 18:59:29 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819acd5f3fd27a-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2025-03-03
+        14:13:58","gasDayStart":"2022-05-01","gasInStorage":"87.4313","consumption":"888.8300","consumptionFull":"9.84","injection":"1304.75","withdrawal":"7.7","netWithdrawal":"-1297.1","workingGasVolume":"244.1803","injectionCapacity":"4047.35","withdrawalCapacity":"6873.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.62","full":"35.81","info":[]}]}'
+  recorded_at: 2025-03-29 19:05:58 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 18:59:30 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819acfabe0d27a-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2025-03-03
+        14:13:58","gasDayStart":"2022-05-01","gasInStorage":"87.4313","consumption":"888.8300","consumptionFull":"9.84","injection":"1304.75","withdrawal":"7.7","netWithdrawal":"-1297.1","workingGasVolume":"244.1803","injectionCapacity":"4047.35","withdrawalCapacity":"6873.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.62","full":"35.81","info":[]}]}'
+  recorded_at: 2025-03-29 19:05:58 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:02:35 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819f56ffb5dc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2025-03-03
+        14:13:58","gasDayStart":"2022-05-01","gasInStorage":"87.4313","consumption":"888.8300","consumptionFull":"9.84","injection":"1304.75","withdrawal":"7.7","netWithdrawal":"-1297.1","workingGasVolume":"244.1803","injectionCapacity":"4047.35","withdrawalCapacity":"6873.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.62","full":"35.81","info":[]}]}'
+  recorded_at: 2025-03-29 19:05:58 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:02:35 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 92819f598cbedc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2025-03-03
+        14:13:58","gasDayStart":"2022-05-01","gasInStorage":"87.4313","consumption":"888.8300","consumptionFull":"9.84","injection":"1304.75","withdrawal":"7.7","netWithdrawal":"-1297.1","workingGasVolume":"244.1803","injectionCapacity":"4047.35","withdrawalCapacity":"6873.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.62","full":"35.81","info":[]}]}'
+  recorded_at: 2025-03-29 19:05:58 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:05:03 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a2f63c3ddc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2025-03-03
+        14:13:58","gasDayStart":"2022-05-01","gasInStorage":"87.4313","consumption":"888.8300","consumptionFull":"9.84","injection":"1304.75","withdrawal":"7.7","netWithdrawal":"-1297.1","workingGasVolume":"244.1803","injectionCapacity":"4047.35","withdrawalCapacity":"6873.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.62","full":"35.81","info":[]}]}'
+  recorded_at: 2025-03-29 19:05:58 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:05:04 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a2f81895dc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2025-03-03
+        14:13:58","gasDayStart":"2022-05-01","gasInStorage":"87.4313","consumption":"888.8300","consumptionFull":"9.84","injection":"1304.75","withdrawal":"7.7","netWithdrawal":"-1297.1","workingGasVolume":"244.1803","injectionCapacity":"4047.35","withdrawalCapacity":"6873.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.62","full":"35.81","info":[]}]}'
+  recorded_at: 2025-03-29 19:05:58 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:05:57 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a443bc49dc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2025-03-03
+        14:13:58","gasDayStart":"2022-05-01","gasInStorage":"87.4313","consumption":"888.8300","consumptionFull":"9.84","injection":"1304.75","withdrawal":"7.7","netWithdrawal":"-1297.1","workingGasVolume":"244.1803","injectionCapacity":"4047.35","withdrawalCapacity":"6873.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.62","full":"35.81","info":[]}]}'
+  recorded_at: 2025-03-29 19:05:58 GMT
+  recorded_with: vcr/1.2.2, webmockr/0.9.0
+- request:
+    method: get
+    uri: https://agsi.gie.eu/api?page=1&size=30&country=DE&date=2022-05-01
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      x-key: <<<GIE_APIKEY>>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 29 Mar 2025 19:05:57 GMT
+      content-type: application/json
+      transfer-encoding: chunked
+      connection: keep-alive
+      cache-control: no-cache, private
+      x-robots-tag: noindex
+      cf-cache-status: DYNAMIC
+      server: cloudflare
+      cf-ray: 9281a445a829dc62-FRA
+      content-encoding: gzip
+      alt-svc: h3=":443"; ma=86400
+    body:
+      encoding: ''
+      file: no
+      string: '{"last_page":1,"total":1,"dataset":"","gas_day":"2025-03-28","data":[{"name":"Germany","code":"DE","url":"DE","updatedAt":"2025-03-03
+        14:13:58","gasDayStart":"2022-05-01","gasInStorage":"87.4313","consumption":"888.8300","consumptionFull":"9.84","injection":"1304.75","withdrawal":"7.7","netWithdrawal":"-1297.1","workingGasVolume":"244.1803","injectionCapacity":"4047.35","withdrawalCapacity":"6873.8","contractedCapacity":"-","availableCapacity":"-","coveredCapacity":"-","status":"E","trend":"0.62","full":"35.81","info":[]}]}'
+  recorded_at: 2025-03-29 19:05:58 GMT
   recorded_with: vcr/1.2.2, webmockr/0.9.0

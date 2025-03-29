@@ -8,7 +8,7 @@ test_that("download single country data", {
   skip_on_ci()
 
   vcr::use_cassette("test1.1",
-                    record = "new_episodes",{
+                    record = "new_episodes", {
 
     result <- gie_load(country = "DE",
                        date = "2022-05-01")
@@ -18,7 +18,7 @@ test_that("download single country data", {
   expect_s3_class(result,
                   class = "data.frame")
 
-  })
+})
 
 #------------------------------------------------------------------------------#
 
@@ -39,7 +39,7 @@ test_that("download single country data with from/to", {
   expect_s3_class(result,
                   class = "data.frame")
 
-  })
+})
 
 #------------------------------------------------------------------------------#
 
@@ -73,8 +73,8 @@ test_that("check that gie_load works with company & facilities", {
 
     result <- gie_load(country = c("DE"),
                        date = "2022-05-01",
-                       company = "21X000000001160J",
-                       facility = "21Z000000000271O")
+                       company = "21X0000000011756",
+                       facility = "21W000000000104B")
 
   })
 
@@ -95,7 +95,7 @@ test_that("check that gie_load works with company", {
 
     result <- gie_load(country = c("DE"),
                        date = "2022-05-01",
-                       company = "21X000000001160J")
+                       company = "21X0000000011756")
 
   })
 
@@ -116,8 +116,8 @@ test_that("check that gie_batchload works with companies", {
 
     result <- gie_batchload(countries = "DE",
                             date = "2022-05-01",
-                            companies = c("21X000000001160J",
-                                          "21X0000000011756"))
+                            companies = c("21X0000000011756",
+                                          "21X000000001368W"))
 
   })
 
@@ -138,10 +138,10 @@ test_that("check that gie_batchload works with company and facilities", {
 
     result <- gie_batchload(countries = "DE",
                             date = "2022-05-01",
-                            companies = "21X000000001160J",
-                            facilities = c("21Z000000000271O",
-                                           "21W0000000001148",
-                                           "21W0000000001261"))
+                            companies = "21X0000000011756",
+                            facilities = c("21W0000000001075",
+                                           "21W000000000048W",
+                                           "21W000000000104B"))
 
   })
 
@@ -247,3 +247,20 @@ test_that("check that gie_getnews outputs are correct", {
 })
 
 #-------------------------------------------------------------------------------
+
+test_that("gie_getumm outputs a list of length 1 called 'data'", {
+
+  skip_on_cran()
+  skip_on_ci()
+
+  vcr::use_cassette("test1.13",
+                    record = "new_episodes", {
+
+                      result <- gie_getumm(from = "2025-01-01",
+                                           size = 2)
+
+                    })
+
+  expect_type(result, "list")
+
+})
