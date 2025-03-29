@@ -6,10 +6,12 @@
 [![Lifecycle:
 experimental](https://lifecycle.r-lib.org/articles/figures/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/yannikbuhl/gie/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/yannikbuhl/gie/actions/workflows/R-CMD-check.yaml)
+[![CRAN_Download_Badge](https://cranlogs.r-pkg.org/badges/gie)](https://cran.r-project.org/package=gie)
 <!-- badges: end -->
 
 A R wrapper for Gas Infrastructure Europe’s (GIE) AGSI+ and ALSI+
-transparency platform API
+transparency platform API (also supports getting Urgent Market Messages
+from Inside Information Platform, IIP)
 
 ## Collecting data on natural gas storages
 

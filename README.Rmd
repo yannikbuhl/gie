@@ -7,9 +7,10 @@ output: github_document
 <!-- badges: start -->
 [![Lifecycle: experimental](https://lifecycle.r-lib.org/articles/figures/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/yannikbuhl/gie/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/yannikbuhl/gie/actions/workflows/R-CMD-check.yaml)
+[![CRAN\_Download\_Badge](https://cranlogs.r-pkg.org/badges/gie)](https://cran.r-project.org/package=gie)
 <!-- badges: end -->
 
-A R wrapper for Gas Infrastructure Europe's (GIE) AGSI+ and ALSI+ transparency platform API
+A R wrapper for Gas Infrastructure Europe's (GIE) AGSI+ and ALSI+ transparency platform API (also supports getting Urgent Market Messages from Inside Information Platform, IIP)
 
 ## Collecting data on natural gas storages
 [Gas Infrastructure Europe (GIE)](https://www.gie.eu/) is an organisation that represents the vast majority of operators of natural gas storage units in Europe and some non-EU countries (such as the United Kingdom and Ukraine). They provide a REST API for their AGSI+ transparency platform to retrieve data on country level, operator level and facility level. Data include information on, e.g., the filling level, overall capacity, inflow or outflow. In order to use `{gie}`, you have to register for an API key on the [AGSI+ website](https://agsi.gie.eu/).
